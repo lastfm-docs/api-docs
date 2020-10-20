@@ -661,32 +661,24 @@
 <span class="p">}</span>
 </code></pre></div>
 </details>
-<details class="warning"><summary>Example response of non existing user</summary></details>
-<p>HTTP status: <code>404 NOT FOUND</code></p>
-<pre><code>```
-https://ws.audioscrobbler.com/2.0/?api_key=censored&amp;method=User.getrecenttracks&amp;user=userthatdoesntexist&amp;format=json
-```
-
-```json
-{
-    "error": 6,
-    "message": "User not found"
-}
-```
-</code></pre>
-<details class="warning"><summary>Example response of user with 'Hide recent listening information' enabled</summary></details>
-<p>HTTP status: <code>403 FORBIDDEN</code></p>
-<pre><code>```
-https://ws.audioscrobbler.com/2.0/?api_key=censored&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json
-```
-
-```json
-{
-    "error": 17,
-    "message": "Login: User required to be logged in"
-}
-```
-</code></pre>
+<details class="warning"><summary>Example response of non existing user</summary><p>HTTP status: <code>404 NOT FOUND</code></p>
+<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=censored&amp;method=User.getrecenttracks&amp;user=userthatdoesntexist&amp;format=json
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User not found&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="warning"><summary>Example response of user with 'Hide recent listening information' enabled</summary><p>HTTP status: <code>403 FORBIDDEN</code></p>
+<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=censored&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Login: User required to be logged in&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
 <p>// Add auth docs</p>
                 
               
