@@ -5,7 +5,7 @@ No authentication required.
 ## Parameters
 | Method         | Type                                                                                               | Default | Optional | Description                                            |
 | -------------- | -------------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------ |
-| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The last.fm username to fetch the friends of.
+| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The username to fetch top albums for.
 | `period`       |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   | overall    | :white_check_mark:            | The time period over which to retrieve top albums for. Can be `overall`, `7day`, `1month`, `3month`, `6month` or `12month`
 | `limit`        |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50      | :white_check_mark:            | The number of results to fetch per page. Defaults to 50.
 | `page`         |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 1       | :white_check_mark:            | The page number to fetch. Defaults to first page.
