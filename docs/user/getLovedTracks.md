@@ -28,7 +28,7 @@ Errors:
 
 ## Examples
 
-??? note "Example response of a user currently not scrobbling"
+??? note "Example Response"
 
     | Parameter | Value            |
     |-----------|------------------|
@@ -95,7 +95,7 @@ Errors:
     ```
 
 
-??? warning "Example Response"
+??? warning "Example Response of a user that doesn't exist"
 
     HTTP status: `404 NOT FOUND`
 
