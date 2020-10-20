@@ -210,9 +210,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Bugs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       Bugs
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attribute-fields" class="md-nav__link">
+    Attribute fields
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -356,6 +385,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attribute-fields" class="md-nav__link">
+    Attribute fields
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -374,6 +418,14 @@
                 <h1 id="bugs">Bugs<a class="headerlink" href="#bugs" title="Permanent link">&para;</a></h1>
 <p>The last.fm API is by no means updated or maintained regularly, due to this, responses are often riddled with inconsistency and is not up to standards. This page aims to document these bugs, and similar instances of malformed responses and be a reference for developers trying to make last.fm apps and tools.</p>
 <p>Every part of this page documents a different case and can be linked to individually to help make helping newcomers feasible.</p>
+<h2 id="attribute-fields">Attribute fields<a class="headerlink" href="#attribute-fields" title="Permanent link">&para;</a></h2>
+<p>As per <a href="https://www.last.fm/api/rest">this page</a> in the official documentation, last.fm serves its JSON responses as converted XML responses, this is done automatically and leads to mistructed JSON, the most common occurrence with this is the presence of fields in the form of attributes to JSON objects, these are attached to JSON objects and can be accessed by looking through the JSON using the title as the property name.</p>
+<p>For example the <a href="https://lastfm-docs.github.io/api-docs/user/getInfo/">user.getInfo</a> method has a nested JSON objected (<code>registered</code>) that includes information about when a user account was created. This includes a text
+ field named "#text", this property can be accessed by using the title of the value (<code>#text</code>) as a key.
+<div class="highlight"><pre><span></span><code>+ registered[&quot;#text&quot;]
+- registered.text
+</code></pre></div></p>
+<p>Similarly @attr fields can be accessed by using <code>"@attr"</code> as a key.</p>
                 
               
               
