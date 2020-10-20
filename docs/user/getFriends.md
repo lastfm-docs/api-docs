@@ -17,6 +17,7 @@ No authentication required.
 ## Responses
 Errors:
 
+- 6 : Invalid parameters - Your request is missing a required parameter
 - 8 : Operation failed - Something else went wrong  
 - 9 : Invalid session key - Please re-authenticate  
 - 10 : Invalid API key - You must be granted a valid key by last.fm  
