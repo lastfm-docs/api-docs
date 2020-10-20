@@ -5,7 +5,7 @@ No authentication required.
 ## Parameters
 | Method         | Type                                                                                               | Default | Optional | Description                                            |
 | -------------- | -------------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------ |
-| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The last.fm username to fetch the friends of.
+| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The last.fm username to fetch top tags for.
 | `limit`        |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50      | :white_check_mark:            | The number of results to fetch per page. Defaults to 50.
 | `api_key`      |[token](https://www.last.fm/api/account/create)                                                     |`none`   | :negative_squared_cross_mark: | A Last.fm API key.
 
