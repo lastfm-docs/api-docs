@@ -246,6 +246,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mistitled-fields" class="md-nav__link">
+    Mistitled Fields
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -412,6 +419,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mistitled-fields" class="md-nav__link">
+    Mistitled Fields
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -448,6 +462,9 @@ To prevent your apps breaking, all responses must be checked as just relying on 
 - registered.text
 </code></pre></div></p>
 <p>Similarly @attr fields can be accessed by using <code>"@attr"</code> as a key.</p>
+<h2 id="mistitled-fields">Mistitled Fields<a class="headerlink" href="#mistitled-fields" title="Permanent link">&para;</a></h2>
+<p>The official documentation has schemas that reflect some fields to have data they do not. For example, the <code>getTopArtists</code> methods when called upon the <code>geo</code> endpoint should return a field for the number of listeners that the artist has in the requested country. This field is missing in the response and is replaced by a <code>listeners</code> field that reflects an artist's global listener count, not his listeners in that country as it should.</p>
+<p>Similarly certain fields containing time information are often titled differently in the documented schemas, in actuality, they are placed in a "uts" field. UTS is an abbrevation for UNIX Timestamp, this is not a common title for it.</p>
                 
               
               
