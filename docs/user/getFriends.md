@@ -119,6 +119,6 @@ Errors:
     ```json
     {
         "error": 6,
-        "message": "User not found"
+        "message": "no such page"
     }
     ```

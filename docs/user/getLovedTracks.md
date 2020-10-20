@@ -7,7 +7,7 @@ This method doesn't not require authentication.
 | Method     | Type                                                                                                | Default                  | Optional                      | Description                                                                                                                        |
 | ---------- | --------------------------------------------------------------------------------------------------- | ------------------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `user`     | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   | `none`                   | :negative_squared_cross_mark: | The last.fm username to fetch the recent tracks of                                                                                 |
-| `limit`    | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50                       | :white_check_mark:            | The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening. |
+| `limit`    | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50                       | :white_check_mark:            | The number of results to fetch per page. Defaults to 50. Maximum is 1000. |
 | `page`     | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 1                        | :white_check_mark:            | The page number to fetch. Defaults to first page.                                                                                  |
 | `api_key`  | [token](https://www.last.fm/api/account/create)                                                     | `none`                   | :negative_squared_cross_mark: | A Last.fm API key.                                                                                                                 |
 
@@ -28,10 +28,10 @@ Errors:
 
 ## Examples
 
-??? note "Example response of a user currently not scrobbling"
+??? note "Example Response"
 
     | Parameter | Value            |
-    |-----------|-----------=------|
+    |-----------|------------------|
     | username  | TyphoonasNorABot |
     | limit     | 1                |
     | format    | json             |
@@ -95,7 +95,7 @@ Errors:
     ```
 
 
-??? warning "Example response of non existing user"
+??? warning "Example Response of a user that doesn't exist"
 
     HTTP status: `404 NOT FOUND`
 
@@ -110,17 +110,3 @@ Errors:
     }
     ```
 
-??? warning "Example response of user with 'Hide recent listening information' enabled"
-
-    HTTP status: `403 FORBIDDEN`
-
-    ```
-    https://ws.audioscrobbler.com/2.0/?YOUR_API_KEY=censored&method=User.getlovedtracks&user=userthathasthishidden&format=json
-    ```
-
-    ```json
-    {
-        "error": 17,
-        "message": "Login: User required to be logged in"
-    }
-    ```
