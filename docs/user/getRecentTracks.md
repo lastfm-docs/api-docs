@@ -1,6 +1,6 @@
 Returns a list of the tracks recently scrobbled by this user. Adds a `nowplaying` flag with a boolean value if the user is currently scrobbling.
 
-This method doesn not require authentication.
+This method doesn't not require authentication.
 
 ## Parameters
 
@@ -33,7 +33,7 @@ Errors:
 
 ## Examples
 
-??? note "Example Response 1 - User not currently scrobbling"
+??? note "Example response of a user currently not scrobbling"
 
     | Parameter | Value      |
     |-----------|------------|
@@ -100,7 +100,7 @@ Errors:
     }
     ```
 
-??? note "Example Response 2 - User currently scrobbling"
+??? note "Example response of a user currently scrobbling"
 
     | Parameter | Value      |
     |-----------|------------|
