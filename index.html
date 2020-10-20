@@ -221,8 +221,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#what-makes-this-better-then-the-official-documentation" class="md-nav__link">
+    What makes this better then the official documentation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sounds-great-how-can-i-contribute" class="md-nav__link">
+    Sounds great! How can I contribute?
   </a>
   
 </li>
@@ -256,11 +263,73 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
+      Auth
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Auth" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Auth
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="auth/Desktop/" class="md-nav__link">
+      Desktop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="auth/getToken/" class="md-nav__link">
+      getToken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="auth/signature/" class="md-nav__link">
+      Signature
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
       User
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="User" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
         User
       </label>
@@ -416,8 +485,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#what-makes-this-better-then-the-official-documentation" class="md-nav__link">
+    What makes this better then the official documentation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sounds-great-how-can-i-contribute" class="md-nav__link">
+    Sounds great! How can I contribute?
   </a>
   
 </li>
@@ -441,12 +517,19 @@
                 
                 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>This is a community initiative by members of the last.fm Discord to create better documentation for the last.fm API. Anyone is welcome to join and help create better documentation.</p>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+<h2 id="what-makes-this-better-then-the-official-documentation">What makes this better then the official documentation?<a class="headerlink" href="#what-makes-this-better-then-the-official-documentation" title="Permanent link">&para;</a></h2>
+<p>There are multiple reasons we're doing this:</p>
+<ul>
+<li>The official docs often have outdated examples, and they're all in XML</li>
+<li>Examples with parameters and showing what objects to expect are easier to work with</li>
+<li>The API often has weird behaviour that we feel should be documented so developers don't have to figure that out themselves</li>
+<li>Error responses are often inconsistent and don't match the docs. It would save developers time if they are well documented</li>
+<li>Documentation should be open source so anyone can fix errors if they find them</li>
+</ul>
+<h2 id="sounds-great-how-can-i-contribute">Sounds great! How can I contribute?<a class="headerlink" href="#sounds-great-how-can-i-contribute" title="Permanent link">&para;</a></h2>
+<p>You can check out the docs <a href="https://github.com/lastfm-docs/api-docs/tree/master/docs">here</a>. </p>
+<p>It's all in markdown, so easy to work with. Please follow the other pages in styling and objects.</p>
+<p>We use MkDocs with some extensions for extra markdown types. Some of the extensions are: <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/">Tabbed</a> and <a href="https://facelessuser.github.io/pymdown-extensions/extensions/details/">Details (collapsible objects)</a></p>
                 
               
               
