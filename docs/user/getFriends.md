@@ -17,6 +17,7 @@ No authentication required.
 ## Responses
 Errors:
 
+- 6 : Invalid parameters - Your request was either missing a required parameter, the parameter was not found, or had 0 results
 - 8 : Operation failed - Something else went wrong  
 - 9 : Invalid session key - Please re-authenticate  
 - 10 : Invalid API key - You must be granted a valid key by last.fm  
@@ -39,7 +40,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=CENSORED&method=User.getfriends&user=aidan-&format=json&limit=1
+    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getfriends&user=aidan-&format=json&limit=1
     ```
 
     ```json
@@ -98,7 +99,7 @@ Errors:
     HTTP status: `404 NOT FOUND`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=CENSORED&method=User.getfriends&user=userthatdoesntexist&format=json
+    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getfriends&user=userthatdoesntexist&format=json
     ```
 
     ```json
@@ -112,7 +113,7 @@ Errors:
     HTTP status: `400 BAD REQUEST`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=CENSORED&method=User.getfriends&user=letmeridee&format=json
+    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getfriends&user=letmeridee&format=json
     ```
 
     ```json
