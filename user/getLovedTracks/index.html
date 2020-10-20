@@ -455,7 +455,7 @@
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
 <td>50</td>
 <td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
-<td>The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening.</td>
+<td>The number of results to fetch per page. Defaults to 50. Maximum is 1000.</td>
 </tr>
 <tr>
 <td><code>page</code></td>
@@ -488,11 +488,28 @@
 <li>29 : Rate limit exceeded - Your IP has made too many requests in a short period</li>
 </ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<details class="note"><summary>Example response of a user currently not scrobbling</summary><p>| Parameter | Value            |
-|-----------|-----------=------|
-| username  | TyphoonasNorABot |
-| limit     | 1                |
-| format    | json             |</p>
+<details class="note"><summary>Example response of a user currently not scrobbling</summary><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>TyphoonasNorABot</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>1</td>
+</tr>
+<tr>
+<td>format</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
 <p>HTTP status: <code>200 OK</code></p>
 <div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&amp;method=User.getlovedtracks&amp;user=TyphoonsNotABot&amp;limit=1&amp;format=json
 </code></pre></div>
@@ -553,15 +570,6 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
     <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User not found&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-</details>
-<details class="warning"><summary>Example response of user with 'Hide recent listening information' enabled</summary><p>HTTP status: <code>403 FORBIDDEN</code></p>
-<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?YOUR_API_KEY=censored&amp;method=User.getlovedtracks&amp;user=userthathasthishidden&amp;format=json
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Login: User required to be logged in&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 </details>
