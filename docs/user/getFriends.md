@@ -5,7 +5,7 @@ Get a list of the user's friends (follow each other) on Last.fm.
 No authentication required.
 
 ## Parameters
-| Parameter      | Type                                                                                               | Default | Optional | Description                                            |
+| Method         | Type                                                                                               | Default | Optional | Description                                            |
 | -------------- | -------------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------ |
 | `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The last.fm username to fetch the friends of.
 | `recenttracks` |[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | 0       | :white_check_mark:            | Whether or not to include information about friends' recent listening in the response.
@@ -28,7 +28,13 @@ Errors:
 
 
 ## Examples
-??? note "Example response (limit 1)"
+??? note "Example response"
+
+    | Parameter | Value |
+    | --------- | ----- |
+    | username  | aidan-|
+    | limit     | 1     |
+    | format    | json  |
 
     HTTP status: `200 OK`
 
