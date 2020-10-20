@@ -8,5 +8,8 @@ theme:
     scheme: preference
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
   - toc:
       permalink: true
