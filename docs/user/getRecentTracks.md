@@ -243,7 +243,8 @@ Errors:
     ```
 
 ??? warning "Example response of non existing user"
-HTTP status: `404 NOT FOUND`
+
+    HTTP status: `404 NOT FOUND`
 
     ```
     https://ws.audioscrobbler.com/2.0/?api_key=censored&method=User.getrecenttracks&user=userthatdoesntexist&format=json
@@ -257,7 +258,8 @@ HTTP status: `404 NOT FOUND`
     ```
 
 ??? warning "Example response of user with 'Hide recent listening information' enabled"
-HTTP status: `403 FORBIDDEN`
+
+    HTTP status: `403 FORBIDDEN`
 
     ```
     https://ws.audioscrobbler.com/2.0/?api_key=censored&method=User.getrecenttracks&user=frikandel_&format=json
