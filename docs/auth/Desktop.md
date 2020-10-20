@@ -1,0 +1,2 @@
+This document describes how to allow your users to authenticate within your app without the requirement for a web application.
+
