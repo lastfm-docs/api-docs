@@ -1,6 +1,6 @@
 Returns profile information about a last.fm user.
 
-This method doesn't not require authentication.
+This method doesn't require authentication.
 
 ## Parameters
 
