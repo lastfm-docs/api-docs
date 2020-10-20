@@ -1,13 +1,6 @@
-# Welcome to MkDocs
+# Unofficial last.fm API documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+This is a community initiative by members of the last.fm Discord to create better documentation for the last.fm API. Anyone is welcome to join and help create better documentation.
 
 ## Project layout
 

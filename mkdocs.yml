@@ -1,6 +1,6 @@
 site_name: Unofficial last.fm API docs
 repo_url: https://github.com/lastfm-docs/api-docs
-repo_name: fmbot
+repo_name: lastfm-docs/api-docs
 site_description: Unofficial documentation for the last.fm API
 theme:
   name: 'material'
