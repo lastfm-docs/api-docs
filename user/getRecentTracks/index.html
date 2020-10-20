@@ -1,0 +1,776 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Unofficial documentation for the last.fm API">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>getRecentTracks - Unofficial last.fm API docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Unofficial last.fm API docs" class="md-header-nav__button md-logo" aria-label="Unofficial last.fm API docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Unofficial last.fm API docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              getRecentTracks
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/lastfm-docs/api-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lastfm-docs/api-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Unofficial last.fm API docs" class="md-nav__button md-logo" aria-label="Unofficial last.fm API docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Unofficial last.fm API docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/lastfm-docs/api-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lastfm-docs/api-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Unofficial last.fm API documentation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      User
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="User" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        User
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GET%20User.GetRecentTracks/" class="md-nav__link">
+      GET User.GetRecentTracks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        getRecentTracks
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      getRecentTracks
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/user/getRecentTracks.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>getRecentTracks</h1>
+                
+                <p>Returns a list of the tracks recently scrobbled by this user. Adds a <code>nowplaying</code> flag with a boolean value if the user is currently scrobbling.</p>
+<p>This method doesn not require authentication.</p>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Default</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
+<td><code>none</code></td>
+<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
+<td>The last.fm username to fetch the recent tracks of</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
+<td>50</td>
+<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
+<td>The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening.</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
+<td>1</td>
+<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
+<td>The page number to fetch. Defaults to first page.</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
+<td>0000000000</td>
+<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
+<td>Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
+<td><code>current UNIX timestamp</code></td>
+<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
+<td>End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.</td>
+</tr>
+<tr>
+<td><code>extended</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></td>
+<td>0</td>
+<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
+<td>Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.</td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td><a href="https://www.last.fm/api/account/create">token</a></td>
+<td><code>none</code></td>
+<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
+<td>A Last.fm API key.</td>
+</tr>
+</tbody>
+</table>
+<p>// Add auth docs</p>
+<h2 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">&para;</a></h2>
+<p>Errors:</p>
+<ul>
+<li>6 : Invalid parameters - Your request is missing a required parameter</li>
+<li>8 : Operation failed - Something else went wrong</li>
+<li>9 : Invalid session key - Please re-authenticate</li>
+<li>10 : Invalid API key - You must be granted a valid key by last.fm</li>
+<li>11 : Service Offline - This service is temporarily offline. Try again later.</li>
+<li>13 : Invalid method signature supplied</li>
+<li>16 : There was a temporary error processing your request. Please try again</li>
+<li>17 : Login required - Requested profile might not have privacy set to public.</li>
+<li>26 : Suspended API key - Access for your account has been suspended, please contact Last.fm</li>
+<li>29 : Rate limit exceeded - Your IP has made too many requests in a short period</li>
+</ul>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<details class="note"><summary>Example Response 1 - User not currently scrobbling</summary></details>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>frikandel_</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>1</td>
+</tr>
+<tr>
+<td>format</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+<pre><code>HTTP status: `200 OK`
+
+```
+https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json&amp;limit=1
+```
+
+```json
+{
+    "recenttracks": {
+        "@attr": {
+            "page": "1",
+            "total": "94618",
+            "user": "frikandel_",
+            "perPage": "1",
+            "totalPages": "94618"
+        },
+        "track": [
+            {
+                "artist": {
+                    "mbid": "63aa26c3-d59b-4da4-84ac-716b54f1ef4d",
+                    "#text": "Tame Impala"
+                },
+                "album": {
+                    "mbid": "0d2cb66c-3a32-4f81-b977-9231c461c34a",
+                    "#text": "Lonerism"
+                },
+                "image": [
+                    {
+                        "size": "small",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "medium",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "large",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "extralarge",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    }
+                ],
+                "streamable": "0",
+                "date": {
+                    "uts": "1603188238",
+                    "#text": "20 Oct 2020, 10:03"
+                },
+                "url": "https://www.last.fm/music/Tame+Impala/_/Feels+Like+We+Only+Go+Backwards",
+                "name": "Feels Like We Only Go Backwards",
+                "mbid": "1587517a-9b2b-385a-b044-673fddf88004"
+            }
+        ]
+    }
+}
+```
+</code></pre>
+<details class="note"><summary>Example Response 2 - User currently scrobbling</summary></details>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>frikandel_</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>1</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>1</td>
+</tr>
+<tr>
+<td>format</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+<pre><code>HTTP status: `200 OK`
+
+```
+https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json&amp;limit=1&amp;extended=1
+```
+
+```json
+{
+    "recenttracks": {
+        "@attr": {
+            "page": "1",
+            "total": "94613",
+            "user": "frikandel_",
+            "perPage": "1",
+            "totalPages": "94613"
+        },
+        "track": [
+            {
+                "@attr": {
+                    "nowplaying": "true"
+                },
+                "artist": {
+                    "url": "https://www.last.fm/music/Tame+Impala",
+                    "mbid": "",
+                    "image": [
+                        {
+                            "size": "small",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        },
+                        {
+                            "size": "medium",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        },
+                        {
+                            "size": "large",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        },
+                        {
+                            "size": "extralarge",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        }
+                    ],
+                    "name": "Tame Impala"
+                },
+                "mbid": "08b8e930-fa2d-454d-a659-069df6111a02",
+                "image": [
+                    {
+                        "size": "small",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "medium",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "large",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "extralarge",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    }
+                ],
+                "url": "https://www.last.fm/music/Tame+Impala/_/Apocalypse+Dreams",
+                "streamable": "0",
+                "album": {
+                    "mbid": "0d2cb66c-3a32-4f81-b977-9231c461c34a",
+                    "#text": "Lonerism"
+                },
+                "name": "Apocalypse Dreams",
+                "loved": "0"
+            },
+            {
+                "mbid": "0632aa27-3c1f-4ca9-ae87-e656ce677bfe",
+                "loved": "0",
+                "artist": {
+                    "url": "https://www.last.fm/music/Tame+Impala",
+                    "mbid": "",
+                    "image": [
+                        {
+                            "size": "small",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        },
+                        {
+                            "size": "medium",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        },
+                        {
+                            "size": "large",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        },
+                        {
+                            "size": "extralarge",
+                            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        }
+                    ],
+                    "name": "Tame Impala"
+                },
+                "image": [
+                    {
+                        "size": "small",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "medium",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "large",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    },
+                    {
+                        "size": "extralarge",
+                        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg"
+                    }
+                ],
+                "date": {
+                    "uts": "1603186824",
+                    "#text": "20 Oct 2020, 09:40"
+                },
+                "streamable": "0",
+                "url": "https://www.last.fm/music/Tame+Impala/_/Endors+Toi",
+                "name": "Endors Toi",
+                "album": {
+                    "mbid": "0d2cb66c-3a32-4f81-b977-9231c461c34a",
+                    "#text": "Lonerism"
+                }
+            }
+        ]
+    }
+}
+```
+</code></pre>
+<details class="warning"><summary>Example response of non existing user</summary></details>
+<p>HTTP status: <code>404 NOT FOUND</code></p>
+<pre><code>```
+https://ws.audioscrobbler.com/2.0/?api_key=censored&amp;method=User.getrecenttracks&amp;user=userthatdoesntexist&amp;format=json
+```
+
+```json
+{
+    "error": 6,
+    "message": "User not found"
+}
+```
+</code></pre>
+<details class="warning"><summary>Example response of user with 'Hide recent listening information' enabled</summary></details>
+<p>HTTP status: <code>403 FORBIDDEN</code></p>
+<pre><code>```
+https://ws.audioscrobbler.com/2.0/?api_key=censored&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json
+```
+
+```json
+{
+    "error": 17,
+    "message": "Login: User required to be logged in"
+}
+```
+</code></pre>
+<p>// Add auth docs</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../GET%20User.GetRecentTracks/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                GET User.GetRecentTracks
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
