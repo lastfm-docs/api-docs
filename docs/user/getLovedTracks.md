@@ -95,7 +95,7 @@ Errors:
     ```
 
 
-??? warning "Example response of non existing user"
+??? warning "Example Response"
 
     HTTP status: `404 NOT FOUND`
 
