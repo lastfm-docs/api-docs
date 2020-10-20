@@ -1,10 +1,10 @@
-#getFriends
+# getFriends
 
 Get a list of the user's friends (follow each other) on Last.fm.
 
 No authentication required.
 
-##Parameters
+## Parameters
 | Parameter      | Required           | Description                                            |
 | -------------- | ------------------ | ------------------------------------------------------ |
 | `user`         | :white_check_mark: | The last.fm username to fetch the friends of.
