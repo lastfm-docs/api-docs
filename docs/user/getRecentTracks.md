@@ -34,12 +34,14 @@ Errors:
 ## Examples
 
 ??? note "Example Response 1 - User not currently scrobbling"
-| Parameter | Value |
-|-----------|------------|
-| username | frikandel\_ |
-| limit | 1 |
-| format | json |
 
+    | Parameter | Value      |
+    |-----------|------------|
+    | username  | frikandel\_|
+    | limit     | 1          |
+    | extended  | 1          |
+    | format    | json       |
+    
     HTTP status: `200 OK`
 
     ```
@@ -99,12 +101,13 @@ Errors:
     ```
 
 ??? note "Example Response 2 - User currently scrobbling"
-| Parameter | Value |
-|-----------|------------|
-| username | frikandel\_ |
-| limit | 1 |
-| extended | 1 |
-| format | json |
+
+    | Parameter | Value      |
+    |-----------|------------|
+    | username  | frikandel\_|
+    | limit     | 1          |
+    | extended  | 1          |
+    | format    | json       |
 
     HTTP status: `200 OK`
 
