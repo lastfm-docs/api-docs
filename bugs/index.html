@@ -471,7 +471,7 @@
 <p>The last.fm API is by no means updated or maintained regularly, due to this, responses are often riddled with inconsistency and is not up to standards. This page aims to document these bugs, and similar instances of malformed responses and be a reference for developers trying to make last.fm apps and tools.</p>
 <p>Every part of this page documents a different case and can be linked to individually to help make helping newcomers feasible.</p>
 <h2 id="status-codes">Status Codes<a class="headerlink" href="#status-codes" title="Permanent link">&para;</a></h2>
-<p>Last.fm has a few bugs to iron out with its return headers, one of these causes the API to return inaccurate HTTP response codes in the return header. Some requests do not return the requested resource but still emit a HTTP 400 OK code.
+<p>Last.fm has a few bugs to iron out with its return headers, one of these causes the API to return inaccurate HTTP response codes in the return header. Some requests do not return the requested resource but still emit a HTTP 200 OK code.
 The <code>getTopTags</code> method for example, returns an empty array as a response if the resource has no tags, but still emits an OK in the response header. 
 To prevent your apps breaking, all responses must be checked as just relying on return headers is not enough to validate your response.</p>
 <p>Methods that currently exhibit this behaviour
