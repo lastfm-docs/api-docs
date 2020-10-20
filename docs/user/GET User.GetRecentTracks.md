@@ -1,18 +1,18 @@
-Get a list of the recent tracks listened to by this user. Adds the currently playing track with the `"nowplaying":"true"` attribute if the user is currently listening.
+Get a list of the recent tracks scrobbled by this user. Adds the currently playing track with the `"nowplaying":"true"` attribute if the user is currently listening.
 
 No authentication required.
 
 ## Parameters
 
 
-| Method      | Required          | Example    | Description                               |
+| Method      | Required          | Type       | Description                               |
 | ----------- | ------------------|----------- | ------------------------------------------|
-| `user`      | :white_check_mark:| frikandel_ | The last.fm username to fetch the recent tracks of
-| `limit`     |                   | 10         | The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening.
-| `page`      |                   | 2          | The page number to fetch. Defaults to first page.
-| `from`      |                   | 1577836800 | Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.
-| `to`        |                   | 1606780800 | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.
-| `extended`  |                   | 1          | Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.
+| `user`      | :white_check_mark:| string     | The last.fm username to fetch the recent tracks of
+| `limit`     |                   | int        | The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening.
+| `page`      |                   | int        | The page number to fetch. Defaults to first page.
+| `from`      |                   | int        | Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.
+| `to`        |                   | int        | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.
+| `extended`  |                   | bool (0/1) | Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.
 
 TODO: Add parameters for authorized call
 
