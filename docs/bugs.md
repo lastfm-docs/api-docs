@@ -24,3 +24,8 @@ For example the [user.getInfo](https://lastfm-docs.github.io/api-docs/user/getIn
 ```
 
 Similarly @attr fields can be accessed by using `"@attr"` as a key.
+
+## Mistitled Fields
+The official documentation has schemas that reflect some fields to have data they do not. For example, the `getTopArtists` methods when called upon the `geo` endpoint should return a field for the number of listeners that the artist has in the requested country. This field is missing in the response and is replaced by a `listeners` field that reflects an artist's global listener count, not his listeners in that country as it should.
+
+Similarly certain fields containing time information are often titled differently in the documented schemas, in actuality, they are placed in a "uts" field. UTS is an abbrevation for UNIX Timestamp, this is not a common title for it.
