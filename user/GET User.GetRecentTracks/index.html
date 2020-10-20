@@ -357,7 +357,7 @@
                 
                   <h1>GET User.GetRecentTracks</h1>
                 
-                <p>Get a list of the recent tracks listened to by this user. Adds the currently playing track with the <code>"nowplaying":"true"</code> attribute if the user is currently listening.</p>
+                <p>Get a list of the recent tracks scrobbled by this user. Adds the currently playing track with the <code>"nowplaying":"true"</code> attribute if the user is currently listening.</p>
 <p>No authentication required.</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
@@ -365,7 +365,7 @@
 <tr>
 <th>Method</th>
 <th>Required</th>
-<th>Example</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -373,37 +373,37 @@
 <tr>
 <td><code>user</code></td>
 <td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
-<td>frikandel_</td>
+<td>string</td>
 <td>The last.fm username to fetch the recent tracks of</td>
 </tr>
 <tr>
 <td><code>limit</code></td>
 <td></td>
-<td>10</td>
+<td>int</td>
 <td>The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening.</td>
 </tr>
 <tr>
 <td><code>page</code></td>
 <td></td>
-<td>2</td>
+<td>int</td>
 <td>The page number to fetch. Defaults to first page.</td>
 </tr>
 <tr>
 <td><code>from</code></td>
 <td></td>
-<td>1577836800</td>
+<td>int</td>
 <td>Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.</td>
 </tr>
 <tr>
 <td><code>to</code></td>
 <td></td>
-<td>1606780800</td>
+<td>int</td>
 <td>End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.</td>
 </tr>
 <tr>
 <td><code>extended</code></td>
 <td></td>
-<td>1</td>
+<td>bool (0/1)</td>
 <td>Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.</td>
 </tr>
 </tbody>
