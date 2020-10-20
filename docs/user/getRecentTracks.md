@@ -1,6 +1,6 @@
 Returns a list of the tracks recently scrobbled by this user. Adds a `nowplaying` flag with a boolean value if the user is currently scrobbling.
 
-This method doesn not require authentication.
+This method doesn't not require authentication.
 
 ## Parameters
 
@@ -33,7 +33,7 @@ Errors:
 
 ## Examples
 
-??? note "Example Response 1 - User not currently scrobbling"
+??? note "Example response of a user currently not scrobbling"
 
     | Parameter | Value      |
     |-----------|------------|
@@ -45,7 +45,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&method=User.getrecenttracks&user=frikandel_&format=json&limit=1
+    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getrecenttracks&user=frikandel_&format=json&limit=1
     ```
 
     ```json
@@ -100,7 +100,7 @@ Errors:
     }
     ```
 
-??? note "Example Response 2 - User currently scrobbling"
+??? note "Example response of a user currently scrobbling"
 
     | Parameter | Value      |
     |-----------|------------|
@@ -112,7 +112,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&method=User.getrecenttracks&user=frikandel_&format=json&limit=1&extended=1
+    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getrecenttracks&user=frikandel_&format=json&limit=1&extended=1
     ```
 
     ```json
@@ -247,7 +247,7 @@ Errors:
     HTTP status: `404 NOT FOUND`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=censored&method=User.getrecenttracks&user=userthatdoesntexist&format=json
+    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getrecenttracks&user=userthatdoesntexist&format=json
     ```
 
     ```json
@@ -262,7 +262,7 @@ Errors:
     HTTP status: `403 FORBIDDEN`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=censored&method=User.getrecenttracks&user=frikandel_&format=json
+    https://ws.audioscrobbler.com/2.0/?YOUR_API_KEY=censored&method=User.getrecenttracks&user=frikandel_&format=json
     ```
 
     ```json
