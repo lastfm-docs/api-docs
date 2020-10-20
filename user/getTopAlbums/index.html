@@ -15,7 +15,7 @@
     
     
       
-        <title>getFriends - Unofficial last.fm API docs</title>
+        <title>getTopAlbums - Unofficial last.fm API docs</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getfriends" class="md-skip">
+        <a href="#parameters" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              getFriends
+              getTopAlbums
             
           </span>
         </div>
@@ -223,6 +223,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../getFriends/" class="md-nav__link">
+      getFriends
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getRecentTracks/" class="md-nav__link">
+      getRecentTracks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -230,23 +254,19 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        getFriends
+        getTopAlbums
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      getFriends
+      getTopAlbums
     </a>
     
       
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -273,30 +293,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../getRecentTracks/" class="md-nav__link">
-      getRecentTracks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../getTopAlbums/" class="md-nav__link">
-      getTopAlbums
-    </a>
   </li>
 
         
@@ -331,8 +327,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -366,13 +360,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/user/getFriends.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/user/getTopAlbums.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="getfriends">getFriends<a class="headerlink" href="#getfriends" title="Permanent link">&para;</a></h1>
-<p>Get a list of the user's friends (follow each other) on Last.fm.</p>
+                  <h1>getTopAlbums</h1>
+                
+                <p>Get the top albums listened to by a user. You can stipulate a time period. Sends the overall chart by default.</p>
 <p>No authentication required.</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
@@ -394,11 +389,11 @@
 <td>The last.fm username to fetch the friends of.</td>
 </tr>
 <tr>
-<td><code>recenttracks</code></td>
-<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></td>
-<td>0</td>
+<td><code>period</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
+<td>overall</td>
 <td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
-<td>Whether or not to include information about friends' recent listening in the response.</td>
+<td>The time period over which to retrieve top albums for. Can be <code>overall</code>, <code>7day</code>, <code>1month</code>, <code>3month</code>, <code>6month</code> or <code>12month</code></td>
 </tr>
 <tr>
 <td><code>limit</code></td>
@@ -426,6 +421,7 @@
 <h2 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">&para;</a></h2>
 <p>Errors:</p>
 <ul>
+<li>6 : Invalid parameters - Your request was either missing a required parameter, the parameter was not found, or had 0 results</li>
 <li>8 : Operation failed - Something else went wrong  </li>
 <li>9 : Invalid session key - Please re-authenticate  </li>
 <li>10 : Invalid API key - You must be granted a valid key by last.fm  </li>
@@ -449,7 +445,7 @@
 </tr>
 <tr>
 <td>limit</td>
-<td>1</td>
+<td>3</td>
 </tr>
 <tr>
 <td>format</td>
@@ -458,71 +454,116 @@
 </tbody>
 </table>
 <p>HTTP status: <code>200 OK</code></p>
-<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&amp;method=User.getfriends&amp;user=aidan-&amp;format=json&amp;limit=1
+<div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&amp;method=user.getTopAlbums&amp;user=aidan-&amp;format=json&amp;limit=10
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;friends&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nt">&quot;topalbums&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;album&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="nt">&quot;playlists&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;playcount&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;subscriber&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;oldmaneatintwix&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Joy+Division&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Joy Division&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;9a58fda3-f4ed-4080-a3a5-f457aac9fcdd&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+                <span class="p">},</span>
                 <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
                     <span class="p">{</span>
                         <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/1c3fd3c2548906f6ea0f2863718c2668.png&quot;</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
                     <span class="p">},</span>
                     <span class="p">{</span>
                         <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/1c3fd3c2548906f6ea0f2863718c2668.png&quot;</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
                     <span class="p">},</span>
                     <span class="p">{</span>
                         <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/1c3fd3c2548906f6ea0f2863718c2668.png&quot;</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
                     <span class="p">},</span>
                     <span class="p">{</span>
                         <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/1c3fd3c2548906f6ea0f2863718c2668.png&quot;</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
                     <span class="p">}</span>
                 <span class="p">],</span>
-                <span class="nt">&quot;registered&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;unixtime&quot;</span><span class="p">:</span> <span class="s2">&quot;1603189685&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-10-20 10:28&quot;</span>
+                <span class="nt">&quot;playcount&quot;</span><span class="p">:</span> <span class="s2">&quot;596&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Joy+Division/The+Best+Of&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;The Best Of&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Lily+Allen&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lily Allen&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;6e0c7c0e-cba5-4c2c-a652-38f71ef5785d&quot;</span>
                 <span class="p">},</span>
-                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/user/oldmaneatintwix&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;realname&quot;</span><span class="p">:</span> <span class="s2">&quot;Charlie Brown&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;bootstrap&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span>
+                <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;playcount&quot;</span><span class="p">:</span> <span class="s2">&quot;484&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Lily+Allen/It%27s+Not+Me,+It%27s+You+(Special+Edition)&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;It&#39;s Not Me, It&#39;s You (Special Edition)&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/System+of+a+Down&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;System of a Down&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;cc0b7089-c08d-4c10-b6b0-873582c17fd6&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;playcount&quot;</span><span class="p">:</span> <span class="s2">&quot;482&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/System+of+a+Down/Hypnotize&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Hypnotize&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;0c63d2e4-2a99-4cc4-8991-a88dba182bbd&quot;</span>
             <span class="p">}</span>
         <span class="p">],</span>
         <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;3344&quot;</span><span class="p">,</span>
             <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;aidan-&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;perPage&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;totalPages&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span>
+            <span class="nt">&quot;perPage&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;totalPages&quot;</span><span class="p">:</span> <span class="s2">&quot;1115&quot;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</details>
-<details class="warning"><summary>Example response of non existing user</summary><p>HTTP status: <code>404 NOT FOUND</code></p>
-<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&amp;method=User.getfriends&amp;user=userthatdoesntexist&amp;format=json
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User not found&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-</details>
-<details class="warning"><summary>Example response of a user with no friends</summary><p>HTTP status: <code>400 BAD REQUEST</code></p>
-<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&amp;method=User.getfriends&amp;user=letmeridee&amp;format=json
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User not found&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 </details>
@@ -544,7 +585,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getRecentTracks/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -553,19 +594,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Unofficial last.fm API documentation
+                getRecentTracks
               </div>
             </div>
           </a>
         
         
-          <a href="../getRecentTracks/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../getTopArtists/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                getRecentTracks
+                getTopArtists
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
