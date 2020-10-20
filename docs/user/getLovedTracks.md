@@ -1,4 +1,4 @@
-Returns a list of the tracks loved scrobbled by this user.
+Returns a list of the tracks loved scrobbled by this user. Defaults to the last 50 loved tracks.
 
 This method doesn't not require authentication.
 
