@@ -426,89 +426,7 @@
 <li>29 : Rate limit exceeded - Your IP has made too many requests in a short period</li>
 </ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<details class="note"><summary>Example Response 1 - User not currently scrobbling</summary></details>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>username</td>
-<td>frikandel_</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>1</td>
-</tr>
-<tr>
-<td>format</td>
-<td>json</td>
-</tr>
-</tbody>
-</table>
-<pre><code>HTTP status: `200 OK`
-
-```
-https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json&amp;limit=1
-```
-
-```json
-{
-    "recenttracks": {
-        "@attr": {
-            "page": "1",
-            "total": "94618",
-            "user": "frikandel_",
-            "perPage": "1",
-            "totalPages": "94618"
-        },
-        "track": [
-            {
-                "artist": {
-                    "mbid": "63aa26c3-d59b-4da4-84ac-716b54f1ef4d",
-                    "#text": "Tame Impala"
-                },
-                "album": {
-                    "mbid": "0d2cb66c-3a32-4f81-b977-9231c461c34a",
-                    "#text": "Lonerism"
-                },
-                "image": [
-                    {
-                        "size": "small",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "medium",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "large",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "extralarge",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    }
-                ],
-                "streamable": "0",
-                "date": {
-                    "uts": "1603188238",
-                    "#text": "20 Oct 2020, 10:03"
-                },
-                "url": "https://www.last.fm/music/Tame+Impala/_/Feels+Like+We+Only+Go+Backwards",
-                "name": "Feels Like We Only Go Backwards",
-                "mbid": "1587517a-9b2b-385a-b044-673fddf88004"
-            }
-        ]
-    }
-}
-```
-</code></pre>
-<details class="note"><summary>Example Response 2 - User currently scrobbling</summary></details>
-<table>
+<details class="note"><summary>Example Response 1 - User not currently scrobbling</summary><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -534,139 +452,215 @@ https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&amp;method=User.getrecenttrac
 </tr>
 </tbody>
 </table>
-<pre><code>HTTP status: `200 OK`
-
-```
-https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json&amp;limit=1&amp;extended=1
-```
-
-```json
-{
-    "recenttracks": {
-        "@attr": {
-            "page": "1",
-            "total": "94613",
-            "user": "frikandel_",
-            "perPage": "1",
-            "totalPages": "94613"
-        },
-        "track": [
-            {
-                "@attr": {
-                    "nowplaying": "true"
-                },
-                "artist": {
-                    "url": "https://www.last.fm/music/Tame+Impala",
-                    "mbid": "",
-                    "image": [
-                        {
-                            "size": "small",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        },
-                        {
-                            "size": "medium",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        },
-                        {
-                            "size": "large",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        },
-                        {
-                            "size": "extralarge",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        }
-                    ],
-                    "name": "Tame Impala"
-                },
-                "mbid": "08b8e930-fa2d-454d-a659-069df6111a02",
-                "image": [
-                    {
-                        "size": "small",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "medium",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "large",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "extralarge",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    }
-                ],
-                "url": "https://www.last.fm/music/Tame+Impala/_/Apocalypse+Dreams",
-                "streamable": "0",
-                "album": {
-                    "mbid": "0d2cb66c-3a32-4f81-b977-9231c461c34a",
-                    "#text": "Lonerism"
-                },
-                "name": "Apocalypse Dreams",
-                "loved": "0"
-            },
-            {
-                "mbid": "0632aa27-3c1f-4ca9-ae87-e656ce677bfe",
-                "loved": "0",
-                "artist": {
-                    "url": "https://www.last.fm/music/Tame+Impala",
-                    "mbid": "",
-                    "image": [
-                        {
-                            "size": "small",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        },
-                        {
-                            "size": "medium",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        },
-                        {
-                            "size": "large",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        },
-                        {
-                            "size": "extralarge",
-                            "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
-                        }
-                    ],
-                    "name": "Tame Impala"
-                },
-                "image": [
-                    {
-                        "size": "small",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "medium",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "large",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    },
-                    {
-                        "size": "extralarge",
-                        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg"
-                    }
-                ],
-                "date": {
-                    "uts": "1603186824",
-                    "#text": "20 Oct 2020, 09:40"
-                },
-                "streamable": "0",
-                "url": "https://www.last.fm/music/Tame+Impala/_/Endors+Toi",
-                "name": "Endors Toi",
-                "album": {
-                    "mbid": "0d2cb66c-3a32-4f81-b977-9231c461c34a",
-                    "#text": "Lonerism"
-                }
-            }
-        ]
-    }
-}
-```
-</code></pre>
+<p>HTTP status: <code>200 OK</code></p>
+<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json&amp;limit=1
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;recenttracks&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;94618&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;frikandel_&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;perPage&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;totalPages&quot;</span><span class="p">:</span> <span class="s2">&quot;94618&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;track&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;63aa26c3-d59b-4da4-84ac-716b54f1ef4d&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;Tame Impala&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;album&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;0d2cb66c-3a32-4f81-b977-9231c461c34a&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;Lonerism&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;streamable&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;uts&quot;</span><span class="p">:</span> <span class="s2">&quot;1603188238&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;20 Oct 2020, 10:03&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Tame+Impala/_/Feels+Like+We+Only+Go+Backwards&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Feels Like We Only Go Backwards&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;1587517a-9b2b-385a-b044-673fddf88004&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="note"><summary>Example Response 2 - User currently scrobbling</summary><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>frikandel_</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>1</td>
+</tr>
+<tr>
+<td>extended</td>
+<td>1</td>
+</tr>
+<tr>
+<td>format</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+<p>HTTP status: <code>200 OK</code></p>
+<div class="highlight"><pre><span></span><code>https://ws.audioscrobbler.com/2.0/?api_key=API_KEY&amp;method=User.getrecenttracks&amp;user=frikandel_&amp;format=json&amp;limit=1&amp;extended=1
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;recenttracks&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;94613&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;frikandel_&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;perPage&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;totalPages&quot;</span><span class="p">:</span> <span class="s2">&quot;94613&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;track&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;nowplaying&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Tame+Impala&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tame Impala&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;08b8e930-fa2d-454d-a659-069df6111a02&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Tame+Impala/_/Apocalypse+Dreams&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;streamable&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;album&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;0d2cb66c-3a32-4f81-b977-9231c461c34a&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;Lonerism&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Apocalypse Dreams&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;loved&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;0632aa27-3c1f-4ca9-ae87-e656ce677bfe&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;loved&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Tame+Impala&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">},</span>
+                        <span class="p">{</span>
+                            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tame Impala&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/7c9c4d1009514b178c82f2201e3a1fce.jpg&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;uts&quot;</span><span class="p">:</span> <span class="s2">&quot;1603186824&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;20 Oct 2020, 09:40&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;streamable&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Tame+Impala/_/Endors+Toi&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Endors Toi&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;album&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;0d2cb66c-3a32-4f81-b977-9231c461c34a&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;Lonerism&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
 <details class="warning"><summary>Example response of non existing user</summary></details>
 <p>HTTP status: <code>404 NOT FOUND</code></p>
 <pre><code>```
