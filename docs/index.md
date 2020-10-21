@@ -19,3 +19,13 @@ You can check out the docs [here](https://github.com/lastfm-docs/api-docs/tree/m
 It's all in markdown, so easy to work with. Please follow the other pages in styling and objects.
 
 We use MkDocs with some extensions for extra markdown types. Some of the extensions are: [Tabbed](https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/) and [Details (collapsible objects)](https://facelessuser.github.io/pymdown-extensions/extensions/details/)
+
+## Last.fm's API Terms of Service
+
+Please carefully read [this](https://www.last.fm/api/tos) agreement  before using Last.fm's webservices, as it affects your legal rights and obligations. This agreement governs the way that you are permitted to access Last.fm data via the API. By accessing the API, You agree to accept and abide by the terms set out in the agreement in respect of your access to and use of the Last.fm data.
+
+!!! warning "Note"
+	- Please use an identifiable User-Agent header on all requests. This helps Last.fm's logging and reduces the risk of you getting banned.
+	- Be reasonable in your usage of the API and ensure you don't make an excessive number of calls as that can impact the reliability of the service to you and other users. Last.fm encourage best practice implementation, for example, if you're making a web application, try not to hit the API on page load. Your account may be suspended if your application is continuously making several calls per second or if you’re making excessive calls. See our [API Terms of Service](https://www.last.fm/api/tos) for more information on limits.
+	- If you are planning to use Last.fm's API for commercial purposes, please contact them via email at [partners@last.fm](mailto:partners@last.fm).
+	- Last.fm assume that you are using an RFC 3986-compliant HTTP client to access the web services. In particular, pay attention to your url encoding. This will not be an issue for 99% of developers.
