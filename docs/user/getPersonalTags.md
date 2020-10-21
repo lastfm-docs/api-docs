@@ -8,7 +8,7 @@ No authentication required.
 | ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------- |
 | `user`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The last.fm username to fetch the personal tags of. |
 | `tag`         | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The tag that is being fetched.                      |
-| `taggingtype` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | :negative_squared_cross_mark:                       | The number of results to fetch per page. Defaults to 50. |
+| `taggingtype` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The type of items that have been tagged. Options are artist / album /track |
 | `limit`       | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50      | :white_check_mark:            | The page number to fetch. Defaults to first page.   |
 | `page`        | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1       | :white_check_mark:            | The number of pages to be fetched.                  |
 | `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :negative_squared_cross_mark: | A Last.fm API key.                                  |
@@ -32,6 +32,9 @@ Errors:
 - 26 : Suspended API key - Access for your account has been suspended, please contact Last.fm
 - 29 : Rate limit exceeded - Your IP has made too many requests in a short period
 
+!!! Warning
+    This API call returns 200 OK HTTP status codes even when the response contains an error.
+    
 ## Examples
 
 ??? note "Example response"
@@ -97,7 +100,7 @@ Errors:
     ```
 
 ??? warning "Example response of non existing user"
-HTTP status: `404 NOT FOUND`
+    HTTP status: `200 OK`
 
     ```
     http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=userthatdoesntexist&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
@@ -111,43 +114,43 @@ HTTP status: `404 NOT FOUND`
     ```
 
 ??? warning "Example response of a user with no tags as the ones fetched"
-HTTP status: `404 NOT FOUND`
+    HTTP status: `200 OK`
 
-    ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=burdayy&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
-    ```
+        ```
+        http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=burdayy&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
+        ```
 
-    ```json
-    {
-    "taggings": {
-        "artists": {
-        "artist": [
+        ```json
+        {
+        "taggings": {
+            "artists": {
+            "artist": [
 
-        ]
-        },
-        "@attr": {
-        "user": "Burdayy",
-        "tag": "rock",
-        "page": "1",
-        "perPage": "1",
-        "totalPages": "0",
-        "total": "0"
+            ]
+            },
+            "@attr": {
+            "user": "Burdayy",
+            "tag": "rock",
+            "page": "1",
+            "perPage": "1",
+            "totalPages": "0",
+            "total": "0"
+            }
         }
-     }
-    }
-    ```
+        }
+        ```
 
 ??? warning "Example response of a tag that does not exist"
-HTTP status: `400 BAD REQUEST`
+    HTTP status: `200 OK`
 
-    ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=taggingtypethatdoesntexist&api_key=YOUR_API_KEY&format=json&limit=1
-    ```
-    ```json
+        ```
+        http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=taggingtypethatdoesntexist&api_key=YOUR_API_KEY&format=json&limit=1
+        ```
+        ```json
 
-    {
-        "error": 6,
-        "message": "taggingtype param missing",
-        "links": []
-    }
-    ```
+        {
+            "error": 6,
+            "message": "taggingtype param missing",
+            "links": []
+        }
+        ```
