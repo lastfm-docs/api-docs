@@ -14,7 +14,7 @@ No authentication required.
 | `lang`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | en      | :negative_squared_cross_mark: | The language which will be used in the response for biography. Requires an ISO 639 alpha-1 code.                      |
 | `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                                                                                                    |
 
-\*Required unless you are using a musicbrainz id for the album.
+\*Required unless you are using a musicbrainz id (mbid) for the album.
 
 ## Responses
 
