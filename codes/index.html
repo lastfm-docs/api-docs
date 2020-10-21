@@ -991,12 +991,14 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
   - 5** Codes : Server side errors</p>
 <h3 id="http-status-code-200-success">HTTP Status Code 200: Success<a class="headerlink" href="#http-status-code-200-success" title="Permanent link">&para;</a></h3>
 <p>The HTTP 200 OK success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
-The meaning of a success depends on the HTTP request method:
-   - GET: The resource has been fetched and is transmitted in the message body.
-   - HEAD: The entity headers are in the message body.
-   - POST: The resource describing the result of the action is transmitted in the message body.
-   - TRACE: The message body contains the request message as received by the server.
-The successful result of a PUT or a DELETE is often not a 200 OK but a 204 No Content (or a 201 Created when the resource is uploaded for the first time).</p>
+The meaning of a success depends on the HTTP request method:</p>
+<ul>
+<li>GET: The resource has been fetched and is transmitted in the message body.</li>
+<li>HEAD: The entity headers are in the message body.</li>
+<li>POST: The resource describing the result of the action is transmitted in the message body.</li>
+<li>TRACE: The message body contains the request message as received by the server.</li>
+</ul>
+<p>The successful result of a PUT or a DELETE is often not a 200 OK but a 204 No Content (or a 201 Created when the resource is uploaded for the first time).</p>
 <h3 id="http-status-code-400-bad-request">HTTP Status Code 400: Bad Request<a class="headerlink" href="#http-status-code-400-bad-request" title="Permanent link">&para;</a></h3>
 <p>The HyperText Transfer Protocol (HTTP) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).</p>
 <h3 id="http-status-code-403-forbidden">HTTP Status Code 403: Forbidden<a class="headerlink" href="#http-status-code-403-forbidden" title="Permanent link">&para;</a></h3>
