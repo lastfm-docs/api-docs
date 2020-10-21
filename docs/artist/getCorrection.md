@@ -14,12 +14,7 @@ No authentication required.
 
 Errors:
 
-- 2 : Invalid service - This service does not exist
-- 3 : Invalid Method - No method with that name in this package
-- 4 : Authentication Failed - You do not have permissions to access the service
-- 5 : Invalid format - This service doesn't exist in that format
 - 6 : Invalid parameters - Your request is missing a required parameter
-- 7 : Invalid resource specified
 - 8 : Operation failed - Something else went wrong
 - 9 : Invalid session key - Please re-authenticate
 - 10 : Invalid API key - You must be granted a valid key by last.fm
@@ -32,50 +27,46 @@ Errors:
 !!! Warning
     This API call returns 200 OK HTTP status codes even when the response contains an error.
     
-## Attributes
-
-duration - in seconds
-
 ## Examples
 
 ??? note "Example response"
 
-    | Parameter | Value         |
-    | --------- | ------------- |
-    | artist    | Skee-Lo       |
-    | track     | I wish        |
-    | api_key   | YOUR_API_KEY  |
+	| Parameter | Value         |
+	| --------- | ------------- |
+	| artist    | Skee-Lo       |
+	| track     | I wish        |
+	| api_key   | YOUR_API_KEY  |
 
-    HTTP status: `200 OK`
+	HTTP status: `200 OK`
 
-    ```
-    http://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=skee-lo&track=i%20wish&api_key=YOUR_API_KEY&format=json
-    ```
+	```
+	http://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=skee-lo&track=i%20wish&api_key=YOUR_API_KEY&format=json
+	```
 
-    ```json
-    {
-			"corrections": {
-				"correction": {
-					"track": {
-						"name": "I Wish",
-						"mbid": "ccb9326a-6f9f-48b1-a097-1210dd14e119",
-						"url": "https://www.last.fm/music/Skee-Lo/_/I+Wish",
-						"artist": {
-							"name": "Skee-Lo",
-							"mbid": "9341a67c-4f0c-43c2-9ec4-c222d2cb97f3",
-							"url": "https://www.last.fm/music/Skee-Lo"
-						}
-					},
-					"@attr": {
-						"index": "0",
-						"artistcorrected": "0",
-						"trackcorrected": "0"
+	```json
+	{
+		"corrections": {
+			"correction": {
+				"track": {
+					"name": "I Wish",
+					"mbid": "ccb9326a-6f9f-48b1-a097-1210dd14e119",
+					"url": "https://www.last.fm/music/Skee-Lo/_/I+Wish",
+					"artist": {
+						"name": "Skee-Lo",
+						"mbid": "9341a67c-4f0c-43c2-9ec4-c222d2cb97f3",
+						"url": "https://www.last.fm/music/Skee-Lo"
 					}
+				},
+				"@attr": {
+					"index": "0",
+					"artistcorrected": "0",
+					"trackcorrected": "0"
 				}
 			}
-    }
+		}
+	}
 
-    ```
+	```
 
 ??? warning "Example response of an artist/track that doesnt exist"
     HTTP status: `200 OK`
