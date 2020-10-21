@@ -16,13 +16,11 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
     ```
  
 ## HTTP Status Codes Forewarning
- !!! warning
-    Some API calls return HTTP 200 OK status codes even when the response contains an error.
-    For this reason make sure to check your response payload to validate it.
+ !!! warning "Some API calls return HTTP 200 OK status codes even when the response contains an error. For this reason make sure to check your response payload to validate it."
 
 ---
 
-### Last.fm Error Code 2: Service Unavailable/Service Unavailable
+### Last.fm Error Code 2: Service offline/service Unavailable
 This error usually emits when Last.fm is having server issues. However this may also happen because of a malformed request with invalid endpoints.
 
 
