@@ -15,7 +15,7 @@
     
     
       
-        <title>getToken - Unofficial last.fm API docs</title>
+        <title>Search - Unofficial last.fm API docs</title>
       
     
     
@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#parameters" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +90,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              getToken
+              Search
             
           </span>
         </div>
@@ -219,10 +224,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Album
@@ -242,7 +249,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../album/getInfo/" class="md-nav__link">
+    <a href="../getInfo/" class="md-nav__link">
       getInfo
     </a>
   </li>
@@ -254,7 +261,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../album/getTags/" class="md-nav__link">
+    <a href="../getTags/" class="md-nav__link">
       getTags
     </a>
   </li>
@@ -266,7 +273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../album/getTopTags/" class="md-nav__link">
+    <a href="../getTopTags/" class="md-nav__link">
       getTopTags
     </a>
   </li>
@@ -276,11 +283,59 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../album/search/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Search
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Search
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -355,12 +410,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Auth
@@ -380,7 +433,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Desktop/" class="md-nav__link">
+    <a href="../../auth/Desktop/" class="md-nav__link">
       Desktop
     </a>
   </li>
@@ -390,18 +443,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../auth/getToken/" class="md-nav__link">
       getToken
     </a>
-    
   </li>
 
         
@@ -411,7 +457,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../signature/" class="md-nav__link">
+    <a href="../../auth/signature/" class="md-nav__link">
       Signature
     </a>
   </li>
@@ -649,19 +695,221 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/auth/getToken.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/album/search.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>getToken</h1>
+                  <h1>Search</h1>
                 
-                
+                <p>Get the top tags for an album on Last.fm, ordered by popularity.</p>
+<p>No authentication required.</p>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limit</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
+<td>30</td>
+<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
+<td>The artist which's album should be fetched.</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
+<td>1</td>
+<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
+<td>The album that should be fetched.</td>
+</tr>
+<tr>
+<td><code>album</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
+<td><code>none</code></td>
+<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
+<td>The album's musicbrainz id.</td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td><a href="https://www.last.fm/api/account/create">token</a></td>
+<td><code>none</code></td>
+<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
+<td>A Last.fm API key.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">&para;</a></h2>
+<p>Errors:</p>
+<ul>
+<li>6 : Invalid parameters - Your request is missing a required parameter</li>
+<li>8 : Operation failed - Something else went wrong</li>
+<li>9 : Invalid session key - Please re-authenticate</li>
+<li>10 : Invalid API key - You must be granted a valid key by last.fm</li>
+<li>11 : Service Offline - This service is temporarily offline. Try again later.</li>
+<li>13 : Invalid method signature supplied</li>
+<li>16 : There was a temporary error processing your request. Please try again</li>
+<li>26 : Suspended API key - Access for your account has been suspended, please contact Last.fm</li>
+<li>29 : Rate limit exceeded - Your IP has made too many requests in a short period</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This API call returns 200 OK HTTP status codes even when the response contains an error.</p>
+</div>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<details class="note"><summary>Example response</summary><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>album</td>
+<td>Greatest Hits</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+</tr>
+<tr>
+<td>page</td>
+<td>2</td>
+</tr>
+<tr>
+<td>format</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+<p>HTTP status: <code>200 OK</code></p>
+<div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?method=album.search&amp;album=Greatest%20Hits&amp;page=2&amp;api_key=YOUR_API_KEY&amp;format=json
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;opensearch:Query&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;searchTerms&quot;</span><span class="p">:</span> <span class="s2">&quot;greatest hits&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;startPage&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;opensearch:totalResults&quot;</span><span class="p">:</span> <span class="s2">&quot;1068391&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;opensearch:startIndex&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;opensearch:itemsPerPage&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;album&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Greatest Hits&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="s2">&quot;Simply Red&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Simply+Red/Greatest+Hits&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/d6a2c56c7b6295e99c8213987363d8ff.png&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/d6a2c56c7b6295e99c8213987363d8ff.png&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/d6a2c56c7b6295e99c8213987363d8ff.png&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/d6a2c56c7b6295e99c8213987363d8ff.png&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;streamable&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;fb871fa5-23f2-387a-be2a-c3f1ad074393&quot;</span>
+    <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="s2">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;for&quot;</span><span class="p">:</span> <span class="s2">&quot;greatest hits&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="warning"><summary>Example response of an album that doesnt exist</summary><p>HTTP status: <code>200 OK</code></p>
+<p><div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?method=album.search&amp;album=albumthatdoesntexist&amp;page=2&amp;api_key=YOUR_API_KEY&amp;format=json
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;opensearch:Query&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;searchTerms&quot;</span><span class="p">:</span> <span class="s2">&quot;albumthatdoesntexist&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;startPage&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;opensearch:totalResults&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;opensearch:startIndex&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;opensearch:itemsPerPage&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;albummatches&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;album&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;for&quot;</span><span class="p">:</span> <span class="s2">&quot;albumthatdoesntexist&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
                 
               
               
@@ -680,7 +928,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Desktop/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getTopTags/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -689,19 +937,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Desktop
+                getTopTags
               </div>
             </div>
           </a>
         
         
-          <a href="../signature/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../artist/getCorrection/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Signature
+                getCorrection
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

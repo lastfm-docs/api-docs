@@ -253,6 +253,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../album/getTags/" class="md-nav__link">
+      getTags
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../album/getTopTags/" class="md-nav__link">
+      getTopTags
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../album/search/" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -285,8 +321,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../artist/getCorrection/" class="md-nav__link">
+      getCorrection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../artist/getInfo/" class="md-nav__link">
       getInfo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../artist/search/" class="md-nav__link">
+      Search
     </a>
   </li>
 
@@ -722,7 +782,7 @@
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
 <td><code>none</code></td>
 <td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
-<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
+<td>The type of items that have been tagged. Options are artist / album /track</td>
 </tr>
 <tr>
 <td><code>limit</code></td>
@@ -765,6 +825,10 @@
 <li>26 : Suspended API key - Access for your account has been suspended, please contact Last.fm</li>
 <li>29 : Rate limit exceeded - Your IP has made too many requests in a short period</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This API call returns 200 OK HTTP status codes even when the response contains an error.</p>
+</div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <details class="note"><summary>Example response</summary><table>
 <thead>
@@ -841,21 +905,16 @@
 <span class="p">}</span>
 </code></pre></div>
 </details>
-<details class="warning"><summary>Example response of non existing user</summary></details>
-<p>HTTP status: <code>404 NOT FOUND</code></p>
-<pre><code>```
-http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=userthatdoesntexist&amp;tag=rock&amp;taggingtype=artist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
-```
-
-```json
-{
-    "error": 6,
-    "message": "User not found"
-}
-```
-</code></pre>
-<details class="warning"><summary>Example response of a user with no tags as the ones fetched</summary></details>
-<p>HTTP status: <code>404 NOT FOUND</code></p>
+<details class="warning"><summary>Example response of non existing user</summary><p>HTTP status: <code>200 OK</code></p>
+<div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=userthatdoesntexist&amp;tag=rock&amp;taggingtype=artist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User not found&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="warning"><summary>Example response of a user with no tags as the ones fetched</summary><p>HTTP status: <code>200 OK</code></p>
 <pre><code>```
 http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=burdayy&amp;tag=rock&amp;taggingtype=artist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
 ```
@@ -876,12 +935,12 @@ http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=burdayy&a
     "totalPages": "0",
     "total": "0"
     }
- }
+}
 }
 ```
 </code></pre>
-<details class="warning"><summary>Example response of a tag that does not exist</summary></details>
-<p>HTTP status: <code>400 BAD REQUEST</code></p>
+</details>
+<details class="warning"><summary>Example response of a tag that does not exist</summary><p>HTTP status: <code>200 OK</code></p>
 <pre><code>```
 http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=rj&amp;tag=rock&amp;taggingtype=taggingtypethatdoesntexist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
 ```
@@ -894,6 +953,7 @@ http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=rj&amp;ta
 }
 ```
 </code></pre>
+</details>
                 
               
               
