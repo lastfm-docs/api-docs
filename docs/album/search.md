@@ -6,8 +6,8 @@ No authentication required.
 
 | Method    | Type                                                                                              | Default | Required                      | Description                                 |
 | --------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | ------------------------------------------- |
-| `limit`   | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | 30      | :negative_squared_cross_mark: | The artist which's album should be fetched. |
-| `page`    | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | 1       | :negative_squared_cross_mark: | The album that should be fetched.           |
+| `limit`   | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 30      | :negative_squared_cross_mark: | The artist which's album should be fetched. |
+| `page`    | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1       | :negative_squared_cross_mark: | The album that should be fetched.           |
 | `album`   | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark:            | The album's musicbrainz id.                 |
 | `api_key` | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                          |
 
