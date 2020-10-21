@@ -1,11 +1,11 @@
-Get the top artists listened to by a user. You can stipulate a time period. Sends the overall chart by default.
+Get the top tags used by this user.
 
 No authentication required.
 
 ## Parameters
 | Method         | Type                                                                                               | Default | Optional | Description                                            |
 | -------------- | -------------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------ |
-| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The last.fm username to fetch top tags for.
+| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The Last.fm username to fetch top tags for.
 | `limit`        |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50      | :white_check_mark:            | The number of results to fetch per page. Defaults to 50.
 | `api_key`      |[token](https://www.last.fm/api/account/create)                                                     |`none`   | :negative_squared_cross_mark: | A Last.fm API key.
 
@@ -23,6 +23,8 @@ Errors:
 - 26 : Suspended API key - Access for your account has been suspended, please contact Last.fm  
 - 29 : Rate limit exceeded - Your IP has made too many requests in a short period  
 
+!!! Warning
+    This API call returns 200 OK HTTP status codes even when the response contains an error.
 
 ## Examples
 ??? note "Example response"
