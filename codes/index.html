@@ -1,0 +1,844 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Unofficial documentation for the last.fm API">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Last.fm Error Codes - Unofficial last.fm API docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lastfm-error-codes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Unofficial last.fm API docs" class="md-header-nav__button md-logo" aria-label="Unofficial last.fm API docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Unofficial last.fm API docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Last.fm Error Codes
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/lastfm-docs/api-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lastfm-docs/api-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Unofficial last.fm API docs" class="md-nav__button md-logo" aria-label="Unofficial last.fm API docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Unofficial last.fm API docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/lastfm-docs/api-docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lastfm-docs/api-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bugs/" class="md-nav__link">
+      Bugs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Last.fm Error Codes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Last.fm Error Codes
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-2-service-unavailableservice-unavailable" class="md-nav__link">
+    Last.fm Error Code 2: Service Unavailable/Service Unavailable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-3-invalid-method" class="md-nav__link">
+    Last.fm Error Code 3: Invalid Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-4-authentication-failed" class="md-nav__link">
+    Last.fm Error Code 4: Authentication Failed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-5-invalid-response-format" class="md-nav__link">
+    Last.fm Error Code 5: Invalid Response Format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-6-parameter-error" class="md-nav__link">
+    Last.fm Error Code 6: Parameter Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-8-generic-error" class="md-nav__link">
+    Last.fm Error Code 8: Generic Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-9-invalid-session-token" class="md-nav__link">
+    Last.fm Error Code 9: Invalid Session Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-10-invalid-api-token" class="md-nav__link">
+    Last.fm Error Code 10: Invalid API Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-11-service-offline" class="md-nav__link">
+    Last.fm Error Code 11: Service Offline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-13-invalid-method-signature-in-request-header" class="md-nav__link">
+    Last.fm Error Code 13: Invalid Method Signature In Request Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-16-a-temporary-error-occurred" class="md-nav__link">
+    Last.fm Error Code 16: A Temporary Error Occurred
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-26-your-api-key-has-been-banned" class="md-nav__link">
+    Last.fm Error Code 26: Your API key has been banned
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-29-rate-limit-exceeded" class="md-nav__link">
+    Last.fm Error Code 29: Rate Limit Exceeded
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Auth
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Auth" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Auth
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../auth/Desktop/" class="md-nav__link">
+      Desktop
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../auth/getToken/" class="md-nav__link">
+      getToken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../auth/signature/" class="md-nav__link">
+      Signature
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      User
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="User" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        User
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getFriends/" class="md-nav__link">
+      getFriends
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getInfo/" class="md-nav__link">
+      getInfo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getLovedTracks/" class="md-nav__link">
+      getLovedTracks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getRecentTracks/" class="md-nav__link">
+      getRecentTracks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getTopAlbums/" class="md-nav__link">
+      getTopAlbums
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getTopArtists/" class="md-nav__link">
+      getTopArtists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getTopTags/" class="md-nav__link">
+      getTopTags
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getTopTracks/" class="md-nav__link">
+      getTopTracks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getWeeklyAlbumChart/" class="md-nav__link">
+      getWeeklyAlbumChart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getWeeklyArtistChart/" class="md-nav__link">
+      getWeeklyArtistChart
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-2-service-unavailableservice-unavailable" class="md-nav__link">
+    Last.fm Error Code 2: Service Unavailable/Service Unavailable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-3-invalid-method" class="md-nav__link">
+    Last.fm Error Code 3: Invalid Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-4-authentication-failed" class="md-nav__link">
+    Last.fm Error Code 4: Authentication Failed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-5-invalid-response-format" class="md-nav__link">
+    Last.fm Error Code 5: Invalid Response Format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-6-parameter-error" class="md-nav__link">
+    Last.fm Error Code 6: Parameter Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-8-generic-error" class="md-nav__link">
+    Last.fm Error Code 8: Generic Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-9-invalid-session-token" class="md-nav__link">
+    Last.fm Error Code 9: Invalid Session Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-10-invalid-api-token" class="md-nav__link">
+    Last.fm Error Code 10: Invalid API Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-11-service-offline" class="md-nav__link">
+    Last.fm Error Code 11: Service Offline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-13-invalid-method-signature-in-request-header" class="md-nav__link">
+    Last.fm Error Code 13: Invalid Method Signature In Request Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-16-a-temporary-error-occurred" class="md-nav__link">
+    Last.fm Error Code 16: A Temporary Error Occurred
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-26-your-api-key-has-been-banned" class="md-nav__link">
+    Last.fm Error Code 26: Your API key has been banned
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lastfm-error-code-29-rate-limit-exceeded" class="md-nav__link">
+    Last.fm Error Code 29: Rate Limit Exceeded
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/codes.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="lastfm-error-codes">Last.fm Error Codes<a class="headerlink" href="#lastfm-error-codes" title="Permanent link">&para;</a></h1>
+<p>In addition to return <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP Status Codes</a> along with every response from the Last.fm API, failed responses include errors. <a href="https://lastfm-docs.github.io/api-docs/bugs/#status-codes">Last.fm often does not return HTTP Status Codes that accurately reflect the state of your request</a>. 
+This page provides a comprehensive list of error codes returned by Last.fm, along with a short description of them.</p>
+<details class="warning"><summary>Example response of an error</summary><p>HTTP status: <code>404 NOT FOUND</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User not found&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<p>## HTTP Status Codes Forewarning
+ !!! warning
+    Some API calls return HTTP 200 OK status codes even when the response contains an error.
+    For this reason make sure to check your response payload to validate it.</p>
+<hr />
+<h3 id="lastfm-error-code-2-service-unavailableservice-unavailable">Last.fm Error Code 2: Service Unavailable/Service Unavailable<a class="headerlink" href="#lastfm-error-code-2-service-unavailableservice-unavailable" title="Permanent link">&para;</a></h3>
+<p>This error usually emits when Last.fm is having server issues. However this may also happen because of a malformed request with invalid endpoints.</p>
+<h3 id="lastfm-error-code-3-invalid-method">Last.fm Error Code 3: Invalid Method<a class="headerlink" href="#lastfm-error-code-3-invalid-method" title="Permanent link">&para;</a></h3>
+<p>This error emits when a request is made to an endpoint with a method that does not exist. For example, <code>artist.getSomeData</code>. While the endpoint you're making a request to might be perfectly valid, a malformed method name will prevent Last.fm from returning the data you want. For a comprehensive list of every method, refer to the API docs on this site.</p>
+<h3 id="lastfm-error-code-4-authentication-failed">Last.fm Error Code 4: Authentication Failed<a class="headerlink" href="#lastfm-error-code-4-authentication-failed" title="Permanent link">&para;</a></h3>
+<p>This error emits when a request is made signed with a session token that has been generated for an account that has revoked access to your application.</p>
+<h3 id="lastfm-error-code-5-invalid-response-format">Last.fm Error Code 5: Invalid Response Format<a class="headerlink" href="#lastfm-error-code-5-invalid-response-format" title="Permanent link">&para;</a></h3>
+<p>A <code>format</code> parameter is necessary in addition to the documented parameters, this may either have a value of <code>XML</code> or <code>JSON</code> (case insensitive). Requesting data in another format will emit this error. Some methods do support more than these 2 formats, the methods that do have their formats listed in this documentation.</p>
+<h3 id="lastfm-error-code-6-parameter-error">Last.fm Error Code 6: Parameter Error<a class="headerlink" href="#lastfm-error-code-6-parameter-error" title="Permanent link">&para;</a></h3>
+<p>The Last.fm API returns this error code in response to multiple types of failed request. This error can occur because:
+ - Your search returned no results
+ - Your request used an invalid parameter
+ - Your request has a parameter with an invalid value (for example, an invalid type)
+ - The requested resource is not available</p>
+<p>### Last.fm Error Code 7: Invalid Resource Specified 
+This error emits when a method requests data from a resource that does not exist, for example, an artist or album that cannot have the data you requested. This might be due to using a method that is not valid on an endpoint despite being documented.</p>
+<h3 id="lastfm-error-code-8-generic-error">Last.fm Error Code 8: Generic Error<a class="headerlink" href="#lastfm-error-code-8-generic-error" title="Permanent link">&para;</a></h3>
+<p>This error is emitted when something unexpected causes your request to fail but unfortunately Last.fm can't quite tell you what. This is a generic error. This is similar to <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500">HTTP Error 500</a>.</p>
+<h3 id="lastfm-error-code-9-invalid-session-token">Last.fm Error Code 9: Invalid Session Token<a class="headerlink" href="#lastfm-error-code-9-invalid-session-token" title="Permanent link">&para;</a></h3>
+<p>This error emits when a request tries to authenticate with an invalid session key, or similar missing/malformed parameters. For a guide to auth and signing your calls, refer to <a href="https://lastfm-docs.github.io/api-docs/auth/signature/">this part</a> of the site. Make sure that your session key is hashed using UTF-8 encoding in addition to MD54</p>
+<h3 id="lastfm-error-code-10-invalid-api-token">Last.fm Error Code 10: Invalid API Token<a class="headerlink" href="#lastfm-error-code-10-invalid-api-token" title="Permanent link">&para;</a></h3>
+<p>This error reflects that your request was signed with an api key that is not valid. A valid API key can be generated <a href="https://www.last.fm/api/account/create">here</a>.</p>
+<h3 id="lastfm-error-code-11-service-offline">Last.fm Error Code 11: Service Offline<a class="headerlink" href="#lastfm-error-code-11-service-offline" title="Permanent link">&para;</a></h3>
+<p>Last.fm is often down and you might encounter this error when a certain part of their backend is offline. Updated for the status of Last.fm's service can be found <a href="https://twitter.com/lastfmstatus">on this Twitter account</a>.</p>
+<h3 id="lastfm-error-code-13-invalid-method-signature-in-request-header">Last.fm Error Code 13: Invalid Method Signature In Request Header<a class="headerlink" href="#lastfm-error-code-13-invalid-method-signature-in-request-header" title="Permanent link">&para;</a></h3>
+<p>This error signifies a malformed header, more specifically, one that hasn't been signed right.</p>
+<h3 id="lastfm-error-code-16-a-temporary-error-occurred">Last.fm Error Code 16: A Temporary Error Occurred<a class="headerlink" href="#lastfm-error-code-16-a-temporary-error-occurred" title="Permanent link">&para;</a></h3>
+<p>This is another generic error similar to Last.fm error code 8, however this code implies that this request can be made again and will most likely be successful, this error usually occurs due to backed errors.</p>
+<h3 id="lastfm-error-code-26-your-api-key-has-been-banned">Last.fm Error Code 26: Your API key has been banned<a class="headerlink" href="#lastfm-error-code-26-your-api-key-has-been-banned" title="Permanent link">&para;</a></h3>
+<p>If you hit this error, your API key has been revoked. This can occur due to a plethora of reasons, most likely a violation of Last.fm's ratelimits multiple times, or a violation of their terms of service in general. To further clarify on why you were banned, contact Last.fm support.</p>
+<h3 id="lastfm-error-code-29-rate-limit-exceeded">Last.fm Error Code 29: Rate Limit Exceeded<a class="headerlink" href="#lastfm-error-code-29-rate-limit-exceeded" title="Permanent link">&para;</a></h3>
+<p>Your IP has made too many requests in a short period. To prevent API abuse, Last.fm returns a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">HTTP 429 Error</a> and blocks your requests. Implementing throttling might be a fair consideration.</p>
+<h1 id="http-status-codes">HTTP Status Codes<a class="headerlink" href="#http-status-codes" title="Permanent link">&para;</a></h1>
+<p>HTTP status codes returned in response headers are often useful for troubleshooting, however the Last.fm API is not held up to any standards.  <strong><strong>Make sure to check your response in addition to validating your requests using HTTP headers</strong></strong>.</p>
+<p>This part of this page <strong>does not</strong> document every HTTP error code. You can find a comprehensive guide <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">here</a>.</p>
+<p>This is meant to be a refernce for the most common HTTP codes returned by the Last.fm API</p>
+<p>A general reference:-
+  - 1<strong> Codes : Informational responses
+  - 2</strong> Codes : Successful responses
+  - 3<strong> Codes : Redirects
+  - 4</strong> Codes : Client side errors
+  - 5** Codes : Server side errors</p>
+<h3 id="http-status-code-200-success">HTTP Status Code 200: Success<a class="headerlink" href="#http-status-code-200-success" title="Permanent link">&para;</a></h3>
+<p>The HTTP 200 OK success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
+The meaning of a success depends on the HTTP request method:
+   - GET: The resource has been fetched and is transmitted in the message body.
+   - HEAD: The entity headers are in the message body.
+   - POST: The resource describing the result of the action is transmitted in the message body.
+   - TRACE: The message body contains the request message as received by the server.
+The successful result of a PUT or a DELETE is often not a 200 OK but a 204 No Content (or a 201 Created when the resource is uploaded for the first time).</p>
+<h3 id="http-status-code-400-bad-request">HTTP Status Code 400: Bad Request<a class="headerlink" href="#http-status-code-400-bad-request" title="Permanent link">&para;</a></h3>
+<p>The HyperText Transfer Protocol (HTTP) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).</p>
+<h3 id="http-status-code-403-forbidden">HTTP Status Code 403: Forbidden<a class="headerlink" href="#http-status-code-403-forbidden" title="Permanent link">&para;</a></h3>
+<p>The HTTP 403 Forbidden client error status response code indicates that the server understood the request but refuses to authorize it.</p>
+<h3 id="http-status-code-404-not-found">HTTP Status Code 404: Not Found<a class="headerlink" href="#http-status-code-404-not-found" title="Permanent link">&para;</a></h3>
+<p>The HTTP 404 Not Found client error response code indicates that the server can't find the requested resource. Links that lead to a 404 page are often called broken or dead links and can be subject to link rot.</p>
+<p>A 404 status code does not indicate whether the resource is temporarily or permanently missing. But if a resource is permanently removed, a 410 (Gone) should be used instead of a 404 status.</p>
+<h3 id="http-status-code-429-too-many-requests">HTTP Status Code 429: Too Many Requests<a class="headerlink" href="#http-status-code-429-too-many-requests" title="Permanent link">&para;</a></h3>
+<p>The HTTP 429 Too Many Requests response status code indicates the user has sent too many requests in a given amount of time ("rate limiting").</p>
+<p>A Retry-After header might be included to this response indicating how long to wait before making a new request.</p>
+<h3 id="http-status-code-500-internal-server-error">HTTP Status Code 500: Internal Server Error<a class="headerlink" href="#http-status-code-500-internal-server-error" title="Permanent link">&para;</a></h3>
+<p>The HyperText Transfer Protocol (HTTP) 500 Internal Server Error server error response code indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.</p>
+<p>This error response is a generic "catch-all" response. Usually, this indicates the server cannot find a better 5xx error code to response. Sometimes, server administrators log error responses like the 500 status code with more details about the request to prevent the error from happening again in the future.</p>
+<h5 id="the-mozilla-docs-have-been-referenced-in-the-last-section-of-this-page">The Mozilla Docs have been referenced in the last section of this page<a class="headerlink" href="#the-mozilla-docs-have-been-referenced-in-the-last-section-of-this-page" title="Permanent link">&para;</a></h5>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../bugs/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Bugs
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../auth/Desktop/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Desktop
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
