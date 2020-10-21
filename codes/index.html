@@ -260,8 +260,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lastfm-error-code-2-service-unavailableservice-unavailable" class="md-nav__link">
-    Last.fm Error Code 2: Service Unavailable/Service Unavailable
+  <a href="#lastfm-error-code-2-service-offlineservice-unavailable" class="md-nav__link">
+    Last.fm Error Code 2: Service offline/service Unavailable
   </a>
   
 </li>
@@ -746,8 +746,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lastfm-error-code-2-service-unavailableservice-unavailable" class="md-nav__link">
-    Last.fm Error Code 2: Service Unavailable/Service Unavailable
+  <a href="#lastfm-error-code-2-service-offlineservice-unavailable" class="md-nav__link">
+    Last.fm Error Code 2: Service offline/service Unavailable
   </a>
   
 </li>
@@ -945,11 +945,9 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
 </code></pre></div></p>
 </details>
 <h2 id="http-status-codes-forewarning">HTTP Status Codes Forewarning<a class="headerlink" href="#http-status-codes-forewarning" title="Permanent link">&para;</a></h2>
-<p>!!! warning
-    Some API calls return HTTP 200 OK status codes even when the response contains an error.
-    For this reason make sure to check your response payload to validate it.</p>
+<p>!!! warning "Some API calls return HTTP 200 OK status codes even when the response contains an error. For this reason make sure to check your response payload to validate it."</p>
 <hr />
-<h3 id="lastfm-error-code-2-service-unavailableservice-unavailable">Last.fm Error Code 2: Service Unavailable/Service Unavailable<a class="headerlink" href="#lastfm-error-code-2-service-unavailableservice-unavailable" title="Permanent link">&para;</a></h3>
+<h3 id="lastfm-error-code-2-service-offlineservice-unavailable">Last.fm Error Code 2: Service offline/service Unavailable<a class="headerlink" href="#lastfm-error-code-2-service-offlineservice-unavailable" title="Permanent link">&para;</a></h3>
 <p>This error usually emits when Last.fm is having server issues. However this may also happen because of a malformed request with invalid endpoints.</p>
 <h3 id="lastfm-error-code-3-invalid-method">Last.fm Error Code 3: Invalid Method<a class="headerlink" href="#lastfm-error-code-3-invalid-method" title="Permanent link">&para;</a></h3>
 <p>This error emits when a request is made to an endpoint with a method that does not exist. For example, <code>artist.getSomeData</code>. While the endpoint you're making a request to might be perfectly valid, a malformed method name will prevent Last.fm from returning the data you want. For a comprehensive list of every method, refer to the API docs on this site.</p>
