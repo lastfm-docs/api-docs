@@ -344,6 +344,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lastfm-error-code-17-login-required" class="md-nav__link">
+    Last.fm Error Code 17: Login Required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lastfm-error-code-26-your-api-key-has-been-banned" class="md-nav__link">
     Last.fm Error Code 26: Your API key has been banned
   </a>
@@ -830,6 +837,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lastfm-error-code-17-login-required" class="md-nav__link">
+    Last.fm Error Code 17: Login Required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lastfm-error-code-26-your-api-key-has-been-banned" class="md-nav__link">
     Last.fm Error Code 26: Your API key has been banned
   </a>
@@ -974,7 +988,9 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
 <h3 id="lastfm-error-code-13-invalid-method-signature-in-request-header">Last.fm Error Code 13: Invalid Method Signature In Request Header<a class="headerlink" href="#lastfm-error-code-13-invalid-method-signature-in-request-header" title="Permanent link">&para;</a></h3>
 <p>This error signifies a malformed header, more specifically, one that hasn't been signed right.</p>
 <h3 id="lastfm-error-code-16-a-temporary-error-occurred">Last.fm Error Code 16: A Temporary Error Occurred<a class="headerlink" href="#lastfm-error-code-16-a-temporary-error-occurred" title="Permanent link">&para;</a></h3>
-<p>This is another generic error similar to Last.fm error code 8, however this code implies that this request can be made again and will most likely be successful, this error usually occurs due to backed errors.</p>
+<p>This is another generic error similar to Last.fm error code 8, however this code implies that this request can be made again and will most likely be successful, this error usually occurs due to backend errors.</p>
+<h3 id="lastfm-error-code-17-login-required">Last.fm Error Code 17: Login Required<a class="headerlink" href="#lastfm-error-code-17-login-required" title="Permanent link">&para;</a></h3>
+<p>This error occurs when a request is made to a method on the <code>user</code> endpoint, but the user doesn't have their profile privacy set to public.</p>
 <h3 id="lastfm-error-code-26-your-api-key-has-been-banned">Last.fm Error Code 26: Your API key has been banned<a class="headerlink" href="#lastfm-error-code-26-your-api-key-has-been-banned" title="Permanent link">&para;</a></h3>
 <p>If you hit this error, your API key has been revoked. This can occur due to a plethora of reasons, most likely a violation of Last.fm's ratelimits multiple times, or a violation of their terms of service in general. To further clarify on why you were banned, contact Last.fm support.</p>
 <h3 id="lastfm-error-code-29-rate-limit-exceeded">Last.fm Error Code 29: Rate Limit Exceeded<a class="headerlink" href="#lastfm-error-code-29-rate-limit-exceeded" title="Permanent link">&para;</a></h3>
@@ -983,12 +999,14 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
 <p>HTTP status codes returned in response headers are often useful for troubleshooting, however the Last.fm API is not held up to any standards.  <strong><strong>Make sure to check your response in addition to validating your requests using HTTP headers</strong></strong>.</p>
 <p>This part of this page <strong>does not</strong> document every HTTP error code. You can find a comprehensive guide <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">here</a>.</p>
 <p>This is meant to be a refernce for the most common HTTP codes returned by the Last.fm API</p>
-<p>A general reference:-
-  - 1** Codes : Informational responses
-  - 2** Codes : Successful responses
-  - 3** Codes : Redirects
-  - 4** Codes : Client side errors
-  - 5** Codes : Server side errors</p>
+<p>A general reference:-</p>
+<ul>
+<li>1** Codes : Informational responses</li>
+<li>2** Codes : Successful responses</li>
+<li>3** Codes : Redirects</li>
+<li>4** Codes : Client side errors</li>
+<li>5** Codes : Server side errors</li>
+</ul>
 <h3 id="http-status-code-200-success">HTTP Status Code 200: Success<a class="headerlink" href="#http-status-code-200-success" title="Permanent link">&para;</a></h3>
 <p>The HTTP 200 OK success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
 The meaning of a success depends on the HTTP request method:</p>
