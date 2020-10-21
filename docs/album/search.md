@@ -95,7 +95,7 @@ Errors:
     ```
 
 ??? warning "Example response of an album that doesnt exist"
-    HTTP status: `400 NOT FOUND`
+    HTTP status: `200 OK`
 
     ```
     http://ws.audioscrobbler.com/2.0/?method=album.search&album=albumthatdoesntexist&page=2&api_key=YOUR_API_KEY&format=json
