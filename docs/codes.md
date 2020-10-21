@@ -60,7 +60,10 @@ Last.fm is often down and you might encounter this error when a certain part of 
 This error signifies a malformed header, more specifically, one that hasn't been signed right.
 
 ### Last.fm Error Code 16: A Temporary Error Occurred 
-This is another generic error similar to Last.fm error code 8, however this code implies that this request can be made again and will most likely be successful, this error usually occurs due to backed errors.
+This is another generic error similar to Last.fm error code 8, however this code implies that this request can be made again and will most likely be successful, this error usually occurs due to backend errors.
+
+### Last.fm Error Code 17: Login Required
+This error occurs when a request is made to a method on the `user` endpoint, but the user doesn't have their profile privacy set to public.
 
 ### Last.fm Error Code 26: Your API key has been banned
 If you hit this error, your API key has been revoked. This can occur due to a plethora of reasons, most likely a violation of Last.fm's ratelimits multiple times, or a violation of their terms of service in general. To further clarify on why you were banned, contact Last.fm support.
@@ -76,6 +79,7 @@ This part of this page **does not** document every HTTP error code. You can find
 This is meant to be a refernce for the most common HTTP codes returned by the Last.fm API
 
 A general reference:-
+
   - 1\*\* Codes : Informational responses
   - 2\*\* Codes : Successful responses
   - 3\*\* Codes : Redirects
