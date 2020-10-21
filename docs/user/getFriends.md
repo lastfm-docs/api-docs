@@ -17,6 +17,7 @@ No authentication required.
 ## Responses
 Errors:
 
+- 6 : Invalid parameters - Your request was either missing a required parameter, the parameter was not found, or had 0 results
 - 8 : Operation failed - Something else went wrong  
 - 9 : Invalid session key - Please re-authenticate  
 - 10 : Invalid API key - You must be granted a valid key by last.fm  
@@ -118,6 +119,6 @@ Errors:
     ```json
     {
         "error": 6,
-        "message": "User not found"
+        "message": "no such page"
     }
     ```
