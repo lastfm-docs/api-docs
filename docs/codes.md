@@ -13,3 +13,7 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
     }
     ```
  
+ ## HTTP Status Codes
+ !!! warning
+    Some API calls return HTTP 200 OK status codes even when the response contains an error.
+    For this reason make sure to check your response payload to validate it.
