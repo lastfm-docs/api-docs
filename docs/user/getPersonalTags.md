@@ -32,6 +32,9 @@ Errors:
 - 26 : Suspended API key - Access for your account has been suspended, please contact Last.fm
 - 29 : Rate limit exceeded - Your IP has made too many requests in a short period
 
+!!! Warning
+    This API call returns 200 OK HTTP status codes even when the response contains an error.
+    
 ## Examples
 
 ??? note "Example response"
@@ -97,7 +100,7 @@ Errors:
     ```
 
 ??? warning "Example response of non existing user"
-    HTTP status: `404 NOT FOUND`
+    HTTP status: `200 OK`
 
     ```
     http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=userthatdoesntexist&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
@@ -111,7 +114,7 @@ Errors:
     ```
 
 ??? warning "Example response of a user with no tags as the ones fetched"
-    HTTP status: `404 NOT FOUND`
+    HTTP status: `200 OK`
 
         ```
         http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=burdayy&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
@@ -138,7 +141,7 @@ Errors:
         ```
 
 ??? warning "Example response of a tag that does not exist"
-    HTTP status: `400 BAD REQUEST`
+    HTTP status: `200 OK`
 
         ```
         http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=taggingtypethatdoesntexist&api_key=YOUR_API_KEY&format=json&limit=1

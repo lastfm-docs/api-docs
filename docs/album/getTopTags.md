@@ -33,6 +33,9 @@ Errors:
 - 26 : Suspended API key - Access for your account has been suspended, please contact Last.fm
 - 29 : Rate limit exceeded - Your IP has made too many requests in a short period
 
+!!! Warning
+    This API call returns 200 OK HTTP status codes even when the response contains an error.
+    
 ## Attributes
 
 count : A weighted count of how often the tag was applied, with a maximum of 100
@@ -74,7 +77,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     ```
 
 ??? warning "Example response of an artist/album that doesnt exist"
-    HTTP status: `400 NOT FOUND`
+    HTTP status: `200 OK`
 
     ```
     http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=ArtistThatDoesntExist&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
@@ -88,7 +91,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     ```
 
 ??? warning "Example response of an user that doesnt exist"
-    HTTP status: `400 NOT FOUND`
+    HTTP status: `200 OK`
 
     ```
     http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=UserThatDoesntExist&api_key=YOUR_API_KEY&format=json
