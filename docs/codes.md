@@ -1,4 +1,4 @@
-## Last.fm Error Codes
+# Last.fm Error Codes
 
 In addition to return [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) along with every response from the Last.fm API, failed responses include errors. [Last.fm often does not return HTTP Status Codes that accurately reflect the state of your request](https://lastfm-docs.github.io/api-docs/bugs/#status-codes). 
 This page provides a comprehensive list of error codes returned by Last.fm, along with a short description of them.
@@ -13,7 +13,7 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
     }
     ```
  
- ## HTTP Status Codes
+ ## HTTP Status Codes Forewarning
  !!! warning
     Some API calls return HTTP 200 OK status codes even when the response contains an error.
     For this reason make sure to check your response payload to validate it.
@@ -68,3 +68,16 @@ If you hit this error, your API key has been revoked. This can occur due to a pl
 ### Last.fm Error Code 29: Rate Limit Exceeded 
 Your IP has made too many requests in a short period. To prevent API abuse, Last.fm returns a [HTTP 429 Error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429) and blocks your requests. Implementing throttling might be a fair consideration.
 
+# HTTP Status Codes
+HTTP status codes returned in response headers are often useful for troubleshooting, however the Last.fm API is not held up to any standards.  __**Make sure to check your response in addition to validating your requests using HTTP headers**__.
+
+This part of this page **does not** document every HTTP error code. You can find a comprehensive guide [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+
+This is meant to be a refernce for the most common HTTP codes returned by the Last.fm API
+
+A general reference:-
+  - 1** Codes : Informational responses
+  - 2** Codes : Successful responses
+  - 3** Codes : Redirects
+  - 4** Codes : Client side errors
+  - 5** Codes : Server side errors
