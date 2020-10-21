@@ -335,7 +335,7 @@ duration - in seconds
     ```
 
 ??? warning "Example response of an artist/album that doesnt exist"
-HTTP status: `400 NOT FOUND`
+    HTTP status: `400 NOT FOUND`
 
     ```
     http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=metallica&album=albumthatdoesnotexist&format=json

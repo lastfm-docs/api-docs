@@ -97,7 +97,7 @@ Errors:
     ```
 
 ??? warning "Example response of non existing user"
-HTTP status: `404 NOT FOUND`
+    HTTP status: `404 NOT FOUND`
 
     ```
     http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=userthatdoesntexist&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
@@ -111,43 +111,43 @@ HTTP status: `404 NOT FOUND`
     ```
 
 ??? warning "Example response of a user with no tags as the ones fetched"
-HTTP status: `404 NOT FOUND`
+    HTTP status: `404 NOT FOUND`
 
-    ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=burdayy&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
-    ```
+        ```
+        http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=burdayy&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
+        ```
 
-    ```json
-    {
-    "taggings": {
-        "artists": {
-        "artist": [
+        ```json
+        {
+        "taggings": {
+            "artists": {
+            "artist": [
 
-        ]
-        },
-        "@attr": {
-        "user": "Burdayy",
-        "tag": "rock",
-        "page": "1",
-        "perPage": "1",
-        "totalPages": "0",
-        "total": "0"
+            ]
+            },
+            "@attr": {
+            "user": "Burdayy",
+            "tag": "rock",
+            "page": "1",
+            "perPage": "1",
+            "totalPages": "0",
+            "total": "0"
+            }
         }
-     }
-    }
-    ```
+        }
+        ```
 
 ??? warning "Example response of a tag that does not exist"
-HTTP status: `400 BAD REQUEST`
+    HTTP status: `400 BAD REQUEST`
 
-    ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=taggingtypethatdoesntexist&api_key=YOUR_API_KEY&format=json&limit=1
-    ```
-    ```json
+        ```
+        http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=taggingtypethatdoesntexist&api_key=YOUR_API_KEY&format=json&limit=1
+        ```
+        ```json
 
-    {
-        "error": 6,
-        "message": "taggingtype param missing",
-        "links": []
-    }
-    ```
+        {
+            "error": 6,
+            "message": "taggingtype param missing",
+            "links": []
+        }
+        ```
