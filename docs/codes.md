@@ -56,5 +56,15 @@ This error reflects that your request was signed with an api key that is not val
 ### Last.fm Error Code 11: Service Offline
 Last.fm is often down and you might encounter this error when a certain part of their backend is offline. Updated for the status of Last.fm's service can be found [on this Twitter account](https://twitter.com/lastfmstatus).
 
-### Last.fm Error Code 12: Invalid Method Signature In Request Header
+### Last.fm Error Code 13: Invalid Method Signature In Request Header
 This error signifies a malformed header, more specifically, one that hasn't been signed right.
+
+### Last.fm Error Code 16: A Temporary Error Occurred 
+This is another generic error similar to Last.fm error code 8, however this code implies that this request can be made again and will most likely be successful, this error usually occurs due to backed errors.
+
+### Last.fm Error Code 26: Your API key has been banned
+If you hit this error, your API key has been revoked. This can occur due to a plethora of reasons, most likely a violation of Last.fm's ratelimits multiple times, or a violation of their terms of service in general. To further clarify on why you were banned, contact Last.fm support.
+
+### Last.fm Error Code 29: Rate Limit Exceeded 
+Your IP has made too many requests in a short period. To prevent API abuse, Last.fm returns a [HTTP 429 Error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429) and blocks your requests. Implementing throttling might be a fair consideration.
+
