@@ -249,7 +249,14 @@
     Last.fm Error Codes
   </a>
   
-    <nav class="md-nav" aria-label="Last.fm Error Codes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-status-codes-forewarning" class="md-nav__link">
+    HTTP Status Codes Forewarning
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Status Codes Forewarning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -283,6 +290,13 @@
           <li class="md-nav__item">
   <a href="#lastfm-error-code-6-parameter-error" class="md-nav__link">
     Last.fm Error Code 6: Parameter Error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastfm-error-code-7-invalid-resource-specified" class="md-nav__link">
+    Last.fm Error Code 7: Invalid Resource Specified
   </a>
   
 </li>
@@ -721,7 +735,14 @@
     Last.fm Error Codes
   </a>
   
-    <nav class="md-nav" aria-label="Last.fm Error Codes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-status-codes-forewarning" class="md-nav__link">
+    HTTP Status Codes Forewarning
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Status Codes Forewarning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -755,6 +776,13 @@
           <li class="md-nav__item">
   <a href="#lastfm-error-code-6-parameter-error" class="md-nav__link">
     Last.fm Error Code 6: Parameter Error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lastfm-error-code-7-invalid-resource-specified" class="md-nav__link">
+    Last.fm Error Code 7: Invalid Resource Specified
   </a>
   
 </li>
@@ -916,8 +944,8 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
 <span class="p">}</span>
 </code></pre></div></p>
 </details>
-<p>## HTTP Status Codes Forewarning
- !!! warning
+<h2 id="http-status-codes-forewarning">HTTP Status Codes Forewarning<a class="headerlink" href="#http-status-codes-forewarning" title="Permanent link">&para;</a></h2>
+<p>!!! warning
     Some API calls return HTTP 200 OK status codes even when the response contains an error.
     For this reason make sure to check your response payload to validate it.</p>
 <hr />
@@ -935,8 +963,8 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
  - Your request used an invalid parameter
  - Your request has a parameter with an invalid value (for example, an invalid type)
  - The requested resource is not available</p>
-<p>### Last.fm Error Code 7: Invalid Resource Specified 
-This error emits when a method requests data from a resource that does not exist, for example, an artist or album that cannot have the data you requested. This might be due to using a method that is not valid on an endpoint despite being documented.</p>
+<h3 id="lastfm-error-code-7-invalid-resource-specified">Last.fm Error Code 7: Invalid Resource Specified<a class="headerlink" href="#lastfm-error-code-7-invalid-resource-specified" title="Permanent link">&para;</a></h3>
+<p>This error emits when a method requests data from a resource that does not exist, for example, an artist or album that cannot have the data you requested. This might be due to using a method that is not valid on an endpoint despite being documented.</p>
 <h3 id="lastfm-error-code-8-generic-error">Last.fm Error Code 8: Generic Error<a class="headerlink" href="#lastfm-error-code-8-generic-error" title="Permanent link">&para;</a></h3>
 <p>This error is emitted when something unexpected causes your request to fail but unfortunately Last.fm can't quite tell you what. This is a generic error. This is similar to <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500">HTTP Error 500</a>.</p>
 <h3 id="lastfm-error-code-9-invalid-session-token">Last.fm Error Code 9: Invalid Session Token<a class="headerlink" href="#lastfm-error-code-9-invalid-session-token" title="Permanent link">&para;</a></h3>
