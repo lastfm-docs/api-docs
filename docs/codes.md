@@ -29,7 +29,7 @@ This error emits when a request is made to an endpoint with a method that does n
 
 
 ### Last.fm Error Code 4: Authentication Failed
-This error emits when a request tries to authenticate with an invalid session key, or similar missing/malformed parameters. For a guide to auth and signing your calls, refer to [this part](https://lastfm-docs.github.io/api-docs/auth/signature/) of the site. Make sure that your session key is hashed using UTF-8 encoding in addition to MD5
+This error emits when a request is made signed with a session token that has been generated for an account that has revoked access to your application.
 
 ### Last.fm Error Code 5: Invalid Response Format
 A `format` parameter is necessary in addition to the documented parameters, this may either have a value of `XML` or `JSON` (case insensitive). Requesting data in another format will emit this error. Some methods do support more than these 2 formats, the methods that do have their formats listed in this documentation.
@@ -46,3 +46,6 @@ This error emits when a method requests data from a resource that does not exist
  
 ### Last.fm Error Code 8: Generic Error
 This error is emitted when something unexpected causes your request to fail but unfortunately Last.fm can't quite tell you what. This is a generic error. This is similar to [HTTP Error 500](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500).
+
+### Last.fm Error Code 9: Invalid Session Token
+This error emits when a request tries to authenticate with an invalid session key, or similar missing/malformed parameters. For a guide to auth and signing your calls, refer to [this part](https://lastfm-docs.github.io/api-docs/auth/signature/) of the site. Make sure that your session key is hashed using UTF-8 encoding in addition to MD5
