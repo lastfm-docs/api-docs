@@ -48,4 +48,13 @@ This error emits when a method requests data from a resource that does not exist
 This error is emitted when something unexpected causes your request to fail but unfortunately Last.fm can't quite tell you what. This is a generic error. This is similar to [HTTP Error 500](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500).
 
 ### Last.fm Error Code 9: Invalid Session Token
-This error emits when a request tries to authenticate with an invalid session key, or similar missing/malformed parameters. For a guide to auth and signing your calls, refer to [this part](https://lastfm-docs.github.io/api-docs/auth/signature/) of the site. Make sure that your session key is hashed using UTF-8 encoding in addition to MD5
+This error emits when a request tries to authenticate with an invalid session key, or similar missing/malformed parameters. For a guide to auth and signing your calls, refer to [this part](https://lastfm-docs.github.io/api-docs/auth/signature/) of the site. Make sure that your session key is hashed using UTF-8 encoding in addition to MD54
+
+### Last.fm Error Code 10: Invalid API Token
+This error reflects that your request was signed with an api key that is not valid. A valid API key can be generated [here](https://www.last.fm/api/account/create).
+
+### Last.fm Error Code 11: Service Offline
+Last.fm is often down and you might encounter this error when a certain part of their backend is offline. Updated for the status of Last.fm's service can be found [on this Twitter account](https://twitter.com/lastfmstatus).
+
+### Last.fm Error Code 12: Invalid Method Signature In Request Header
+This error signifies a malformed header, more specifically, one that hasn't been signed right.
