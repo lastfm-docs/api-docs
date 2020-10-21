@@ -76,11 +76,11 @@ This part of this page **does not** document every HTTP error code. You can find
 This is meant to be a refernce for the most common HTTP codes returned by the Last.fm API
 
 A general reference:-
-  - 1** Codes : Informational responses
-  - 2** Codes : Successful responses
-  - 3** Codes : Redirects
-  - 4** Codes : Client side errors
-  - 5** Codes : Server side errors
+  - 1\*\* Codes : Informational responses
+  - 2\*\* Codes : Successful responses
+  - 3\*\* Codes : Redirects
+  - 4\*\* Codes : Client side errors
+  - 5\*\* Codes : Server side errors
 
 ### HTTP Status Code 200: Success
 The HTTP 200 OK success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
