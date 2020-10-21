@@ -15,7 +15,7 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
     }
     ```
  
- ## HTTP Status Codes Forewarning
+## HTTP Status Codes Forewarning
  !!! warning
     Some API calls return HTTP 200 OK status codes even when the response contains an error.
     For this reason make sure to check your response payload to validate it.
@@ -43,7 +43,7 @@ The Last.fm API returns this error code in response to multiple types of failed 
  - Your request has a parameter with an invalid value (for example, an invalid type)
  - The requested resource is not available
  
- ### Last.fm Error Code 7: Invalid Resource Specified 
+### Last.fm Error Code 7: Invalid Resource Specified 
 This error emits when a method requests data from a resource that does not exist, for example, an artist or album that cannot have the data you requested. This might be due to using a method that is not valid on an endpoint despite being documented.
  
 ### Last.fm Error Code 8: Generic Error
