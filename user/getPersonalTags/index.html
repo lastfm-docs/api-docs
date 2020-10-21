@@ -15,7 +15,7 @@
     
     
       
-        <title>getTopAlbums - Unofficial last.fm API docs</title>
+        <title>getPersonalTags - Unofficial last.fm API docs</title>
       
     
     
@@ -90,7 +90,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              getTopAlbums
+              getPersonalTags
             
           </span>
         </div>
@@ -421,30 +421,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../getPersonalTags/" class="md-nav__link">
-      getPersonalTags
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../getRecentTracks/" class="md-nav__link">
-      getRecentTracks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -454,12 +430,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        getTopAlbums
+        getPersonalTags
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      getTopAlbums
+      getPersonalTags
     </a>
     
       
@@ -487,10 +463,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getRecentTracks/" class="md-nav__link">
+      getRecentTracks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getTopAlbums/" class="md-nav__link">
+      getTopAlbums
+    </a>
   </li>
 
         
@@ -618,6 +625,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -630,14 +644,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/user/getTopAlbums.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/lastfm-docs/api-docs/edit/master/docs/user/getPersonalTags.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>getTopAlbums</h1>
+                  <h1>getPersonalTags</h1>
                 
-                <p>Get the top albums listened to by a user. You can stipulate a time period. Sends the overall chart by default.</p>
+                <p>Get a list of the user's personal tags.</p>
 <p>No authentication required.</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
@@ -656,28 +670,35 @@
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
 <td><code>none</code></td>
 <td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
-<td>The last.fm username to fetch top albums for.</td>
+<td>The last.fm username to fetch the personal tags of.</td>
 </tr>
 <tr>
-<td><code>period</code></td>
+<td><code>tag</code></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
-<td>overall</td>
-<td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
-<td>The time period over which to retrieve top albums for. Can be <code>overall</code>, <code>7day</code>, <code>1month</code>, <code>3month</code>, <code>6month</code> or <code>12month</code></td>
+<td><code>none</code></td>
+<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
+<td>The tag that is being fetched.</td>
+</tr>
+<tr>
+<td><code>taggingtype</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
+<td><code>none</code></td>
+<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
+<td><img alt="❎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/274e.png" title=":negative_squared_cross_mark:" /></td>
 </tr>
 <tr>
 <td><code>limit</code></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
 <td>50</td>
 <td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
-<td>The number of results to fetch per page. Defaults to 50.</td>
+<td>The page number to fetch. Defaults to first page.</td>
 </tr>
 <tr>
 <td><code>page</code></td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></td>
 <td>1</td>
 <td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
-<td>The page number to fetch. Defaults to first page.</td>
+<td>The number of pages to be fetched.</td>
 </tr>
 <tr>
 <td><code>api_key</code></td>
@@ -691,16 +712,22 @@
 <h2 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">&para;</a></h2>
 <p>Errors:</p>
 <ul>
-<li>6 : Invalid parameters - Your request was either missing a required parameter, the parameter was not found, or had 0 results</li>
-<li>8 : Operation failed - Something else went wrong  </li>
-<li>9 : Invalid session key - Please re-authenticate  </li>
-<li>10 : Invalid API key - You must be granted a valid key by last.fm  </li>
-<li>11 : Service Offline - This service is temporarily offline. Try again later.  </li>
-<li>13 : Invalid method signature supplied  </li>
-<li>16 : There was a temporary error processing your request. Please try again  </li>
-<li>26 : Suspended API key - Access for your account has been suspended, please contact Last.fm  </li>
-<li>29 : Rate limit exceeded - Your IP has made too many requests in a short period  </li>
+<li>2 : Invalid service - This service does not exist</li>
+<li>3 : Invalid Method - No method with that name in this package</li>
+<li>4 : Authentication Failed - You do not have permissions to access the service</li>
+<li>5 : Invalid format - This service doesn't exist in that format</li>
+<li>6 : Invalid parameters - Your request is missing a required parameter</li>
+<li>7 : Invalid resource specified</li>
+<li>8 : Operation failed - Something else went wrong</li>
+<li>9 : Invalid session key - Please re-authenticate</li>
+<li>10 : Invalid API key - You must be granted a valid key by last.fm</li>
+<li>11 : Service Offline - This service is temporarily offline. Try again later.</li>
+<li>13 : Invalid method signature supplied</li>
+<li>16 : There was a temporary error processing your request. Please try again</li>
+<li>26 : Suspended API key - Access for your account has been suspended, please contact Last.fm</li>
+<li>29 : Rate limit exceeded - Your IP has made too many requests in a short period</li>
 </ul>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <details class="note"><summary>Example response</summary><table>
 <thead>
 <tr>
@@ -711,11 +738,15 @@
 <tbody>
 <tr>
 <td>username</td>
-<td>aidan-</td>
+<td>rj</td>
 </tr>
 <tr>
-<td>limit</td>
-<td>3</td>
+<td>tag</td>
+<td>rock</td>
+</tr>
+<tr>
+<td>taggingtype</td>
+<td>artist</td>
 </tr>
 <tr>
 <td>format</td>
@@ -724,119 +755,107 @@
 </tbody>
 </table>
 <p>HTTP status: <code>200 OK</code></p>
-<div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&amp;method=user.getTopAlbums&amp;user=aidan-&amp;format=json&amp;limit=10
+<div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=rj&amp;tag=rock&amp;taggingtype=artist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;topalbums&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;album&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="nt">&quot;taggings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;artists&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Jack Bruce&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;94a24504-3548-4bde-a89b-273d277d194e&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Jack+Bruce&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;streamable&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Joy+Division&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Joy Division&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;9a58fda3-f4ed-4080-a3a5-f457aac9fcdd&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/043311d565be4296bb13f299ba1f08de.jpg&quot;</span>
-                    <span class="p">}</span>
-                <span class="p">],</span>
-                <span class="nt">&quot;playcount&quot;</span><span class="p">:</span> <span class="s2">&quot;596&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Joy+Division/The+Best+Of&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;The Best Of&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Lily+Allen&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lily Allen&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;6e0c7c0e-cba5-4c2c-a652-38f71ef5785d&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/13ac538c05b22f5d4f5290d4740b59f4.png&quot;</span>
-                    <span class="p">}</span>
-                <span class="p">],</span>
-                <span class="nt">&quot;playcount&quot;</span><span class="p">:</span> <span class="s2">&quot;484&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/Lily+Allen/It%27s+Not+Me,+It%27s+You+(Special+Edition)&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;It&#39;s Not Me, It&#39;s You (Special Edition)&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="nt">&quot;artist&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/System+of+a+Down&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;System of a Down&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;cc0b7089-c08d-4c10-b6b0-873582c17fd6&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;rank&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;small&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/34s/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/64s/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
-                    <span class="p">},</span>
-                    <span class="p">{</span>
-                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span><span class="p">,</span>
-                        <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/e0ea42e8dd3e4f1aaa61a7bd0c833117.png&quot;</span>
-                    <span class="p">}</span>
-                <span class="p">],</span>
-                <span class="nt">&quot;playcount&quot;</span><span class="p">:</span> <span class="s2">&quot;482&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.last.fm/music/System+of+a+Down/Hypnotize&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Hypnotize&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;mbid&quot;</span><span class="p">:</span> <span class="s2">&quot;0c63d2e4-2a99-4cc4-8991-a88dba182bbd&quot;</span>
+            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;extralarge&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+            <span class="nt">&quot;#text&quot;</span><span class="p">:</span> <span class="s2">&quot;https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;mega&quot;</span>
             <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;3344&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;aidan-&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;perPage&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;totalPages&quot;</span><span class="p">:</span> <span class="s2">&quot;1115&quot;</span>
+        <span class="p">]</span>
         <span class="p">}</span>
+    <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;@attr&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;RJ&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;rock&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;perPage&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;totalPages&quot;</span><span class="p">:</span> <span class="s2">&quot;20&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="s2">&quot;20&quot;</span>
     <span class="p">}</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 </details>
+<details class="warning"><summary>Example response of non existing user</summary></details>
+<p>HTTP status: <code>404 NOT FOUND</code></p>
+<pre><code>```
+http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=userthatdoesntexist&amp;tag=rock&amp;taggingtype=artist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
+```
+
+```json
+{
+    "error": 6,
+    "message": "User not found"
+}
+```
+</code></pre>
+<details class="warning"><summary>Example response of a user with no tags as the ones fetched</summary></details>
+<p>HTTP status: <code>404 NOT FOUND</code></p>
+<pre><code>```
+http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=burdayy&amp;tag=rock&amp;taggingtype=artist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
+```
+
+```json
+{
+"taggings": {
+    "artists": {
+    "artist": [
+
+    ]
+    },
+    "@attr": {
+    "user": "Burdayy",
+    "tag": "rock",
+    "page": "1",
+    "perPage": "1",
+    "totalPages": "0",
+    "total": "0"
+    }
+ }
+}
+```
+</code></pre>
+<details class="warning"><summary>Example response of a tag that does not exist</summary></details>
+<p>HTTP status: <code>400 BAD REQUEST</code></p>
+<pre><code>```
+http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&amp;user=rj&amp;tag=rock&amp;taggingtype=taggingtypethatdoesntexist&amp;api_key=YOUR_API_KEY&amp;format=json&amp;limit=1
+```
+```json
+
+{
+    "error": 6,
+    "message": "taggingtype param missing",
+    "links": []
+}
+```
+</code></pre>
                 
               
               
@@ -855,7 +874,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../getRecentTracks/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getLovedTracks/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -864,19 +883,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                getRecentTracks
+                getLovedTracks
               </div>
             </div>
           </a>
         
         
-          <a href="../getTopArtists/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../getRecentTracks/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                getTopArtists
+                getRecentTracks
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

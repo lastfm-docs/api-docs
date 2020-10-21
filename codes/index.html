@@ -454,11 +454,49 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
+      Album
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Album" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Album
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../album/getInfo/" class="md-nav__link">
+      getInfo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       Auth
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Auth" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         <span class="md-nav__icon md-icon"></span>
         Auth
       </label>
@@ -513,14 +551,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Library
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Library" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         <span class="md-nav__icon md-icon"></span>
         Library
       </label>
@@ -551,14 +589,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       User
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="User" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         <span class="md-nav__icon md-icon"></span>
         User
       </label>
@@ -597,6 +635,18 @@
   <li class="md-nav__item">
     <a href="../user/getLovedTracks/" class="md-nav__link">
       getLovedTracks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/getPersonalTags/" class="md-nav__link">
+      getPersonalTags
     </a>
   </li>
 
@@ -949,7 +999,7 @@
                 
                 <h1 id="error-codes">Error Codes<a class="headerlink" href="#error-codes" title="Permanent link">&para;</a></h1>
 <h2 id="lastfm-error-codes">Last.fm Error Codes<a class="headerlink" href="#lastfm-error-codes" title="Permanent link">&para;</a></h2>
-<p>In addition to return <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP Status Codes</a> along with every response from the Last.fm API, failed responses include errors. <a href="https://lastfm-docs.github.io/api-docs/bugs/#status-codes">Last.fm often does not return HTTP Status Codes that accurately reflect the state of your request</a>. 
+<p>In addition to return <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP Status Codes</a> along with every response from the Last.fm API, failed responses include errors. <a href="https://lastfm-docs.github.io/api-docs/bugs/#status-codes">Last.fm often does not return HTTP Status Codes that accurately reflect the state of your request</a>.
 This page provides a comprehensive list of error codes returned by Last.fm, along with a short description of them.</p>
 <details class="warning"><summary>Example response of an error</summary><p>HTTP status: <code>404 NOT FOUND</code>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -959,7 +1009,10 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
 </code></pre></div></p>
 </details>
 <h2 id="http-status-codes-forewarning">HTTP Status Codes Forewarning<a class="headerlink" href="#http-status-codes-forewarning" title="Permanent link">&para;</a></h2>
-<p>!!! warning "Some API calls return HTTP 200 OK status codes even when the response contains an error. For this reason make sure to check your response payload to validate it."</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some API calls return HTTP 200 OK status codes even when the response contains an error. For this reason make sure to check your response payload to validate it.</p>
+</div>
 <hr />
 <h3 id="lastfm-error-code-2-service-offlineservice-unavailable">Last.fm Error Code 2: Service offline/service Unavailable<a class="headerlink" href="#lastfm-error-code-2-service-offlineservice-unavailable" title="Permanent link">&para;</a></h3>
 <p>This error usually emits when Last.fm is having server issues. However this may also happen because of a malformed request with invalid endpoints.</p>
@@ -970,11 +1023,13 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
 <h3 id="lastfm-error-code-5-invalid-response-format">Last.fm Error Code 5: Invalid Response Format<a class="headerlink" href="#lastfm-error-code-5-invalid-response-format" title="Permanent link">&para;</a></h3>
 <p>A <code>format</code> parameter is necessary in addition to the documented parameters, this may either have a value of <code>XML</code> or <code>JSON</code> (case insensitive). Requesting data in another format will emit this error. Some methods do support more than these 2 formats, the methods that do have their formats listed in this documentation.</p>
 <h3 id="lastfm-error-code-6-parameter-error">Last.fm Error Code 6: Parameter Error<a class="headerlink" href="#lastfm-error-code-6-parameter-error" title="Permanent link">&para;</a></h3>
-<p>The Last.fm API returns this error code in response to multiple types of failed request. This error can occur because:
- - Your search returned no results
- - Your request used an invalid parameter
- - Your request has a parameter with an invalid value (for example, an invalid type)
- - The requested resource is not available</p>
+<p>The Last.fm API returns this error code in response to multiple types of failed request. This error can occur because:</p>
+<ul>
+<li>Your search returned no results</li>
+<li>Your request used an invalid parameter</li>
+<li>Your request has a parameter with an invalid value (for example, an invalid type)</li>
+<li>The requested resource is not available</li>
+</ul>
 <h3 id="lastfm-error-code-7-invalid-resource-specified">Last.fm Error Code 7: Invalid Resource Specified<a class="headerlink" href="#lastfm-error-code-7-invalid-resource-specified" title="Permanent link">&para;</a></h3>
 <p>This error emits when a method requests data from a resource that does not exist, for example, an artist or album that cannot have the data you requested. This might be due to using a method that is not valid on an endpoint despite being documented.</p>
 <h3 id="lastfm-error-code-8-generic-error">Last.fm Error Code 8: Generic Error<a class="headerlink" href="#lastfm-error-code-8-generic-error" title="Permanent link">&para;</a></h3>
@@ -996,7 +1051,7 @@ This page provides a comprehensive list of error codes returned by Last.fm, alon
 <h3 id="lastfm-error-code-29-rate-limit-exceeded">Last.fm Error Code 29: Rate Limit Exceeded<a class="headerlink" href="#lastfm-error-code-29-rate-limit-exceeded" title="Permanent link">&para;</a></h3>
 <p>Your IP has made too many requests in a short period. To prevent API abuse, Last.fm returns a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429">HTTP 429 Error</a> and blocks your requests. Implementing throttling might be a fair consideration.</p>
 <h2 id="http-status-codes">HTTP Status Codes<a class="headerlink" href="#http-status-codes" title="Permanent link">&para;</a></h2>
-<p>HTTP status codes returned in response headers are often useful for troubleshooting, however the Last.fm API is not held up to any standards.  <strong><strong>Make sure to check your response in addition to validating your requests using HTTP headers</strong></strong>.</p>
+<p>HTTP status codes returned in response headers are often useful for troubleshooting, however the Last.fm API is not held up to any standards. <strong><em>*Make sure to check your response in addition to validating your requests using HTTP headers</em></strong>*.</p>
 <p>This part of this page <strong>does not</strong> document every HTTP error code. You can find a comprehensive guide <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">here</a>.</p>
 <p>This is meant to be a refernce for the most common HTTP codes returned by the Last.fm API</p>
 <p>A general reference:-</p>
@@ -1064,13 +1119,13 @@ The meaning of a success depends on the HTTP request method:</p>
           </a>
         
         
-          <a href="../auth/Desktop/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../album/getInfo/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Desktop
+                getInfo
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
