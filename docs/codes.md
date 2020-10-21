@@ -106,3 +106,11 @@ A 404 status code does not indicate whether the resource is temporarily or perma
 The HTTP 429 Too Many Requests response status code indicates the user has sent too many requests in a given amount of time ("rate limiting").
 
 A Retry-After header might be included to this response indicating how long to wait before making a new request.
+
+### HTTP Status Code 500: Internal Server Error
+The HyperText Transfer Protocol (HTTP) 500 Internal Server Error server error response code indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.
+
+This error response is a generic "catch-all" response. Usually, this indicates the server cannot find a better 5xx error code to response. Sometimes, server administrators log error responses like the 500 status code with more details about the request to prevent the error from happening again in the future.
+
+
+##### The Mozilla Docs have been referenced in the last section of this page
