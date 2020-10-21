@@ -1,12 +1,12 @@
 Returns profile information about a last.fm user.
 
-This method doesn't not require authentication.
+This method doesn't require authentication.
 
 ## Parameters
 
 | Method     | Type                                                                                                | Default                  | Optional                      | Description                                                                                                                        |
 | ---------- | --------------------------------------------------------------------------------------------------- | ------------------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `user`     | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   | `none`                   | :negative_squared_cross_mark: | The last.fm username to fetch the recent tracks of                                                                                 |
+| `user`     | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   | `none`                   | :negative_squared_cross_mark: | The last.fm username to fetch the info of                                                                                 |
 | `api_key`  | [token](https://www.last.fm/api/account/create)                                                     | `none`                   | :negative_squared_cross_mark: | A Last.fm API key.                                                                                                                 |
 
 ## Responses
