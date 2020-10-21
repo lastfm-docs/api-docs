@@ -91,4 +91,18 @@ The meaning of a success depends on the HTTP request method:
    - TRACE: The message body contains the request message as received by the server.
 The successful result of a PUT or a DELETE is often not a 200 OK but a 204 No Content (or a 201 Created when the resource is uploaded for the first time).
 
+### HTTP Status Code 400: Bad Request
+The HyperText Transfer Protocol (HTTP) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
 
+### HTTP Status Code 403: Forbidden
+The HTTP 403 Forbidden client error status response code indicates that the server understood the request but refuses to authorize it.
+
+### HTTP Status Code 404: Not Found
+The HTTP 404 Not Found client error response code indicates that the server can't find the requested resource. Links that lead to a 404 page are often called broken or dead links and can be subject to link rot.
+
+A 404 status code does not indicate whether the resource is temporarily or permanently missing. But if a resource is permanently removed, a 410 (Gone) should be used instead of a 404 status.
+
+### HTTP Status Code 429: Too Many Requests
+The HTTP 429 Too Many Requests response status code indicates the user has sent too many requests in a given amount of time ("rate limiting").
+
+A Retry-After header might be included to this response indicating how long to wait before making a new request.
