@@ -66,9 +66,53 @@ Add this signature to your parameters, with the `api_sig` key. Your final parame
 | api_sig   | 94539006DE89B3C6B3C030BB1E52B9C4 |
 
 
+??? note "Example call to track.love"
+
+    Note that for other endpoints, you will have to include every parameter (except format) in your signature. So, let's use track.love as an example.
+    A typical call to track.love will have the following parameters:
+
+    | Parameter | Value                            |
+    |-----------|----------------------------------|
+    | artist    | KITANO REM                       |
+    | track     | RAINSICK                         |
+    | api_key   | YOUR_API_KEY                     |
+    | api_sig   | XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX |
+    | sk        | YOUR_SESSION_KEY                 |
+    | format    | json                             |
+
+    This means that we get the following parameters for generating the api_sig:
+    
+    | Parameter | Value                            |
+    |-----------|----------------------------------|
+    | method    | track.love                       |
+    | artist    | KITANO REM                       |
+    | track     | RAINSICK                         |
+    | api_key   | YOUR_API_KEY                     |
+    | sk        | YOUR_SESSION_KEY                 |
+    
+    This has to be sorted alphabetically, and secret key added:
+    
+    ```
+    api_keyYOUR_API_KEYartistKITANO REMmethodtrack.loveskYOUR_SESSION_KEYtrackRAINSICKYOUR_SECRET
+    ```
+    
+    Note that the values are not url encoded. Use standard UTF-8 encoding.
+    
+    The md5 of this should be:
+    
+    ```
+    800B8884B00C9343D1D425ED271E0F42
+    ```
+    
+    Then the full post request body must be encoded like a GET url querystring:
+    
+    ```
+    method=track.love&api_key=YOUR_API_KEY&artist=KITANO%20REM&track=RAINSICK&api_sig=800B8884B00C9343D1D425ED271E0F42&sk=YOUR_SESSION_KEY&format=json
+    ```
+
 ## Code example: C\#
 
-It might be helpful an actual implementation, so here is an example that is used in [.fmbot](https://github.com/fmbot-discord/fmbot) for calls that need a signature.
+It might be helpful to see an actual implementation, so here is an example that is used in [.fmbot](https://github.com/fmbot-discord/fmbot) for calls that need a signature.
 
 ```csharp
 
