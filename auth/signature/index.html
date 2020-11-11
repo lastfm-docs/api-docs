@@ -10,8 +10,9 @@
       
       
       
+      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
     
     
       
@@ -19,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.358818c7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f0267088.min.css">
         
       
     
@@ -836,8 +837,86 @@
 </tr>
 </tbody>
 </table>
+<details class="note"><summary>Example call to track.love</summary><p>Note that for other endpoints, you will have to include every parameter (except format) in your signature. So, let's use track.love as an example.
+A typical call to track.love will have the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>artist</td>
+<td>KITANO REM</td>
+</tr>
+<tr>
+<td>track</td>
+<td>RAINSICK</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+</tr>
+<tr>
+<td>api_sig</td>
+<td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+</tr>
+<tr>
+<td>sk</td>
+<td>YOUR_SESSION_KEY</td>
+</tr>
+<tr>
+<td>format</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+<p>This means that we get the following parameters for generating the api_sig:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td>track.love</td>
+</tr>
+<tr>
+<td>artist</td>
+<td>KITANO REM</td>
+</tr>
+<tr>
+<td>track</td>
+<td>RAINSICK</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+</tr>
+<tr>
+<td>sk</td>
+<td>YOUR_SESSION_KEY</td>
+</tr>
+</tbody>
+</table>
+<p>This has to be sorted alphabetically, and secret key added:</p>
+<div class="highlight"><pre><span></span><code>api_keyYOUR_API_KEYartistKITANO REMmethodtrack.loveskYOUR_SESSION_KEYtrackRAINSICKYOUR_SECRET
+</code></pre></div>
+<p>Note that the values are not url encoded. Use standard UTF-8 encoding.</p>
+<p>The md5 of this should be:</p>
+<div class="highlight"><pre><span></span><code>800B8884B00C9343D1D425ED271E0F42
+</code></pre></div>
+<p>Then the full post request body must be encoded like a GET url querystring:</p>
+<div class="highlight"><pre><span></span><code>method=track.love&amp;api_key=YOUR_API_KEY&amp;artist=KITANO%20REM&amp;track=RAINSICK&amp;api_sig=800B8884B00C9343D1D425ED271E0F42&amp;sk=YOUR_SESSION_KEY&amp;format=json
+</code></pre></div>
+</details>
 <h2 id="code-example-c">Code example: C#<a class="headerlink" href="#code-example-c" title="Permanent link">&para;</a></h2>
-<p>It might be helpful an actual implementation, so here is an example that is used in <a href="https://github.com/fmbot-discord/fmbot">.fmbot</a> for calls that need a signature.</p>
+<p>It might be helpful to see an actual implementation, so here is an example that is used in <a href="https://github.com/fmbot-discord/fmbot">.fmbot</a> for calls that need a signature.</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">generateSignature</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">var</span> <span class="n">signature</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
@@ -936,8 +1015,8 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
