@@ -19,7 +19,7 @@ To edit the documentation:
 
 ## Updating your local installation (Windows)
 
-1. Pip: `python -m pip install -U pip`
+1. Pip (as admin!): `python -m pip install -U pip`
 
 2. Upgrade mkdocs: `pip install -U mkdocs`
 
