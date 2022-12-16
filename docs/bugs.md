@@ -29,3 +29,8 @@ Similarly @attr fields can be accessed by using `"@attr"` as a key.
 The official documentation has schemas that reflect some fields to have data they do not. For example, the `getTopArtists` methods when called upon the `geo` endpoint should return a field for the number of listeners that the artist has in the requested country. This field is missing in the response and is replaced by a `listeners` field that reflects an artist's global listener count, not their listeners in that country as it should.
 
 Similarly certain fields containing time information are often titled differently in the documented schemas, in actuality, they are placed in a "uts" field. UTS is an abbrevation for UNIX Timestamp, this is not a common title for it.
+
+## Random results
+The API has a rare bug where it will sometimes return data like recent tracks from a completely different user. This behavior is also seen on the website. This usually only happens once, and the next result will actually for the user you requested.
+
+This might mess with any playcount caching mechanisms you have, so keep that in mind.
