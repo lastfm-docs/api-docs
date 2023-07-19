@@ -35,7 +35,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getWeeklyChartList&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=user.getWeeklyChartList&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

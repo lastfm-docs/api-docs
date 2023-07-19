@@ -37,7 +37,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=user.getTopAlbums&user=aidan-&format=json&limit=10
+    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=user.getTopAlbums&user=aidan-&format=json&limit=10
     ```
 
     ```json

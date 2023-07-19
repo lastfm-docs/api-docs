@@ -40,7 +40,7 @@ Errors:
 	HTTP status: `200 OK`
 
 	```
-	http://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=skee-lo&track=i%20wish&api_key=YOUR_API_KEY&format=json
+	https://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=skee-lo&track=i%20wish&api_key=YOUR_API_KEY&format=json
 	```
 
 	```json
@@ -72,7 +72,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=artistthatdoesntexist&track=i%20wish&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=track.getcorrection&artist=artistthatdoesntexist&track=i%20wish&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {

@@ -50,7 +50,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -75,7 +75,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=ArtistThatDoesntExist&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=ArtistThatDoesntExist&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
@@ -89,7 +89,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=UserThatDoesntExist&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=UserThatDoesntExist&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
