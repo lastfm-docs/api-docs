@@ -5,8 +5,8 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The last.fm username to fetch the info of                                                                                 |
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the info of.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 
@@ -91,3 +91,6 @@ Errors:
         "message": "User not found"
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[key]: https://www.last.fm/api/account/create

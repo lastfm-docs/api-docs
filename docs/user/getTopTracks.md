@@ -5,11 +5,11 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The Last.fm username to fetch top tracks for.
-| `period` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | overall | :negative_squared_cross_mark: | The time period over which to retrieve top albums for. Can be `overall`, `7day`, `1month`, `3month`, `6month` or `12month`.
-| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
-| `page` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to the first page.
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch top tracks for.
+| `period` | [string][string] | overall | :negative_squared_cross_mark: | The time period over which to retrieve top albums for. Can be `overall`, `7day`, `1month`, `3month`, `6month` or `12month`.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to the first page.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 
 ## Responses
@@ -168,3 +168,7 @@ Errors:
     }
     
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

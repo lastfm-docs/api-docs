@@ -5,9 +5,9 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The Last.fm username to fetch top tags for.
-| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch top tags for.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 Errors:
@@ -110,3 +110,7 @@ Errors:
         "links": []
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

@@ -8,7 +8,7 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 
 ## Responses
@@ -4140,3 +4140,5 @@ Errors:
     }
     
     ```
+
+[key]: https://www.last.fm/api/account/create

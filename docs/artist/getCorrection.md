@@ -6,9 +6,9 @@ No authentication required.
 
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `artist` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The artist's name for the context of the request.
-| `track` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The track's name for the context of the request.
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `artist` | [string][string] | `none` | :white_check_mark: | The artist's name for the context of the request.
+| `track` | [string][string] | `none` | :white_check_mark: | The track's name for the context of the request.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 
@@ -93,3 +93,6 @@ Errors:
 			}
     }   
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[key]: https://www.last.fm/api/account/create

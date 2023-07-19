@@ -5,10 +5,10 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The user whose library you want to fetch.
-| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50  | :negative_squared_cross_mark: | The number of results to fetch. Maximum 2000.
-| `page` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `user` | [string][string] | `none` | :white_check_mark: | The user whose library you want to fetch.
+| `limit` | [number][number] | 50  | :negative_squared_cross_mark: | The number of results to fetch. Maximum 2000.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 Errors:
@@ -118,3 +118,7 @@ Errors:
 
 !!! warning
     To use parameters: `from` and `to`, you must declare **both** of them otherwise it will be treated with no start or end date
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

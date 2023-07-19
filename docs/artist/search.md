@@ -6,10 +6,10 @@ No authentication required.
 
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 30 | :negative_squared_cross_mark: | The artist which's album should be fetched.
-| `page` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1 | :negative_squared_cross_mark: | The album that should be fetched.
-| `artist` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The artist's name
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `limit` | [number][number] | 30 | :negative_squared_cross_mark: | The artist which's album should be fetched.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The album that should be fetched.
+| `artist` | [string][string] | `none` | :white_check_mark: | The artist's name
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 
@@ -130,3 +130,7 @@ Errors:
       }
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

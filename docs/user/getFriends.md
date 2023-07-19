@@ -7,11 +7,11 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The Last.fm username to fetch the friends of.
-| `recenttracks` | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | 0 | :negative_squared_cross_mark: | Whether or not to include information about friends' recent listening in the response.
-| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
-| `page` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
-| `api_key`| [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the friends of.
+| `recenttracks` | [boolean][boolean] | 0 | :negative_squared_cross_mark: | Whether or not to include information about friends' recent listening in the response.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
+| `api_key`| [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 Errors:
@@ -121,3 +121,8 @@ Errors:
         "message": "no such page"
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

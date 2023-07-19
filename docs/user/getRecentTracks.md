@@ -5,13 +5,13 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The last.fm username to fetch the recent tracks of.                                                                                 |
-| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50 | :negative_squared_cross_mark:       | The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening. |
-| `page` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
-| `from` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0000000000 | :negative_squared_cross_mark: | Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.
-| `to` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | `current UNIX timestamp` | :negative_squared_cross_mark:     | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.    |
-| `extended` | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | 0 | :negative_squared_cross_mark:| Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `user` | [string][string] | `none` | :white_check_mark: | The last.fm username to fetch the recent tracks of.                                                                                 |
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark:       | The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening. |
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
+| `from` | [number][number] | 0000000000 | :negative_squared_cross_mark: | Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.
+| `to` | [number][number] | `current UNIX timestamp` | :negative_squared_cross_mark:     | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.    |
+| `extended` | [boolean][boolean] | 0 | :negative_squared_cross_mark:| Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 // Add auth docs
 
@@ -272,3 +272,8 @@ Errors:
     ```
 
 // Add auth docs
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

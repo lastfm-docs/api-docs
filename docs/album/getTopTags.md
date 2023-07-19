@@ -6,11 +6,11 @@ No authentication required.
 
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `artist` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: \* | The artist which's album should be fetched.
-| `album` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: \* | The album that should be fetched.
-| `mbid` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :negative_squared_cross_mark: | The album's MusicBrainz ID.
-| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0 | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.
-| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+| `artist` | [string][string] | `none` | :white_check_mark: \* | The artist which's album should be fetched.
+| `album` | [string][string] | `none` | :white_check_mark: \* | The album that should be fetched.
+| `mbid` | [string][string] | `none` | :negative_squared_cross_mark: | The album's MusicBrainz ID.
+| `autocorrect` | [number][number] | 0 | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 \* Required unless you are using a MusicBrainz ID for the album.
 
@@ -98,3 +98,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
         "links": []
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create
