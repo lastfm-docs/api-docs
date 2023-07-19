@@ -9,8 +9,8 @@ No authentication required.
 | ------ | ---- | ------- | -------- | -----------
 | `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the friends of.
 | `recenttracks` | [boolean][boolean] | 0 | :negative_squared_cross_mark: | Whether or not to include information about friends' recent listening in the response.
-| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
-| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `api_key`| [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses

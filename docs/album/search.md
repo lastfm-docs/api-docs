@@ -6,7 +6,7 @@ No authentication required.
 
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `album` | [string][string] | `none`  | :white_check_mark: | The album's name.
+| `album` | [string][string] | `none` | :white_check_mark: | The album that should be fetched.
 | `limit` | [number][number] | 30 | :negative_squared_cross_mark: | The number of results to fetch per page.
 | `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.

@@ -6,8 +6,8 @@ No authentication required.
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
 | `user` | [string][string] | `none` | :white_check_mark: | The user whose library you want to fetch.
-| `limit` | [number][number] | 50  | :negative_squared_cross_mark: | The number of results to fetch. Maximum 2000.
-| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
+| `limit` | [number][number] | 50  | :negative_squared_cross_mark: | The number of results to fetch per page. Maximum 2000.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses

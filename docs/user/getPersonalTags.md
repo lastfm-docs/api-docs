@@ -8,8 +8,8 @@ No authentication required.
 | `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the personal tags of.
 | `tag` | [string][string] | `none` | :white_check_mark: | The tag that is being fetched.
 | `taggingtype` | [string][string] | `none` | :white_check_mark: | The type of items that have been tagged. Options are `artist`, `album` and `track`.
-| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
-| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The number of pages to be fetched.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses

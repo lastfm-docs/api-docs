@@ -5,10 +5,10 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string][string] | `none` | :white_check_mark: | The last.fm username to fetch top albums for.
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch top albums for.
 | `period` | [string][string] | overall | :negative_squared_cross_mark: | The time period over which to retrieve top albums for. Can be `overall`, `7day`, `1month`, `3month`, `6month` or `12month`.
-| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
-| `page` | [number][number] | 1       | :negative_squared_cross_mark:      | The page number to fetch. Defaults to first page.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses

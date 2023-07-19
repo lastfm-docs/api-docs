@@ -5,12 +5,12 @@ No authentication required.
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `user` | [string][string] | `none` | :white_check_mark: | The last.fm username to fetch the recent tracks of.                                                                                 |
-| `limit` | [number][number] | 50 | :negative_squared_cross_mark:       | The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening. |
-| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the recent tracks of.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Maximum is 1000. One track is added when the user is currently listening.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `from` | [number][number] | 0000000000 | :negative_squared_cross_mark: | Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.
-| `to` | [number][number] | `current UNIX timestamp` | :negative_squared_cross_mark:     | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.    |
-| `extended` | [boolean][boolean] | 0 | :negative_squared_cross_mark:| Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.
+| `to` | [number][number] | `current UNIX timestamp` | :negative_squared_cross_mark: | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.
+| `extended` | [boolean][boolean] | 0 | :negative_squared_cross_mark: | Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 // Add auth docs

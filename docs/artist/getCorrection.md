@@ -6,7 +6,7 @@ No authentication required.
 
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `artist` | [string][string] | `none` | :white_check_mark: | The artist's name for the context of the request.
+| `artist` | [string][string] | `none` | :white_check_mark: | The artist name to fetch information for.
 | `track` | [string][string] | `none` | :white_check_mark: | The track's name for the context of the request.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 

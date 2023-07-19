@@ -11,7 +11,7 @@ No authentication required.
 | `mbid` | [string][string] | `none` | :negative_squared_cross_mark: | The album's MusicBrainz ID.
 | `autocorrect` | [number][number] | 0 | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.
 | `user` | [string][string] | `none` | :negative_squared_cross_mark: | If not in authenticated mode, this field should be provided with the user that should be looked up.
-| `api_key` | [key][key] | `none`  | :white_check_mark: | A Last.fm API key.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 \* Required unless you are using a MusicBrainz ID for the album.
 

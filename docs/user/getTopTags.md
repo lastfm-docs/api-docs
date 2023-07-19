@@ -6,7 +6,7 @@ No authentication required.
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
 | `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch top tags for.
-| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Defaults to 50.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses

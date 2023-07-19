@@ -6,9 +6,9 @@ No authentication required.
 
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `limit` | [number][number] | 30 | :negative_squared_cross_mark: | The artist which's album should be fetched.
-| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The album that should be fetched.
-| `artist` | [string][string] | `none` | :white_check_mark: | The artist's name
+| `artist` | [string][string] | `none` | :white_check_mark: | The artist's name for the context of the request.
+| `limit` | [number][number] | 30 | :negative_squared_cross_mark: | The number of results to fetch per page.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses

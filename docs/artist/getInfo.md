@@ -4,16 +4,16 @@ No authentication required.
 
 ## Parameters
 
-| Method | Type | Default | Required | Description 
+| Method | Type | Default | Required | Description
 | ------ | ---- | ------- | -------- | -----------
-| `artist` | [string][string] | `none`  | :white_check_mark: \* | The artist name to fetch information for.                                                                             |
-| `mbid` | [string][string] | `none`  | :negative_squared_cross_mark: | MusicBrainz ID as an alternative for the artist's name.
+| `artist` | [string][string] | `none` | :white_check_mark: \* | The artist name to fetch information for.
+| `mbid` | [string][string] | `none` | :negative_squared_cross_mark: | The artist's MusicBrainz ID.
 | `autocorrect` | [number][number] | 0 | :negative_squared_cross_mark: | Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
-| `username` | [string][string] | `none`  | :negative_squared_cross_mark: | The username for the context of the request. If supplied, the user's playcount for this artist is included in the response. |
+| `username` | [string][string] | `none` | :negative_squared_cross_mark: | The username for the context of the request. If supplied, the user's playcount for this artist is included in the response.
 | `lang` | [string][string] | en | :negative_squared_cross_mark: | The language to return the biography in, expressed as an ISO 639 alpha-2 code.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
-\* Required unless you are using a MusicBrainz ID for the album.
+\* Required unless you are using a MusicBrainz ID for the artist.
 
 ## Responses
 
