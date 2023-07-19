@@ -1,17 +1,19 @@
-Get the metadata and tracklist for an album on Last.fm using the album name or a musicbrainz id.
+Get the metadata and tracklist for an album on Last.fm using the album name or a MusicBrainz ID.
 
 No authentication required.
 
 ## Parameters
 
-| Method        | Type                                                                                              | Default | Required                      | Description                                                                                                           |
-| ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `artist`      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | Yes (unless mbid)        | The artist name to fetch information for.                                                                             |
-| `mbid`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | Yes (unless artist name) | MusicBrainz ID as an alternative for the artist's name.                                                               |
-| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0       |  | Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.                                                             |
-| `username`    | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  |  | The username for the context of the request. If supplied, the user's playcount for this artist is included in the response. |
-| `lang`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | en      |  | The language to return the biography in, expressed as an ISO 639 alpha-2 code.                      |
-| `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | Yes            | A Last.fm API key.                                                                                                    |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `artist` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \* | The artist name to fetch information for.                                                                             |
+| `mbid` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | MusicBrainz ID as an alternative for the artist's name.
+| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0 | :negative_squared_cross_mark: | Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.
+| `username` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The username for the context of the request. If supplied, the user's playcount for this artist is included in the response. |
+| `lang` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | en | :negative_squared_cross_mark: | The language to return the biography in, expressed as an ISO 639 alpha-2 code.
+| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
+
+\* Required unless you are using a MusicBrainz ID for the album.
 
 ## Responses
 

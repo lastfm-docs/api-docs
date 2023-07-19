@@ -3,14 +3,13 @@ Get an album chart for a user profile, for a given date range. If no date range 
 No authentication required.
 
 ## Parameters
-| Method         | Type                                                                                               | Default    | Optional | Description                                            |
-| -------------- | -------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------------------------ |
-| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`      | :negative_squared_cross_mark: | The last.fm username to fetch the charts of.
-| `limit`        |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | `none`  | :white_check_mark:            | The number of results to fetch. Maximum 1000.
-| `from`         |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | `UNIX timestamp of the seventh most recent time it was 12pm (UTC)` | :white_check_mark:    | The date at which the chart should start from (can preceed a week).
-| `to`           |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | `UNIX timestamp of the last time it was 12pm (UTC)` | :white_check_mark:            | The date at which the chart should end on.
-| `api_key`      |[token](https://www.last.fm/api/account/create)                                                     |`none`      | :negative_squared_cross_mark: | A Last.fm API key.
-
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The Last.fm username to fetch the charts of.
+| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | `none` | :negative_squared_cross_mark: | The number of results to fetch. Maximum 1000.
+| `from` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | `UNIX timestamp of the seventh most recent time it was 12pm (UTC)` | :negative_squared_cross_mark: | The date at which the chart should start from (can preceed a week).
+| `to` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | `UNIX timestamp of the last time it was 12pm (UTC)` | :negative_squared_cross_mark: | The date at which the chart should end on.
+| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 Errors:

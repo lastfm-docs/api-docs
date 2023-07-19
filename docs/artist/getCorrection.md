@@ -1,14 +1,14 @@
-Get the metadata and tracklist for an album on Last.fm using the album name or a musicbrainz id.
+Get the metadata and tracklist for an album on Last.fm using the album name or a MusicBrainz ID.
 
 No authentication required.
 
 ## Parameters
 
-| Method        | Type                                                                                              | Default | Required                      | Description                                                                                                           |
-| ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `artist`      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark:          | The artist which's album should be fetched.                                                                           |
-| `track`       | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark:        | The track that should be fetched.                                                                                     |
-| `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                                                                                                    |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `artist` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The artist's name for the context of the request.
+| `track` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The track's name for the context of the request.
+| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 

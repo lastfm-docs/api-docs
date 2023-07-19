@@ -1,20 +1,20 @@
-Get the metadata and tracklist for an album on Last.fm using the album name or a musicbrainz id.
+Get the metadata and tracklist for an album on Last.fm using the album name or a MusicBrainz ID.
 
 No authentication required.
 
 ## Parameters
 
-| Method        | Type                                                                                              | Default | Required                      | Description                                                                                                           |
-| ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `artist`      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The artist which's album should be fetched.                                                                           |
-| `album`       | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The album that should be fetched.                                                                                     |
-| `mbid`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The album's musicbrainz id.                                                                                           |
-| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0       | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.                                                             |
-| `username`    | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The user in the context of the request. If submitted, will provide information about the user for the requested album |
-| `lang`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | en      | :negative_squared_cross_mark: | The language which will be used in the response for biography. Requires an ISO 639 alpha-1 code.                      |
-| `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                                                                                                    |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `artist` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: \* | The artist which's album should be fetched.
+| `album` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: \* | The album that should be fetched.
+| `mbid` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :negative_squared_cross_mark: | The album's MusicBrainz ID.
+| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0 | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.
+| `lang` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | en | :negative_squared_cross_mark: | The language which will be used in the response for biography. Requires an ISO 639 alpha-1 code.
+| `username` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :negative_squared_cross_mark: | The user in the context of the request. If submitted, will provide information about the user for the requested album.
+| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
 
-\*Required unless you are using a musicbrainz id for the album.
+\* Required unless you are using a MusicBrainz ID for the album.
 
 ## Responses
 

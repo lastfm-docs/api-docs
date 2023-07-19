@@ -4,16 +4,16 @@ No authentication required.
 
 ## Parameters
 
-| Method        | Type                                                                                              | Default | Required                      | Description                                                                                         |
-| ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------- |
-| `artist`      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The artist which's album should be fetched.                                                         |
-| `album`       | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The album that should be fetched.                                                                   |
-| `mbid`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The album's musicbrainz id.                                                                         |
-| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0       | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.                                           |
-| `user`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | If not in authenticated mode, this field should be provided with the user that should be looked up. |
-| `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                                                                                  |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `artist` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: \* | The artist which's album should be fetched.
+| `album` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: \* | The album that should be fetched.
+| `mbid` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :negative_squared_cross_mark: | The album's MusicBrainz ID.
+| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0 | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.
+| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :negative_squared_cross_mark: | If not in authenticated mode, this field should be provided with the user that should be looked up.
+| `api_key` | [token](https://www.last.fm/api/account/create) | `none`  | :white_check_mark: | A Last.fm API key.
 
-\*Required unless you are using a musicbrainz id for the album.
+\* Required unless you are using a MusicBrainz ID for the album.
 
 ## Responses
 

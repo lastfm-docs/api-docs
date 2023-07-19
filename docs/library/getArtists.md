@@ -3,12 +3,12 @@ A paginated list of all the artists in a user's library, with play counts and ta
 No authentication required.
 
 ## Parameters
-| Method         | Type                                                                                               | Default    | Required | Description                                            |
-| -------------- | -------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------------------------ |
-| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`      | True | The user whose library you want to fetch.
-| `limit`        |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50  |             | The number of results to fetch. Maximum 2000.
-| `page`         |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 1       |             | The page number to fetch. Defaults to first page.
-| `api_key`      |[token](https://www.last.fm/api/account/create)                                                     |`none`      | True | A Last.fm API key.
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `user` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none` | :white_check_mark: | The user whose library you want to fetch.
+| `limit` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50  | :negative_squared_cross_mark: | The number of results to fetch. Maximum 2000.
+| `page` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1 | :negative_squared_cross_mark: | The page number to fetch. Defaults to first page.
+| `api_key` | [token](https://www.last.fm/api/account/create) | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 Errors:
