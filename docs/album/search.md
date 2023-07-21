@@ -35,8 +35,8 @@ Errors:
     | Parameter | Value         |
     | --------- | ------------- |
     | album     | Greatest Hits |
-    | api_key   | YOUR_API_KEY  |
     | page      | 2             |
+    | api_key   | YOUR_API_KEY  |
     | format    | json          |
 
     HTTP status: `200 OK`

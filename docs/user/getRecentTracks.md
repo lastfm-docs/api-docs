@@ -34,12 +34,12 @@ Errors:
 
 ??? note "Example response of a user currently not scrobbling"
 
-    | Parameter | Value      |
-    |-----------|------------|
-    | username  | frikandel\_|
-    | limit     | 1          |
-    | extended  | 1          |
-    | format    | json       |
+    | Parameter   | Value        |
+    | ----------- | ------------ |
+    | username    | frikandel\_  |
+    | limit       | 1            |
+    | extended    | 1            |
+    | format      | json         |
     
     HTTP status: `200 OK`
 
@@ -101,17 +101,18 @@ Errors:
 
 ??? note "Example response of a user currently scrobbling"
 
-    | Parameter | Value      |
-    |-----------|------------|
-    | username  | frikandel\_|
-    | limit     | 1          |
-    | extended  | 1          |
-    | format    | json       |
+    | Parameter   | Value        | 
+    | ----------- | ------------ |
+    | user        | frikandel_   |
+    | limit       | 1            |
+    | extended    | 1            |
+    | api_key     | YOUR_API_KEY |
+    | format      | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getrecenttracks&user=frikandel_&format=json&limit=1&extended=1
+    https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=frikandel_&limit=1&extended=1&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

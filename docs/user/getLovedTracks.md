@@ -29,16 +29,17 @@ Errors:
 
 ??? note "Example Response"
 
-    | Parameter | Value            |
-    |-----------|------------------|
-    | username  | TyphoonasNorABot |
-    | limit     | 1                |
-    | format    | json             |
+    | Parameter   | Value              |
+    | ----------- | ------------------ |
+    | user        | TyphoonasNorABot   |
+    | limit       | 1                  |
+    | api_key     | YOUR_API_KEY       |
+    | format      | json               |
     
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getlovedtracks&user=TyphoonsNotABot&limit=1&format=json
+    https://ws.audioscrobbler.com/2.0/?method=user.getLovedTracks&user=TyphoonsNotABot&limit=1&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

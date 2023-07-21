@@ -28,16 +28,17 @@ Errors:
 ## Examples
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | username  | rj    |
-    | limit     | 5     |
-    | format    | json  |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | user      | rj           |
+    | limit     | 5            |
+    | api_key   | YOUR_API_KEY |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=rj&api_key=YOUR_API_KEY&format=json&limit=5
+    https://ws.audioscrobbler.com/2.0/?method=user.getTopTags&user=rj&limit=5&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

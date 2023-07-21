@@ -41,14 +41,14 @@ Errors:
     | --------- | ------------- |
     | artist    | Metallica     |
     | album     | Metallica     |
+    | user      | Burdayy       |
     | api_key   | YOUR_API_KEY  |
-    |  user     | Burdayy       |
     | format    | json          |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.getTags&artist=Metallica&album=Metallica&user=Burdayy&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

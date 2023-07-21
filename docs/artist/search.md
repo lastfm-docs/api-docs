@@ -39,7 +39,7 @@ Errors:
 
     | Parameter | Value         |
     | --------- | ------------- |
-    | artist    | Greatest Hits |
+    | artist    | Rammstein     |
     | api_key   | YOUR_API_KEY  |
     | format    | json          |
 

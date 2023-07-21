@@ -38,17 +38,17 @@ Errors:
 
 ??? note "Example response with user parameter"
 
-    | Parameter | Value         |
-    | --------- | ------------- |
-    | artist    | The Weeknd    |
-    | api_key   | YOUR_API_KEY  |
+    | Parameter | Value           |
+    | --------- | -------------   |
+    | artist    | The Weeknd      |
     | username  | TyphoonsNotABot |
-    | format    | json          |
+    | api_key   | YOUR_API_KEY    |
+    | format    | json            |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=The+Weeknd&username=TyphoonsNotABot&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=The+Weeknd&username=TyphoonsNotABot&api_key=YOUR_API_KEY&format=json
     ```
     ```json
         {

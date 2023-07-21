@@ -30,16 +30,17 @@ Errors:
 ## Examples
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | username  | aidan-|
-    | limit     | 1     |
-    | format    | json  |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | user      | aidan-       |
+    | limit     | 1            |
+    | api_key   | YOUR_API_KEY |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getfriends&user=aidan-&format=json&limit=1
+    https://ws.audioscrobbler.com/2.0/?method=user.getFriends&user=aidan-&limit=1&api_key=YOUR_API_KEY&&format=json
     ```
 
     ```json

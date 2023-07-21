@@ -50,14 +50,14 @@ duration - in seconds
     | --------- | ------------- |
     | artist    | Metallica     |
     | album     | Metallica     |
+    | lang      | de            |
     | api_key   | YOUR_API_KEY  |
-    |  lang     | de            |
     | format    | json          |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=Metallica&album=Metallica&lang=de&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=Metallica&album=Metallica&lang=de&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

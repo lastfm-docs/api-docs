@@ -26,15 +26,16 @@ Errors:
 
 ??? note "Example response"
 
-    | Parameter | Value          |
-    |-----------|----------------|
-    | username  | TyphoonsNotABot|
-    | format    | json           |
+    | Parameter   | Value           |
+    | ----------- | --------------- |
+    | user        | TyphoonsNotABot |
+    | api_key     | YOUR_API_KEY    |
+    | format      | json            |
     
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=TyphoonsNotABot&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=user.getInfo&user=TyphoonsNotABot&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

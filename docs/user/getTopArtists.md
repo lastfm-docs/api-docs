@@ -29,16 +29,17 @@ Errors:
 ## Examples
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | username  | aidan-|
-    | limit     | 3     |
-    | format    | json  |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | user      | aidan-       |
+    | limit     | 3            |
+    | api_key   | YOUR_API_KEY |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=user.getTopArtists&user=aidan-&format=json&limit=3
+    https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=aidan-&limit=3&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

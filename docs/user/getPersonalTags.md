@@ -38,17 +38,19 @@ Errors:
 
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | username  | rj |
-    | tag     | rock     |
-    | taggingtype     | artist     |
-    | format    | json  |
+    | Parameter            | Value        |
+    | -------------------- | ------------ |
+    | user                 | rj           |
+    | tag                  | rock         |
+    | taggingtype          | artist       |
+    | limit                | 1            |
+    | api_key              | YOUR_API_KEY |
+    | format               | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
+    https://ws.audioscrobbler.com/2.0/?method=user.getPersonalTags&user=rj&tag=rock&taggingtype=artist&limit=1&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json

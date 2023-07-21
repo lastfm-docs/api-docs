@@ -27,16 +27,17 @@ Errors:
 ## Examples
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | username  | aidan-|
-    | limit     | 2     |
-    | format    | json  |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | user      | aidan-       |
+    | limit     | 2            |
+    | api_key   | YOUR_API_KEY |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=user.getWeeklyAlbumChart&user=aidan-&api_key=YOUR_API_KEY&format=json&limit=2
+    https://ws.audioscrobbler.com/2.0/?method=user.getWeeklyAlbumChart&user=aidan-&limit=2&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
