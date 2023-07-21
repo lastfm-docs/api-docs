@@ -1,9 +1,17 @@
-site_name: Unofficial last.fm API docs
+site_name: Unofficial Last.fm API docs
+site_description: Unofficial documentation for the Last.fm API
+
 repo_url: https://github.com/lastfm-docs/api-docs
 repo_name: lastfm-docs/api-docs
-site_description: Unofficial documentation for the last.fm API
+
+edit_uri: edit/master/docs
+
 theme:
   name: 'material'
+  features:
+    - content.action.edit
+  icon:
+    edit: material/pencil
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
