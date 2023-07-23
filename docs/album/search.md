@@ -3,7 +3,6 @@ Get the top tags for an album on Last.fm, ordered by popularity.
 No authentication required.
 
 ## Parameters
-
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
 | `album` | [string][string] | `none` | :white_check_mark: | The album that should be fetched.
@@ -12,7 +11,6 @@ No authentication required.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter

@@ -3,7 +3,6 @@ Get the metadata and tracklist for an album on Last.fm using the album name or a
 No authentication required.
 
 ## Parameters
-
 | Method | Type | Default | Required | Description
 | ------ | ---- | ------- | -------- | -----------
 | `artist` | [string][string] | `none` | :white_check_mark: \* | The artist name to fetch information for.
@@ -16,7 +15,6 @@ No authentication required.
 \* Required unless you are using a MusicBrainz ID for the artist.
 
 ## Responses
-
 Errors:
 
 - 2 : Invalid service - This service does not exist

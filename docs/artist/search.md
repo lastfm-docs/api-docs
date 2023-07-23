@@ -3,7 +3,6 @@ Search for an artist by name, ordered by relevance.
 No authentication required.
 
 ## Parameters
-
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
 | `artist` | [string][string] | `none` | :white_check_mark: | The artist's name for the context of the request.
@@ -12,7 +11,6 @@ No authentication required.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
-
 Errors:
 
 - 2 : Invalid service - This service does not exist

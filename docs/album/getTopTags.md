@@ -3,7 +3,6 @@ Get the top tags for an album on Last.fm, ordered by popularity.
 No authentication required.
 
 ## Parameters
-
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
 | `artist` | [string][string] | `none` | :white_check_mark: \* | The artist which's album should be fetched.
@@ -15,7 +14,6 @@ No authentication required.
 \* Required unless you are using a MusicBrainz ID for the album.
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter

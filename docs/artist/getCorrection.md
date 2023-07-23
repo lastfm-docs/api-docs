@@ -3,7 +3,6 @@ Get the metadata and tracklist for an album on Last.fm using the album name or a
 No authentication required.
 
 ## Parameters
-
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
 | `artist` | [string][string] | `none` | :white_check_mark: | The artist name to fetch information for.
@@ -11,7 +10,6 @@ No authentication required.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter

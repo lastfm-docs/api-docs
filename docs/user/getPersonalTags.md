@@ -13,7 +13,6 @@ No authentication required.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
-
 Errors:
 
 - 2 : Invalid service - This service does not exist

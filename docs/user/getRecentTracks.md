@@ -16,7 +16,6 @@ No authentication required.
 // Add auth docs
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter
