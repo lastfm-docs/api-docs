@@ -72,7 +72,7 @@ Errors:
         "total": 0,
         "reach": 0,
         "wiki": {
-          "summary": " <a href=\"http://www.last.fm/tag/thistagdoesntexist\">Read more on Last.fm</a>.",
+          "summary": " <a href=\"https://www.last.fm/tag/thistagdoesntexist\">Read more on Last.fm</a>.",
           "content": ""
         }
       }
