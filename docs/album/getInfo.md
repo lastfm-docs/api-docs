@@ -1,23 +1,21 @@
-Get the metadata and tracklist for an album on Last.fm using the album name or a musicbrainz id.
+Get the metadata and tracklist for an album on Last.fm using the album name or a MusicBrainz ID.
 
 No authentication required.
 
 ## Parameters
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `artist` | [string][string] | `none` | :white_check_mark: \* | The artist which's album should be fetched.
+| `album` | [string][string] | `none` | :white_check_mark: \* | The album that should be fetched.
+| `mbid` | [string][string] | `none` | :negative_squared_cross_mark: | The album's MusicBrainz ID.
+| `autocorrect` | [number][number] | 0 | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.
+| `lang` | [string][string] | en | :negative_squared_cross_mark: | The language which will be used in the response for biography. Requires an ISO 639 alpha-1 code.
+| `username` | [string][string] | `none` | :negative_squared_cross_mark: | The user in the context of the request. If submitted, will provide information about the user for the requested album.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
-| Method        | Type                                                                                              | Default | Required                      | Description                                                                                                           |
-| ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `artist`      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The artist which's album should be fetched.                                                                           |
-| `album`       | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The album that should be fetched.                                                                                     |
-| `mbid`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The album's musicbrainz id.                                                                                           |
-| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0       | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.                                                             |
-| `username`    | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The user in the context of the request. If submitted, will provide information about the user for the requested album |
-| `lang`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | en      | :negative_squared_cross_mark: | The language which will be used in the response for biography. Requires an ISO 639 alpha-1 code.                      |
-| `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                                                                                                    |
-
-\*Required unless you are using a musicbrainz id for the album.
+\* Required unless you are using a MusicBrainz ID for the album.
 
 ## Responses
-
 Errors:
 
 - 2 : Invalid service - This service does not exist
@@ -50,14 +48,14 @@ duration - in seconds
     | --------- | ------------- |
     | artist    | Metallica     |
     | album     | Metallica     |
+    | lang      | de            |
     | api_key   | YOUR_API_KEY  |
-    |  lang     | de            |
     | format    | json          |
 
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=Metallica&album=Metallica&lang=de&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=Metallica&album=Metallica&lang=de&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -329,8 +327,8 @@ duration - in seconds
         },
         "wiki": {
         "published": "06 Oct 2008, 13:22",
-        "summary": "Metallica ist das fünfte Studioalbum der gleichnamigen US-amerikanischen Heavy-Metal-Band Metallica. Es erschien am 12. August 1991 bei Elektra Records und wird aufgrund seines schlichten, fast komplett schwarzen Covers häufig The Black Album genannt. Das hauptsächlich vom Kanadier Bob Rock produzierte Album markierte einen Wendepunkt in der musikalischen Entwicklung der Band. Nachdem die Lieder zuvor immer länger und progressiver geworden waren, schrieb die Band nun einfacher arrangierte, kürzere und eingängigere Songs. <a href=\"http://www.last.fm/music/Metallica/Metallica\">Read more on Last.fm</a>.",
-        "content": "Metallica ist das fünfte Studioalbum der gleichnamigen US-amerikanischen Heavy-Metal-Band Metallica. Es erschien am 12. August 1991 bei Elektra Records und wird aufgrund seines schlichten, fast komplett schwarzen Covers häufig The Black Album genannt. Das hauptsächlich vom Kanadier Bob Rock produzierte Album markierte einen Wendepunkt in der musikalischen Entwicklung der Band. Nachdem die Lieder zuvor immer länger und progressiver geworden waren, schrieb die Band nun einfacher arrangierte, kürzere und eingängigere Songs.\n\nMit weltweit über 28 Millionen verkauften Einheiten, davon über 16 Millionen in den USA, ist Metallica bis heute das meistverkaufte Metal-Album. In zehn Ländern erreichte es Platz eins der jeweiligen Albumcharts. 1992 erhielten Metallica den Grammy Award in der Kategorie Best Metal Performance. <a href=\"http://www.last.fm/music/Metallica/Metallica\">Read more on Last.fm</a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply."
+        "summary": "Metallica ist das fünfte Studioalbum der gleichnamigen US-amerikanischen Heavy-Metal-Band Metallica. Es erschien am 12. August 1991 bei Elektra Records und wird aufgrund seines schlichten, fast komplett schwarzen Covers häufig The Black Album genannt. Das hauptsächlich vom Kanadier Bob Rock produzierte Album markierte einen Wendepunkt in der musikalischen Entwicklung der Band. Nachdem die Lieder zuvor immer länger und progressiver geworden waren, schrieb die Band nun einfacher arrangierte, kürzere und eingängigere Songs. <a href=\"https://www.last.fm/music/Metallica/Metallica\">Read more on Last.fm</a>.",
+        "content": "Metallica ist das fünfte Studioalbum der gleichnamigen US-amerikanischen Heavy-Metal-Band Metallica. Es erschien am 12. August 1991 bei Elektra Records und wird aufgrund seines schlichten, fast komplett schwarzen Covers häufig The Black Album genannt. Das hauptsächlich vom Kanadier Bob Rock produzierte Album markierte einen Wendepunkt in der musikalischen Entwicklung der Band. Nachdem die Lieder zuvor immer länger und progressiver geworden waren, schrieb die Band nun einfacher arrangierte, kürzere und eingängigere Songs.\n\nMit weltweit über 28 Millionen verkauften Einheiten, davon über 16 Millionen in den USA, ist Metallica bis heute das meistverkaufte Metal-Album. In zehn Ländern erreichte es Platz eins der jeweiligen Albumcharts. 1992 erhielten Metallica den Grammy Award in der Kategorie Best Metal Performance. <a href=\"https://www.last.fm/music/Metallica/Metallica\">Read more on Last.fm</a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply."
         }
     }
     }
@@ -341,7 +339,7 @@ duration - in seconds
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=metallica&album=albumthatdoesnotexist&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=YOUR_API_KEY&artist=metallica&album=albumthatdoesnotexist&format=json
     ```
     ```json
     {
@@ -350,3 +348,7 @@ duration - in seconds
         "links": []
     }   
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

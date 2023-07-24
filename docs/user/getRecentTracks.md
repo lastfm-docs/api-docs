@@ -1,23 +1,21 @@
 Returns a list of the tracks recently scrobbled by this user. Adds a `nowplaying` flag with a boolean value if the user is currently scrobbling.
 
-This method doesn't not require authentication.
+No authentication required.
 
 ## Parameters
-
-| Method     | Type                                                                                                | Default                  | Optional                      | Description                                                                                                                        |
-| ---------- | --------------------------------------------------------------------------------------------------- | ------------------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `user`     | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   | `none`                   | :negative_squared_cross_mark: | The last.fm username to fetch the recent tracks of.                                                                                 |
-| `limit`    | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50                       | :white_check_mark:            | The number of results to fetch per page. Defaults to 50. Maximum is 1000. One track is added when the user is currently listening. |
-| `page`     | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 1                        | :white_check_mark:            | The page number to fetch. Defaults to first page.                                                                                  |
-| `from`     | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 0000000000               | :white_check_mark:            | Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.                |
-| `to`       | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | `current UNIX timestamp` | :white_check_mark:            | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.    |
-| `extended` | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | 0                        | :white_check_mark:            | Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.              |
-| `api_key`  | [token](https://www.last.fm/api/account/create)                                                     | `none`                   | :negative_squared_cross_mark: | A Last.fm API key.                                                                                                                 |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the recent tracks of.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Maximum is 1000. One track is added when the user is currently listening.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
+| `from` | [number][number] | 0000000000 | :negative_squared_cross_mark: | Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format. Timezone is UTC.
+| `to` | [number][number] | `current UNIX timestamp` | :negative_squared_cross_mark: | End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (num of seconds). Timezone is UTC.
+| `extended` | [boolean][boolean] | 0 | :negative_squared_cross_mark: | Whether to include extra data. This data is artist info and if the user has loved a track. Changes the output format.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 // Add auth docs
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter
@@ -35,12 +33,12 @@ Errors:
 
 ??? note "Example response of a user currently not scrobbling"
 
-    | Parameter | Value      |
-    |-----------|------------|
-    | username  | frikandel\_|
-    | limit     | 1          |
-    | extended  | 1          |
-    | format    | json       |
+    | Parameter   | Value        |
+    | ----------- | ------------ |
+    | username    | frikandel_  |
+    | limit       | 1            |
+    | extended    | 1            |
+    | format      | json         |
     
     HTTP status: `200 OK`
 
@@ -102,17 +100,18 @@ Errors:
 
 ??? note "Example response of a user currently scrobbling"
 
-    | Parameter | Value      |
-    |-----------|------------|
-    | username  | frikandel\_|
-    | limit     | 1          |
-    | extended  | 1          |
-    | format    | json       |
+    | Parameter   | Value        | 
+    | ----------- | ------------ |
+    | user        | frikandel_   |
+    | limit       | 1            |
+    | extended    | 1            |
+    | api_key     | YOUR_API_KEY |
+    | format      | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getrecenttracks&user=frikandel_&format=json&limit=1&extended=1
+    https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=frikandel_&limit=1&extended=1&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -273,3 +272,8 @@ Errors:
     ```
 
 // Add auth docs
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

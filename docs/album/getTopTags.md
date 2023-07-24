@@ -3,19 +3,17 @@ Get the top tags for an album on Last.fm, ordered by popularity.
 No authentication required.
 
 ## Parameters
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `artist` | [string][string] | `none` | :white_check_mark: \* | The artist which's album should be fetched.
+| `album` | [string][string] | `none` | :white_check_mark: \* | The album that should be fetched.
+| `mbid` | [string][string] | `none` | :negative_squared_cross_mark: | The album's MusicBrainz ID.
+| `autocorrect` | [number][number] | 0 | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
-| Method        | Type                                                                                              | Default | Required                      | Description                                               |
-| ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------------- |
-| `artist`      | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The artist which's album should be fetched.               |
-| `album`       | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark: \*         | The album that should be fetched.                         |
-| `mbid`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The album's musicbrainz id.                               |
-| `autocorrect` | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 0       | :negative_squared_cross_mark: | Automatically corrects any mistakes in the artist's name. |
-| `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                                        |
-
-\*Required unless you are using a musicbrainz id for the album.
+\* Required unless you are using a MusicBrainz ID for the album.
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter
@@ -43,14 +41,14 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     | --------- | ------------- |
     | artist    | Metallica     |
     | album     | Metallica     |
+    | user      | Burdayy       |
     | api_key   | YOUR_API_KEY  |
-    |  user     | Burdayy       |
     | format    | json          |
 
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.getTopTags&artist=Metallica&album=Metallica&user=Burdayy&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -75,7 +73,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=ArtistThatDoesntExist&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=ArtistThatDoesntExist&album=metallica&user=burdayy&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
@@ -89,7 +87,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=UserThatDoesntExist&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.gettags&artist=metallica&album=metallica&user=UserThatDoesntExist&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
@@ -98,3 +96,7 @@ count : A weighted count of how often the tag was applied, with a maximum of 100
         "links": []
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

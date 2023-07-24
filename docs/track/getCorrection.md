@@ -1,4 +1,4 @@
-Use the Last.fm corrections data to check whether the supplied artist has a correction to a canonical artist.
+Use the Last.fm corrections data to check whether the supplied track has a correction to a canonical track.
 
 No authentication required.
 
@@ -6,6 +6,7 @@ No authentication required.
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
 | `artist` | [string][string] | `none` | :white_check_mark: | The artist name to correct.
+| `track` | [string][string] | `none` | :white_check_mark: | The track name to correct.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
@@ -28,50 +29,73 @@ Errors:
 
 !!! Warning
     This API call returns 200 OK HTTP status codes even when the response contains an error.
-    
+
 ## Examples
 
 ??? note "Example response"
 
-    | Parameter | Value         |
-    | --------- | ------------- |
-    | artist    | Avici         |
-    | api_key   | YOUR_API_KEY  |
-    | format    | json          |
+	| Parameter | Value         |
+	| --------- | ------------- |
+	| artist    | Skee-Lo       |
+	| track     | I wish        |
+	| api_key   | YOUR_API_KEY  |
+	| format    | json          |
 
-    HTTP status: `200 OK`
+	HTTP status: `200 OK`
 
-    ```
-    https://ws.audioscrobbler.com/2.0/?method=artist.getCorrection&artist=Avici&api_key=YOUR_API_KEY&format=json
-    ```
+	```
+	https://ws.audioscrobbler.com/2.0/?method=track.getCorrection&artist=Skee-Lo&track=I%20Wish&api_key=YOUR_API_KEY&format=json
+	```
 
-    ```json
-    {
-      "corrections": {
-        "correction": {
-          "artist": {
-            "name": "Avicii",
-            "mbid": "c85cfd6b-b1e9-4a50-bd55-eb725f04f7d5",
-            "url": "https://www.last.fm/music/Avicii"
-          },
-          "@attr": {
-            "index": "0"
-          }
-        }
-      }
-    }
-    ```
+	```json
+	{
+		"corrections": {
+			"correction": {
+				"track": {
+					"name": "I Wish",
+					"mbid": "ccb9326a-6f9f-48b1-a097-1210dd14e119",
+					"url": "https://www.last.fm/music/Skee-Lo/_/I+Wish",
+					"artist": {
+						"name": "Skee-Lo",
+						"mbid": "9341a67c-4f0c-43c2-9ec4-c222d2cb97f3",
+						"url": "https://www.last.fm/music/Skee-Lo"
+					}
+				},
+				"@attr": {
+					"index": "0",
+					"artistcorrected": "0",
+					"trackcorrected": "0"
+				}
+			}
+		}
+	}
+
+	```
 
 ??? warning "Example response of an artist/track that doesnt exist"
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=artist.getCorrection&artist=artistdoesntexist&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=track.getCorrection&artist=artistthatdoesntexist&track=i%20wish&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
-      	"corrections": "\n                "
-    }
+			"corrections": {
+				"correction": {
+					"track": {
+						"url": "",
+						"artist": {
+							"url": ""
+						}
+					},
+					"@attr": {
+						"index": "0",
+						"artistcorrected": "0",
+						"trackcorrected": "0"
+					}
+				}
+			}
+    }   
     ```
 
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String

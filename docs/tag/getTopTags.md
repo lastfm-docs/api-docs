@@ -1,11 +1,10 @@
-Use the Last.fm corrections data to check whether the supplied artist has a correction to a canonical artist.
+Fetches the top global tags on Last.fm. Sorted by popularity. (number of times used)
 
 No authentication required.
 
 ## Parameters
 | Method | Type | Default | Required | Description 
 | ------ | ---- | ------- | -------- | -----------
-| `artist` | [string][string] | `none` | :white_check_mark: | The artist name to correct.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
@@ -26,53 +25,49 @@ Errors:
 - 26 : Suspended API key - Access for your account has been suspended, please contact Last.fm
 - 29 : Rate limit exceeded - Your IP has made too many requests in a short period
 
-!!! Warning
-    This API call returns 200 OK HTTP status codes even when the response contains an error.
-    
 ## Examples
-
 ??? note "Example response"
 
-    | Parameter | Value         |
-    | --------- | ------------- |
-    | artist    | Avici         |
-    | api_key   | YOUR_API_KEY  |
-    | format    | json          |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | tag       | metal        |
+    | api_key   | YOUR_API_KEY |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=artist.getCorrection&artist=Avici&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=tag.getTopTags&tag=metal&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
     {
-      "corrections": {
-        "correction": {
-          "artist": {
-            "name": "Avicii",
-            "mbid": "c85cfd6b-b1e9-4a50-bd55-eb725f04f7d5",
-            "url": "https://www.last.fm/music/Avicii"
+      "toptags": {
+        "@attr": {
+          "offset": 0,
+          "num_res": 50,
+          "total": 2804440
+        },
+        "tag": [
+          {
+            "name": "rock",
+            "count": 4024829,
+            "reach": 399440
           },
-          "@attr": {
-            "index": "0"
-          }
-        }
+          {
+            "name": "electronic",
+            "count": 2441085,
+            "reach": 258464
+          },
+          {
+            "name": "seen live",
+            "count": 2159269,
+            "reach": 82163
+          },
+          ... and 47 more
+        ]
       }
     }
     ```
 
-??? warning "Example response of an artist/track that doesnt exist"
-    HTTP status: `200 OK`
-
-    ```
-    https://ws.audioscrobbler.com/2.0/?method=artist.getCorrection&artist=artistdoesntexist&api_key=YOUR_API_KEY&format=json
-    ```
-    ```json
-    {
-      	"corrections": "\n                "
-    }
-    ```
-
-[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [key]: https://www.last.fm/api/account/create

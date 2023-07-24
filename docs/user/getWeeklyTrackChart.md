@@ -3,13 +3,13 @@ Get a track chart for a user profile, for a given date range. If no date range i
 No authentication required.
 
 ## Parameters
-| Method         | Type                                                                                               | Default    | Required | Description                                            |
-| -------------- | -------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------------------------ |
-| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`      | True | The last.fm username to fetch the friends of.
-| `limit`        |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | `none`  |             | The number of results to fetch. Maximum 1000.
-| `from`         |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | `UNIX timestamp of the seventh most recent time it was 12pm (UTC)` |      | The date at which the chart should start from (can preceed a week).
-| `to`           |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | `UNIX timestamp of the last time it was 12pm (UTC)` |       | The date at which the chart should end on.
-| `api_key`      |[token](https://www.last.fm/api/account/create)                                                     |`none`      | True | A Last.fm API key.
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the friends of.
+| `limit` | [number][number] | `none` | :negative_squared_cross_mark: | The number of results to fetch. Maximum 1000.
+| `from` | [number][number] | `UNIX timestamp of the seventh most recent time it was 12pm (UTC)` | :negative_squared_cross_mark: | The date at which the chart should start from (can preceed a week).
+| `to` | [number][number] | `UNIX timestamp of the last time it was 12pm (UTC)` | :negative_squared_cross_mark: | The date at which the chart should end on.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 Errors:
@@ -27,17 +27,17 @@ Errors:
 ## Examples
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | user      | aidan- |
-    | limit     | 2 |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | user      | aidan-       |
+    | limit     | 2            |
     | api_key   | YOUR_API_KEY |
-    | format    | json  |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getWeeklyTrackChart&api_key=YOUR_API_KEY&user=aidan-&format=json&limit=2
+    https://ws.audioscrobbler.com/2.0/?method=user.getWeeklyTrackChart&user=aidan-&limit=2&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -111,3 +111,7 @@ Errors:
 
 !!! warning
     To use parameters: `from` and `to`, you must declare **both** of them otherwise it will be treated with no start or end date
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

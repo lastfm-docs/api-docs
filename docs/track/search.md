@@ -1,11 +1,12 @@
-Search for an artist by name, ordered by relevance.
+Get the top tags for this track on Last.fm, ordered by tag count.
 
 No authentication required.
 
 ## Parameters
-| Method | Type | Default | Required | Description 
+| Method | Type | Default | Required | Description
 | ------ | ---- | ------- | -------- | -----------
-| `artist` | [string][string] | `none` | :white_check_mark: | The artist's name for the context of the request.
+| `track` | [string][string] | `none` | :white_check_mark: | The track name to fetch information for.
+| `artist` | [string][string] | `none` | :negative_squared_cross_mark: | Narrow your search by specifying an artist.
 | `limit` | [number][number] | 30 | :negative_squared_cross_mark: | The number of results to fetch per page.
 | `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
 | `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
@@ -30,43 +31,40 @@ Errors:
 
 !!! Warning
     This API call returns 200 OK HTTP status codes even when the response contains an error.
-    
-## Examples
 
+## Examples
 ??? note "Example response"
 
     | Parameter | Value         |
     | --------- | ------------- |
-    | artist    | Rammstein     |
+    | track     | Hells Bells   |
     | api_key   | YOUR_API_KEY  |
     | format    | json          |
 
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=Rammstein&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=track.search&track=Hells+Bells&api_key=YOUR_API_KEY&format=json
     ```
-
     ```json
     {
       "results": {
         "opensearch:Query": {
           "#text": "",
           "role": "request",
-          "searchTerms": "rammstein",
           "startPage": "1"
         },
-        "opensearch:totalResults": "13809",
+        "opensearch:totalResults": "11634",
         "opensearch:startIndex": "0",
         "opensearch:itemsPerPage": "30",
-        "artistmatches": {
-          "artist": [
+        "trackmatches": {
+          "track": [
             {
-              "name": "Rammstein",
-              "listeners": "1913191",
-              "mbid": "b2d122f9-eadb-4930-a196-8f221eeb0c66",
-              "url": "https://www.last.fm/music/Rammstein",
-              "streamable": "0",
+              "name": "Hells Bells",
+              "artist": "AC/DC",
+              "url": "https://www.last.fm/music/AC%2FDC/_/Hells+Bells",
+              "streamable": "FIXME",
+              "listeners": "796758",
               "image": [
                 {
                   "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
@@ -83,27 +81,75 @@ Errors:
                 {
                   "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
                   "size": "extralarge"
+                }
+              ],
+              "mbid": "b6411d6b-2dca-4004-8919-e8c27ff6b286"
+            },
+            {
+              "name": "Hell's Bells",
+              "artist": "Cary Ann Hearst",
+              "url": "https://www.last.fm/music/Cary+Ann+Hearst/_/Hell%27s+Bells",
+              "streamable": "FIXME",
+              "listeners": "20485",
+              "image": [
+                {
+                  "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+                  "size": "small"
+                },
+                {
+                  "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+                  "size": "medium"
+                },
+                {
+                  "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+                  "size": "large"
                 },
                 {
                   "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
-                  "size": "mega"
+                  "size": "extralarge"
                 }
-              ]
-            }
+              ],
+              "mbid": "d0fd3d3b-ae2f-40d5-a5ac-d56c0d549dc7"
+            },
+            {
+              "name": "Hell's Bells",
+              "artist": "AC/DC",
+              "url": "https://www.last.fm/music/AC%2FDC/_/Hell%27s+Bells",
+              "streamable": "FIXME",
+              "listeners": "19980",
+              "image": [
+                {
+                  "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png",
+                  "size": "small"
+                },
+                {
+                  "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png",
+                  "size": "medium"
+                },
+                {
+                  "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
+                  "size": "large"
+                },
+                {
+                  "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png",
+                  "size": "extralarge"
+                }
+              ],
+              "mbid": "c7c25302-69ab-4a9d-b967-23cbc6793854"
+            },
+            ... and 27 more
           ]
         },
-        "@attr": {
-          "for": "rammstein"
-        }
+        "@attr": {}
       }
     }
     ```
 
-??? warning "Example response of an artist that doesnt exist"
+??? warning "Example response of an artist/track that doesnt exist"
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=artistthatdoesntexist&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=track.search&track=trackthatdoesntexist&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
@@ -111,20 +157,15 @@ Errors:
         "opensearch:Query": {
           "#text": "",
           "role": "request",
-          "searchTerms": "artistthatdoesntexisthsjdkghkjdfgh",
           "startPage": "1"
         },
         "opensearch:totalResults": "0",
         "opensearch:startIndex": "0",
         "opensearch:itemsPerPage": "30",
-        "artistmatches": {
-          "artist": [
-            
-          ]
+        "trackmatches": {
+          "track": []
         },
-        "@attr": {
-          "for": "artistthatdoesntexisthsjdkghkjdfgh"
-        }
+        "@attr": {}
       }
     }
     ```

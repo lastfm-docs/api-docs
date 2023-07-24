@@ -3,16 +3,14 @@ Get the top tags for an album on Last.fm, ordered by popularity.
 No authentication required.
 
 ## Parameters
-
-| Method    | Type                                                                                              | Default | Required                      | Description                                 |
-| --------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | ------------------------------------------- |
-| `limit`   | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 30      | :negative_squared_cross_mark: | The artist which's album should be fetched. |
-| `page`    | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1       | :negative_squared_cross_mark: | The album that should be fetched.           |
-| `album`   | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :white_check_mark:            | The album's musicbrainz id.                 |
-| `api_key` | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :white_check_mark:            | A Last.fm API key.                          |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `album` | [string][string] | `none` | :white_check_mark: | The album that should be fetched.
+| `limit` | [number][number] | 30 | :negative_squared_cross_mark: | The number of results to fetch per page.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter
@@ -35,14 +33,14 @@ Errors:
     | Parameter | Value         |
     | --------- | ------------- |
     | album     | Greatest Hits |
-    | api_key   | YOUR_API_KEY  |
     | page      | 2             |
+    | api_key   | YOUR_API_KEY  |
     | format    | json          |
 
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.search&album=Greatest%20Hits&page=2&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.search&album=Greatest%20Hits&page=2&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -96,7 +94,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=album.search&album=albumthatdoesntexist&page=2&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=album.search&album=albumthatdoesntexist&page=2&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
@@ -119,3 +117,7 @@ Errors:
       }
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

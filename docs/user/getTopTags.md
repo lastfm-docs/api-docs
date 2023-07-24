@@ -3,12 +3,11 @@ Get the top tags used by this user.
 No authentication required.
 
 ## Parameters
-| Method         | Type                                                                                               | Default | Optional | Description                                            |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------ |
-| `user`         |[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   |`none`   | :negative_squared_cross_mark: | The Last.fm username to fetch top tags for.
-| `limit`        |[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50      | :white_check_mark:            | The number of results to fetch per page. Defaults to 50.
-| `api_key`      |[token](https://www.last.fm/api/account/create)                                                     |`none`   | :negative_squared_cross_mark: | A Last.fm API key.
-
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch top tags for.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
 Errors:
@@ -29,16 +28,17 @@ Errors:
 ## Examples
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | username  | rj    |
-    | limit     | 5     |
-    | format    | json  |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | user      | rj           |
+    | limit     | 5            |
+    | api_key   | YOUR_API_KEY |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=rj&api_key=YOUR_API_KEY&format=json&limit=5
+    https://ws.audioscrobbler.com/2.0/?method=user.getTopTags&user=rj&limit=5&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -83,7 +83,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=aidan-&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=aidan-&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -101,7 +101,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=userthatdoesntexist&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=user.gettoptags&user=userthatdoesntexist&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -111,3 +111,7 @@ Errors:
         "links": []
     }
     ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

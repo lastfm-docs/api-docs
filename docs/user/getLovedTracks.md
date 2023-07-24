@@ -1,18 +1,16 @@
-Returns a list of the tracks loved scrobbled by this user. Defaults to the last 50 loved tracks.
+Returns a list of the tracks loved scrobbled by this user.
 
-This method doesn't not require authentication.
+No authentication required.
 
 ## Parameters
-
-| Method     | Type                                                                                                | Default                  | Optional                      | Description                                                                                                                        |
-| ---------- | --------------------------------------------------------------------------------------------------- | ------------------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `user`     | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)   | `none`                   | :negative_squared_cross_mark: | The last.fm username to fetch the loved tracks of                                                                                 |
-| `limit`    | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 50                       | :white_check_mark:            | The number of results to fetch per page. Defaults to 50. Maximum is 1000. |
-| `page`     | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)   | 1                        | :white_check_mark:            | The page number to fetch. Defaults to first page.                                                                                  |
-| `api_key`  | [token](https://www.last.fm/api/account/create)                                                     | `none`                   | :negative_squared_cross_mark: | A Last.fm API key.                                                                                                                 |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `user` | [string][string] | `none` | :white_check_mark: | The last.fm username to fetch the loved tracks of.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page. Maximum is 1000.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
-
 Errors:
 
 - 6 : Invalid parameters - Your request is missing a required parameter
@@ -30,16 +28,17 @@ Errors:
 
 ??? note "Example Response"
 
-    | Parameter | Value            |
-    |-----------|------------------|
-    | username  | TyphoonasNorABot |
-    | limit     | 1                |
-    | format    | json             |
+    | Parameter   | Value              |
+    | ----------- | ------------------ |
+    | user        | TyphoonasNorABot   |
+    | limit       | 1                  |
+    | api_key     | YOUR_API_KEY       |
+    | format      | json               |
     
     HTTP status: `200 OK`
 
     ```
-    https://ws.audioscrobbler.com/2.0/?api_key=YOUR_API_KEY&method=User.getlovedtracks&user=TyphoonsNotABot&limit=1&format=json
+    https://ws.audioscrobbler.com/2.0/?method=user.getLovedTracks&user=TyphoonsNotABot&limit=1&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -110,3 +109,6 @@ Errors:
     }
     ```
 
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create

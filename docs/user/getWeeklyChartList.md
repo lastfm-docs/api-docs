@@ -6,9 +6,9 @@ No authentication required.
     Originally this method was meant to get a list of available charts for a user, expressed as date ranges which could be sent to the chart services.
 
 ## Parameters
-| Method         | Type                                                                                               | Default    | Required | Description                                            |
-| -------------- | -------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------------------------------------ |
-| `api_key`      |[token](https://www.last.fm/api/account/create)                                                     |`none`      | True | A Last.fm API key.
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 
 ## Responses
@@ -27,15 +27,16 @@ Errors:
 ## Examples
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
+    | Parameter | Value        |
+    | --------- | ------------ |
+    | user      | aidan-       |
     | api_key   | YOUR_API_KEY |
-    | format    | json  |
+    | format    | json         |
 
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getWeeklyChartList&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=user.getWeeklyChartList&user=aidan-&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -4140,3 +4141,5 @@ Errors:
     }
     
     ```
+
+[key]: https://www.last.fm/api/account/create

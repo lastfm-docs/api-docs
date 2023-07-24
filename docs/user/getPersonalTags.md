@@ -3,18 +3,16 @@ Get a list of the user's personal tags.
 No authentication required.
 
 ## Parameters
-
-| Method        | Type                                                                                              | Default | Optional                      | Description                                         |
-| ------------- | ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- | --------------------------------------------------- |
-| `user`        | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The last.fm username to fetch the personal tags of. |
-| `tag`         | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The tag that is being fetched.                      |
-| `taggingtype` | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | `none`  | :negative_squared_cross_mark: | The type of items that have been tagged. Options are artist / album /track |
-| `limit`       | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 50      | :white_check_mark:            | The page number to fetch. Defaults to first page.   |
-| `page`        | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | 1       | :white_check_mark:            | The number of pages to be fetched.                  |
-| `api_key`     | [token](https://www.last.fm/api/account/create)                                                   | `none`  | :negative_squared_cross_mark: | A Last.fm API key.                                  |
+| Method | Type | Default | Required | Description 
+| ------ | ---- | ------- | -------- | -----------
+| `user` | [string][string] | `none` | :white_check_mark: | The Last.fm username to fetch the personal tags of.
+| `tag` | [string][string] | `none` | :white_check_mark: | The tag that is being fetched.
+| `taggingtype` | [string][string] | `none` | :white_check_mark: | The type of items that have been tagged. Options are `artist`, `album` and `track`.
+| `limit` | [number][number] | 50 | :negative_squared_cross_mark: | The number of results to fetch per page.
+| `page` | [number][number] | 1 | :negative_squared_cross_mark: | The page number to fetch.
+| `api_key` | [key][key] | `none` | :white_check_mark: | A Last.fm API key.
 
 ## Responses
-
 Errors:
 
 - 2 : Invalid service - This service does not exist
@@ -39,17 +37,19 @@ Errors:
 
 ??? note "Example response"
 
-    | Parameter | Value |
-    | --------- | ----- |
-    | username  | rj |
-    | tag     | rock     |
-    | taggingtype     | artist     |
-    | format    | json  |
+    | Parameter    | Value        |
+    | ------------ | ------------ |
+    | user         | rj           |
+    | tag          | rock         |
+    | taggingtype  | artist       |
+    | limit        | 1            |
+    | api_key      | YOUR_API_KEY |
+    | format       | json         |
 
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
+    https://ws.audioscrobbler.com/2.0/?method=user.getPersonalTags&user=rj&tag=rock&taggingtype=artist&limit=1&api_key=YOUR_API_KEY&format=json
     ```
 
     ```json
@@ -103,7 +103,7 @@ Errors:
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=userthatdoesntexist&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
+    https://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=userthatdoesntexist&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
     ```
 
     ```json
@@ -117,7 +117,7 @@ Errors:
     HTTP status: `200 OK`
 
         ```
-        http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=burdayy&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
+        https://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=burdayy&tag=rock&taggingtype=artist&api_key=YOUR_API_KEY&format=json&limit=1
         ```
 
         ```json
@@ -144,7 +144,7 @@ Errors:
     HTTP status: `200 OK`
 
         ```
-        http://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=taggingtypethatdoesntexist&api_key=YOUR_API_KEY&format=json&limit=1
+        https://ws.audioscrobbler.com/2.0/?method=user.getpersonaltags&user=rj&tag=rock&taggingtype=taggingtypethatdoesntexist&api_key=YOUR_API_KEY&format=json&limit=1
         ```
         ```json
 
@@ -154,3 +154,7 @@ Errors:
             "links": []
         }
         ```
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[key]: https://www.last.fm/api/account/create
