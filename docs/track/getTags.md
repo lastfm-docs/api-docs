@@ -76,21 +76,17 @@ Errors:
     }
     ```
 
-??? warning "Example response of a track without any tags set"
+??? warning "Example response of an artist/track that doesnt exist"
     HTTP status: `200 OK`
 
     ```
-    http://ws.audioscrobbler.com/2.0/?method=track.getTags&artist=AC/DC&track=Hells+Bells&user=solelychloe&api_key=YOUR_API_KEY&format=json
+    https://ws.audioscrobbler.com/2.0/?method=track.getTags&artist=artistthatdoesntexist&track=trackthatdoesntexist&user=solelychloe&api_key=YOUR_API_KEY&format=json
     ```
     ```json
     {
-      "tags": {
-        "#text": " ",
-        "@attr": {
-          "artist": "AC/DC",
-          "track": "Hells Bells"
-        }
-      }
+      "error": 6,
+      "message": "Track not found",
+      "links": []
     }
     ```
 
