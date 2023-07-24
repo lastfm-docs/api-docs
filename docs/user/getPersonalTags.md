@@ -37,14 +37,14 @@ Errors:
 
 ??? note "Example response"
 
-    | Parameter            | Value        |
-    | -------------------- | ------------ |
-    | user                 | rj           |
-    | tag                  | rock         |
-    | taggingtype          | artist       |
-    | limit                | 1            |
-    | api_key              | YOUR_API_KEY |
-    | format               | json         |
+    | Parameter    | Value        |
+    | ------------ | ------------ |
+    | user         | rj           |
+    | tag          | rock         |
+    | taggingtype  | artist       |
+    | limit        | 1            |
+    | api_key      | YOUR_API_KEY |
+    | format       | json         |
 
     HTTP status: `200 OK`
 

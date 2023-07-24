@@ -35,7 +35,7 @@ Errors:
 
     | Parameter   | Value        |
     | ----------- | ------------ |
-    | username    | frikandel\_  |
+    | username    | frikandel_  |
     | limit       | 1            |
     | extended    | 1            |
     | format      | json         |

@@ -39,6 +39,7 @@ Errors:
 	| artist    | Skee-Lo       |
 	| track     | I wish        |
 	| api_key   | YOUR_API_KEY  |
+	| format    | json          |
 
 	HTTP status: `200 OK`
 
