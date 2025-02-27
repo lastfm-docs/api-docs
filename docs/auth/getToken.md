@@ -50,7 +50,7 @@ Errors:
     
     HTTP status: `200 OK`
     ```
-    http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=YOUR_API_KEY&format=json
+    http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=YOUR_API_KEY
     ```
     ```json
       {
@@ -68,7 +68,7 @@ Errors:
     | format    | json          |
     
     ```
-    http://www.last.fm/api/auth/?api_key=YOUR_API_KEY&token=REQUESTED_TOKEN
+    http://www.last.fm/api/auth/?api_key=YOUR_API_KEY&token=REQUESTED_TOKEN&format=json
     ```
 
     After the user has authorized via this url you can use [getSession](getSession.md)
