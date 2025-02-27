@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../Desktop/">
+        <link rel="prev" href="../getSession/">
       
       
         <link rel="next" href="../signature/">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paramaters" class="md-skip">
+        <a href="#parameters" class="md-skip">
           Skip to content
         </a>
       
@@ -723,6 +723,28 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../getSession/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getSession
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -770,9 +792,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#paramaters" class="md-nav__link">
+  <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Paramaters
+      Parameters
     </span>
   </a>
   
@@ -1821,9 +1843,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#paramaters" class="md-nav__link">
+  <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Paramaters
+      Parameters
     </span>
   </a>
   
@@ -1874,7 +1896,7 @@
   <h1>getToken</h1>
 
 <p>Get a temporary unauthorized token for an API account, this applies to non-web application authorization only.</p>
-<h2 id="paramaters">Paramaters<a class="headerlink" href="#paramaters" title="Permanent link">&para;</a></h2>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1888,52 +1910,117 @@
 <tbody>
 <tr>
 <td><code>api_key</code></td>
-<td>[string][string]</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
 <td><code>none</code></td>
 <td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
 <td>A Last.fm API key.</td>
 </tr>
 <tr>
 <td><code>api_sig</code></td>
-<td>[string][string] <code>none</code></td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td>
+<td><code>none</code></td>
 <td><img alt="✅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png" title=":white_check_mark:" /></td>
 <td>A Last.fm method signature, see <a href="../signature/">signature</a></td>
-<td></td>
 </tr>
 </tbody>
 </table>
 <h2 id="respones">Respones<a class="headerlink" href="#respones" title="Permanent link">&para;</a></h2>
-<p>Errors:
-- 8 : There was an error granting the request token. Please try again later
-- 2 : Invalid service - This service does not exist
-- 3 : Invalid Method - No method with that name in this package
-- 4 : Authentication Failed - You do not have permissions to access the service
-- 5 : Invalid format - This service doesn't exist in that format
-- 6 : Invalid parameters - Your request is missing a required parameter
-- 7 : Invalid resource specified
-- 8 : Operation failed - Something else went wrong
-- 9 : Invalid session key - Please re-authenticate
-- 10 : Invalid API key - You must be granted a valid key by last.fm
-- 11 : Service Offline - This service is temporarily offline. Try again later.
-- 13 : Invalid method signature supplied
-- 16 : There was a temporary error processing your request. Please try again
-- 26 : Suspended API key - Access for your account has been suspended, please contact Last.fm
-- 29 : Rate limit exceeded - Your IP has made too many requests in a short period</p>
+<p>Errors:  </p>
+<ul>
+<li>8 : There was an error granting the request token. Please try again later  </li>
+<li>2 : Invalid service - This service does not exist  </li>
+<li>3 : Invalid Method - No method with that name in this package  </li>
+<li>4 : Authentication Failed - You do not have permissions to access the service  </li>
+<li>5 : Invalid format - This service doesn't exist in that format  </li>
+<li>6 : Invalid parameters - Your request is missing a required parameter  </li>
+<li>7 : Invalid resource specified  </li>
+<li>8 : Operation failed - Something else went wrong  </li>
+<li>9 : Invalid session key - Please re-authenticate  </li>
+<li>10 : Invalid API key - You must be granted a valid key by last.fm  </li>
+<li>11 : Service Offline - This service is temporarily offline. Try again later.  </li>
+<li>13 : Invalid method signature supplied  </li>
+<li>16 : There was a temporary error processing your request. Please try again  </li>
+<li>26 : Suspended API key - Access for your account has been suspended, please contact Last.fm  </li>
+<li>29 : Rate limit exceeded - Your IP has made too many requests in a short period  </li>
+</ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>url: <code>http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&amp;api_key=YOUR_API_KEY&amp;format=json</code> for json or <code>http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&amp;api_key=YOUR_API_KEY</code> for xml</p>
-<p>Sample XML Response:
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;lfm</span><span class="w"> </span><span class="na">status=</span><span class="s">&quot;ok&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;token&gt;</span>cf45fe5a3e3cebe168480a086d7fe481<span class="nt">&lt;/token&gt;</span>
-<span class="nt">&lt;/lfm&gt;</span>
+<details class="note">
+<summary>Example XML response</summary>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+</tr>
+</tbody>
+</table>
+<p>HTTP status: <code>200 OK</code>
+<div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&amp;api_key=YOUR_API_KEY
 </code></pre></div>
-Sample JSON Response:
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;cf45fe5a3e3cebe168480a086d7fe481&quot;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;lfm</span><span class="w"> </span><span class="na">status=</span><span class="s">&quot;ok&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;token&gt;</span>cf45fe5a3e3cebe168480a086d7fe481<span class="nt">&lt;/token&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/lfm&gt;</span>
 </code></pre></div></p>
+</details>
+<details class="note">
+<summary>Example JSON response</summary>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+</tr>
+<tr>
+<td>format</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+<p>HTTP status: <code>200 OK</code>
+<div class="highlight"><pre><span></span><code>http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&amp;api_key=YOUR_API_KEY&amp;format=json
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;cf45fe5a3e3cebe168480a086d7fe481&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></p>
+</details>
+<details class="note">
+<summary>What to do with the token?</summary>
 <p>This token can then be used to authenticate a user by requesting the user to authorize via the auth link, with this token and your api key as parameter.</p>
-<p>Example: http://www.last.fm/api/auth/?api_key=YOUR_API_KEY&amp;token=cf45fe5a3e3cebe168480a086d7fe481</p>
-<p>After the user has authorized via this url you can use <a href="getSession.md">getSession</a></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+</tr>
+<tr>
+<td>token</td>
+<td>REQUESTED_TOKEN</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>http://www.last.fm/api/auth/?api_key=YOUR_API_KEY&amp;token=REQUESTED_TOKEN
+</code></pre></div>
+<p>After the user has authorized via this url you can use <a href="../getSession/">getSession</a></p>
+</details>
 
 
 
