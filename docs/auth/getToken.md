@@ -34,7 +34,7 @@ Errors:
 
     HTTP status: `200 OK`
     ```
-    http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=YOUR_API_KEY&format=json
+    http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=YOUR_API_KEY
     ```
     ```xml
       <lfm status="ok">
@@ -50,7 +50,7 @@ Errors:
     
     HTTP status: `200 OK`
     ```
-    http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=YOUR_API_KEY
+    http://ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=YOUR_API_KEY&format=json
     ```
     ```json
       {
