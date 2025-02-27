@@ -65,10 +65,9 @@ Errors:
     | --------- | --------------- |
     | api_key   | YOUR_API_KEY    |
     | token     | REQUESTED_TOKEN |
-    | format    | json          |
     
     ```
-    http://www.last.fm/api/auth/?api_key=YOUR_API_KEY&token=REQUESTED_TOKEN&format=json
+    http://www.last.fm/api/auth/?api_key=YOUR_API_KEY&token=REQUESTED_TOKEN
     ```
 
     After the user has authorized via this url you can use [getSession](getSession.md)
